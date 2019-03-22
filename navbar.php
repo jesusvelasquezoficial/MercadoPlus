@@ -9,7 +9,7 @@
       </button>
 
       <!-- Brand -->
-      <a class="navbar-brand" href="index-2.html">
+      <a class="navbar-brand" href="index.php">
         <img src="assets/img/logo.svg" class="navbar-brand-img
         mx-auto" alt="...">
       </a>

@@ -70,7 +70,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="getting-started.html">
+            <a class="nav-link " href="login.php">
               <i class="fe fe-log-in"></i> Iniciar Sessión
             </a>
           </li>

@@ -18,8 +18,18 @@
     body {
       display: none;
       position: relative !important;
+      background-image: url("assets/img/fondo7.jpg");
+      background-repeat: repeat;
+      background-position: top;
+      background-attachment: fixed;
+      background-size: cover;
     }
-
+    .card, .navbar-light, .alert-light, .blue-alpha{
+       background-color: rgba(21, 46, 77, 0.5) !important;
+    }
+    .blue-alpha-0{
+      background-color: rgba(21, 46, 77, .7) !important;
+    }
   </style>
 
   <title>Mercado Plus</title>

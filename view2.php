@@ -32,20 +32,6 @@
   <div class="container-fluid">
     <div class="row">
 
-      <style>
-      body{
-        background-image: url("assets/img/fondo2.jpg");
-        background-repeat: no-repeat;
-        background-position: top;
-        background-attachment: fixed;
-      }
-      .card, .navbar-light, .alert-light{
-
-         background-color: rgba(21, 46, 77, 0.5) !important;
-
-    }
-      </style>
-
       <!-- Tasa de Mercados -->
       <div class="col-12 col-xl-6">
 

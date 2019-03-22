@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <?php
   include 'head.php';
 ?>
@@ -17,9 +17,7 @@
         include 'view2.php';
         include 'view1.php';
       ?>
-      <div class="pt-6">
-
-      </div>
+      <div class="pt-6"></div>
     </div>
   </div> <!-- / .main-content -->
 

@@ -1,8 +1,7 @@
 <head>
-  <!-- <meta http-equiv="content-type" content="text/html;charset=utf-8"/> -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+  <meta name="description" content="Información del promedio dolar oficial y paralelo en venezuela.">
 
   <!-- Libs CSS -->
   <link rel="stylesheet" href="assets/fonts/feather/feather.min.css">
@@ -15,8 +14,14 @@
   <link rel="stylesheet" href="assets/css/theme.min.css" id="stylesheetLight">
   <link rel="stylesheet" href="assets/css/theme-dark.min.css" id="stylesheetDark">
 
-  <style>body { display: none; }</style>
+  <style>
+    body {
+      display: none;
+      position: relative !important;
+    }
+
+  </style>
 
   <title>Mercado Plus</title>
-  
+
 </head>

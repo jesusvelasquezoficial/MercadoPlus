@@ -92,7 +92,6 @@
   </div>
 </div>
 
-
 <!-- Modal: Members -->
 <div class="modal fade" id="modalMembers" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">

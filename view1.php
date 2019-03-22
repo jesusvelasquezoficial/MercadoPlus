@@ -13,8 +13,7 @@
               Visión general
             </h4>
             <!-- Title -->
-            <h3 class="header-title">Información del promedio dolar oficial y paralelo en venezuela</h3>
-
+            <h2 class="header-title">Información del promedio dolar oficial y paralelo en venezuela</h2>
           </div>
           <!-- Fecha y Hora -->
           <div class="col-auto">

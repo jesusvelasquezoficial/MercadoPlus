@@ -29,10 +29,7 @@
 
           <!-- Menu -->
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sidebarIcon">
-            <a href="profile-posts.html" class="dropdown-item">Profile</a>
-            <a href="settings.html" class="dropdown-item">Settings</a>
-            <hr class="dropdown-divider">
-            <a href="sign-in.html" class="dropdown-item">Logout</a>
+            <a href="cms.php" class="dropdown-item">CMS</a>
           </div>
 
         </div>
@@ -54,12 +51,12 @@
               <nav id="principal" >
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a class="nav-link active" href="#view1">
+                    <a class="nav-link active" href="index.php#view1">
                       View 1
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#view2">
+                    <a class="nav-link" href="index.php#view2">
                       View 2
                       <span class="badge badge-soft-success ml-auto">New</span>
                     </a>
@@ -113,10 +110,7 @@
 
             <!-- Menu -->
             <div class="dropdown-menu dropdown-menu-right">
-              <a href="profile-posts.html" class="dropdown-item">Profile</a>
-              <a href="settings.html" class="dropdown-item">Settings</a>
-              <hr class="dropdown-divider">
-              <a href="sign-in.html" class="dropdown-item">Logout</a>
+              <a href="cms.php" class="dropdown-item">CMS</a>
             </div>
 
           </div>

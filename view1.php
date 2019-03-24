@@ -56,7 +56,7 @@
               <div class="col-auto align-items-center justify-content-center">
                 <!-- Precio -->
                 <div class="">
-                  <h2 class="m-0 p-0"> <span class="h2 fe fe-bold mb-0">s.</span> 3,297.71 </h2>
+                  <h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-bold mb-0">s.</span> 3,297.71 </h2>
                   <!-- Icon -->
                 </div>
               </div>
@@ -90,41 +90,7 @@
               <div class="col-auto align-items-center justify-content-center">
                 <!-- Precio -->
                 <div class="">
-                  <h2 class="m-0 p-0"> <span class="h2 fe fe-bold mb-0">s.</span> 3,297.71 </h2>
-                  <!-- Icon -->
-                </div>
-              </div>
-            </div> <!-- / .row -->
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-lg-6">
-        <!-- Card -->
-        <div class="card">
-          <div class="card-body">
-            <div class="row align-items-center justify-content-center">
-              <div class="col">
-
-                <!-- Title -->
-                <h4 class="card-title text-uppercase mb-2">
-                  Valor del Petro
-                </h4>
-
-                <!-- Heading -->
-                <span class="h2 mb-0 text-muted">
-                  Salario minimo | Tramite
-                </span>
-
-                <!-- Badge -->
-                <!-- <span class="badge badge-soft-success mt-n1">
-                  +3.5%
-                </span> -->
-
-              </div>
-              <div class="col-auto align-items-center justify-content-center">
-                <!-- Precio -->
-                <div class="">
-                  <h2 class="m-0 p-0"> <span class="h2 fe fe-bold mb-0">s.</span> 36,000.00 </h2>
+                  <h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-bold mb-0">s.</span> 3,297.71 </h2>
                   <!-- Icon -->
                 </div>
               </div>
@@ -158,7 +124,7 @@
               <div class="col-auto align-items-center justify-content-center">
                 <!-- Precio -->
                 <div class="">
-                  <h2 class="m-0 p-0"> 1.13  </h2>
+                  <h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> 1.13  </h2>
                   <!-- Icon -->
                 </div>
               </div>
@@ -166,7 +132,75 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-4">
+      <div class="col-12 col-lg-6">
+        <!-- Card -->
+        <div class="card">
+          <div class="card-body">
+            <div class="row align-items-center justify-content-center">
+              <div class="col">
+
+                <!-- Title -->
+                <h4 class="card-title text-uppercase mb-2">
+                  Valor del
+                </h4>
+
+                <!-- Heading -->
+                <span class="h2 mb-0 text-muted">
+                  Bitcoin | Dolar
+                </span>
+
+                <!-- Badge -->
+                <!-- <span class="badge badge-soft-success mt-n1">
+                  +3.5%
+                </span> -->
+
+              </div>
+              <div class="col-auto align-items-center justify-content-center">
+                <!-- Precio -->
+                <div class="">
+                  <h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-dollar-sign mb-0"></span> 3,600.00 </h2>
+                  <!-- Icon -->
+                </div>
+              </div>
+            </div> <!-- / .row -->
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <!-- Card -->
+        <div class="card">
+          <div class="card-body">
+            <div class="row align-items-center justify-content-center">
+              <div class="col">
+
+                <!-- Title -->
+                <h4 class="card-title text-uppercase mb-2">
+                  Valor del Petro
+                </h4>
+
+                <!-- Heading -->
+                <span class="h2 mb-0 text-muted">
+                  Salario minimo | Tramite
+                </span>
+
+                <!-- Badge -->
+                <!-- <span class="badge badge-soft-success mt-n1">
+                  +3.5%
+                </span> -->
+
+              </div>
+              <div class="col-auto align-items-center justify-content-center">
+                <!-- Precio -->
+                <div class="">
+                  <h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-bold mb-0">s.</span> 36,000.00 </h2>
+                  <!-- Icon -->
+                </div>
+              </div>
+            </div> <!-- / .row -->
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
         <!-- Card -->
         <div class="card">
           <div class="card-body">
@@ -192,7 +226,7 @@
               <div class="col-auto align-items-center justify-content-center">
                 <!-- Precio -->
                 <div class="">
-                  <h2 class="m-0 p-0"> <span class="h2 fe fe-bold mb-0">s.</span> 197,862.60 </h2>
+                  <h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-bold mb-0">s.</span> 197,862.60 </h2>
                   <!-- Icon -->
                 </div>
               </div>
@@ -200,7 +234,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-4">
+      <div class="col-12 col-lg-6">
         <!-- Card -->
         <div class="card">
           <div class="card-body">
@@ -226,7 +260,7 @@
               <div class="col-auto align-items-center justify-content-center">
                 <!-- Precio -->
                 <div class="">
-                  <h2 class="m-0 p-0"> <span class="h2 fe fe-dollar-sign mb-0"></span> 57.83 </h2>
+                  <h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-dollar-sign mb-0"></span> 57.83 </h2>
                   <!-- Icon -->
                 </div>
               </div>
@@ -234,7 +268,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-4">
+      <div class="col-12 col-lg-6">
         <!-- Card -->
         <div class="card">
           <div class="card-body">
@@ -260,7 +294,7 @@
               <div class="col-auto align-items-center justify-content-center">
                 <!-- Precio -->
                 <div class="">
-                  <h2 class="m-0 p-0"> <span class="h2 fe fe-dollar-sign mb-0"></span> 1,308.10 </h2>
+                  <h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-dollar-sign mb-0"></span> 1,308.10 </h2>
                   <!-- Icon -->
                 </div>
               </div>

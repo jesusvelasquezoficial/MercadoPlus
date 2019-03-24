@@ -51,7 +51,7 @@
 
         <!-- Form Datos Oficiales -->
         <form class="mb-4" action="" method="post">
-          <div class="row">
+          <div class="row d-flex justify-content-center">
             <!-- Fecha Datos Oficiales -->
             <div class="col-12 col-md-6">
               <div class="form-group">
@@ -200,12 +200,31 @@
                 <label class="mb-1">
                   Petroleo
                 </label>
-                <!-- Input -->
-                <div class="input-group input-group-merge mb-3">
-                  <input type="text" class="form-control form-control-prepended" placeholder="" id="petro2" data-mask="#.##0,00" data-mask-reverse="true">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <span class="fe fe-dollar-sign"></span>
+                <div class="row">
+                  <div class="col-6">
+                    <small class="form-text text-muted">WTI</small>
+                  </div>
+                  <div class="col-6">
+                    <small class="form-text text-muted">BRENT</small>
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- Input -->
+                  <div class="input-group input-group-merge mb-3 col-6">
+                    <input type="text" class="form-control form-control-prepended" placeholder="" id="wti" data-mask="#.##0,00" data-mask-reverse="true">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <span class="fe fe-dollar-sign"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Input -->
+                  <div class="input-group input-group-merge mb-3 col-6">
+                    <input type="text" class="form-control form-control-prepended" placeholder="" id="brent" data-mask="#.##0,00" data-mask-reverse="true">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <span class="fe fe-dollar-sign"></span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -218,12 +237,31 @@
                 <label class="mb-1">
                   Oro
                 </label>
-                <!-- Input -->
-                <div class="input-group input-group-merge mb-3">
-                  <input type="text" class="form-control form-control-prepended" placeholder="" id="petro2" data-mask="#.##0,00" data-mask-reverse="true">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <span class="fe fe-dollar-sign"></span>
+                <div class="row">
+                  <div class="col-6">
+                    <small class="form-text text-muted">COMPRA</small>
+                  </div>
+                  <div class="col-6">
+                    <small class="form-text text-muted">VENTA</small>
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- Input -->
+                  <div class="input-group input-group-merge mb-3 col-6">
+                    <input type="text" class="form-control form-control-prepended" placeholder="" id="oroBuy" data-mask="#.##0,00" data-mask-reverse="true">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <span class="fe fe-dollar-sign"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Input -->
+                  <div class="input-group input-group-merge mb-3 col-6">
+                    <input type="text" class="form-control form-control-prepended" placeholder="" id="oroSell" data-mask="#.##0,00" data-mask-reverse="true">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <span class="fe fe-dollar-sign"></span>
+                      </div>
                     </div>
                   </div>
                 </div>

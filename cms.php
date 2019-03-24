@@ -32,20 +32,29 @@
             <div class="row align-items-center">
               <div class="col">
                 <!-- Nav -->
-                <ul class="nav nav-tabs nav-overflow header-tabs">
+                <ul class="nav nav-tabs nav-overflow header-tabs" id="tabDatos">
                   <li class="nav-item">
-                    <a href="#!" class="nav-link active">
+                    <a href="#datosOficiales" class="nav-link active" id="datosOficiales-tab" data-toggle="tab" role="tab" aria-controls="datosOficiales" aria-selected="true">
                       Datos Oficiales
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#!" class="nav-link">
+                    <a href="#datosOTC" class="nav-link" id="datosOTC-tab" data-toggle="tab" role="tab" aria-controls="datosOTC" aria-selected="false">
                       Datos OTC
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="tab-content">
+          <div class="tab-pane active" id="datosOficiales" role="tabpanel" aria-labelledby="datosOficiales-tab">
+            <h1>hola</h1>
+          </div>
+          <div class="tab-pane" id="datosOTC" role="tabpanel" aria-labelledby="datosOTC-tab">
+            <h1>mundo</h1>
           </div>
         </div>
 
@@ -60,7 +69,14 @@
                   Fecha
                 </label>
                 <!-- Input -->
-                <input type="text" class="form-control" placeholder="____/__/__/" data-toggle="flatpickr" id="fecha-DO"><br>
+                <div class="input-group input-group-merge mb-3">
+                  <input type="text" class="form-control form-control-prepended" placeholder="____/__/__/" data-toggle="flatpickr" id="fecha-DO"><br>
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <span class="fe fe-calendar"></span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <!-- Hora Datos Oficiales -->

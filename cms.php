@@ -76,25 +76,19 @@
               </div>
             </div>
             <div class="col-12">
-
               <!-- Email address -->
               <div class="form-group">
-
                 <!-- Label -->
                 <label class="mb-1">
                   Email address
                 </label>
-
                 <!-- Form text -->
                 <small class="form-text text-muted">
                   This contact will be shown to others publicly, so choose it carefully.
                 </small>
-
                 <!-- Input -->
                 <input type="email" class="form-control">
-
               </div>
-
             </div>
             <div class="col-12 col-md-6">
 

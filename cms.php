@@ -14,7 +14,6 @@
   <div style="width:1080px /*!important;" class="main-content w-auto " >
     <div class="container-fluid">
       <div class="pt-6 h-auto" id="cms">
-
         <!-- Header -->
         <div class="header">
           <div class="header-body">
@@ -36,22 +35,12 @@
                 <ul class="nav nav-tabs nav-overflow header-tabs">
                   <li class="nav-item">
                     <a href="#!" class="nav-link active">
-                      Nuevo Registro
+                      Datos Oficiales
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="#!" class="nav-link">
-                      Editar Registro
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#!" class="nav-link">
-                      Eliminar Registro
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#!" class="nav-link">
-                      Consultar Registro
+                      Datos OTC
                     </a>
                   </li>
                 </ul>
@@ -60,41 +49,31 @@
           </div>
         </div>
 
-        <!-- Form -->
+        <!-- Form Datos Oficiales -->
         <form class="mb-4">
-
           <div class="row">
             <div class="col-12 col-md-6">
-
               <!-- First name -->
               <div class="form-group">
-
                 <!-- Label -->
                 <label>
-                  First name
+                  Fecha
                 </label>
-
                 <!-- Input -->
-                <input type="text" class="form-control">
-
+                <input type="text" class="form-control" id="fecha-DO">
               </div>
 
             </div>
             <div class="col-12 col-md-6">
-
               <!-- Last name -->
               <div class="form-group">
-
                 <!-- Label -->
                 <label>
-                  Last name
+                  Hora
                 </label>
-
                 <!-- Input -->
-                <input type="text" class="form-control">
-
+                <input type="text" class="form-control" id="hora-DO">
               </div>
-
             </div>
             <div class="col-12">
 

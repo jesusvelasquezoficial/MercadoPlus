@@ -10,8 +10,7 @@
 
       <!-- Brand -->
       <a class="navbar-brand" href="index.php">
-        <img src="assets/img/logo.svg" class="navbar-brand-img
-        mx-auto" alt="...">
+        <img src="assets/img/logo.png" class="navbar-brand-img mx-auto " alt="...">
       </a>
 
       <!-- User (xs) -->

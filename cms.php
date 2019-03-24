@@ -60,6 +60,8 @@
                   Fecha
                 </label>
                 <!-- Input -->
+                <input type="text" class="form-control" placeholder="____/__/__/" data-toggle="flatpickr" id="fecha-DO"><br>
+                <input type="text" class="form-control" placeholder="__/__/____" data-mask="00/00/0000" id="fecha-DO"><br>
                 <input type="text" class="form-control" id="fecha-DO">
               </div>
 
@@ -72,22 +74,36 @@
                   Hora
                 </label>
                 <!-- Input -->
-                <input type="text" class="form-control" id="hora-DO">
+                <div class="input-group input-group-merge mb-3">
+                  <input type="text" class="form-control form-control-prepended" placeholder="">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <span class="fe fe-clock"></span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+            <!-- Form text -->
+            <!-- <small class="form-text text-muted">
+              This contact will be shown to others publicly, so choose it carefully.
+            </small> -->
             <div class="col-12">
               <!-- Email address -->
               <div class="form-group">
                 <!-- Label -->
                 <label class="mb-1">
-                  Email address
+                  Dolar Dicom
                 </label>
-                <!-- Form text -->
-                <small class="form-text text-muted">
-                  This contact will be shown to others publicly, so choose it carefully.
-                </small>
                 <!-- Input -->
-                <input type="email" class="form-control">
+                <div class="input-group input-group-merge mb-3">
+                  <input type="text" class="form-control form-control-prepended" placeholder="">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <span class="fe fe-bold">s.</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-12 col-md-6">
@@ -123,173 +139,6 @@
 
             </div>
           </div> <!-- / .row -->
-
-          <!-- Divider -->
-          <hr class="mt-4 mb-5">
-
-          <div class="row">
-            <div class="col-12 col-md-6">
-
-              <!-- Public profile -->
-              <div class="form-group">
-
-                <!-- Label -->
-                <label class="mb-1">
-                  Public profile
-                </label>
-
-                <!-- Form text -->
-                <small class="form-text text-muted">
-                  Making your profile public means that anyone on the Dashkit network will be able to find you.
-                </small>
-
-                <div class="row">
-                  <div class="col-auto">
-
-                    <!-- Switch -->
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="custom-control-input" id="switchOne">
-                      <label class="custom-control-label" for="switchOne"></label>
-                    </div>
-
-                  </div>
-                  <div class="col ml-n2">
-
-                    <!-- Help text -->
-                    <small class="text-muted">
-                      You're currently invisible
-                    </small>
-
-                  </div>
-                </div> <!-- / .row -->
-              </div>
-
-            </div>
-            <div class="col-12 col-md-6">
-
-              <!-- Allow for additional Bookings -->
-              <div class="form-group">
-
-                <!-- Label -->
-                <label class="mb-1">
-                  Allow for additional Bookings
-                </label>
-
-                <!-- Form text -->
-                <small class="form-text text-muted">
-                  If you are available for hire outside of the current situation, you can encourage others to hire you.
-                </small>
-
-                <div class="row">
-                  <div class="col-auto">
-
-                    <!-- Switch -->
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="custom-control-input" id="switchTwo">
-                      <label class="custom-control-label" for="switchTwo"></label>
-                    </div>
-
-                  </div>
-                  <div class="col ml-n2">
-
-                    <!-- Help text -->
-                    <small class="text-muted">
-                      You're currently available
-                    </small>
-
-                  </div>
-                </div> <!-- / .row -->
-              </div>
-
-            </div>
-          </div> <!-- / .row -->
-
-          <!-- Divider -->
-          <hr class="mt-4 mb-5">
-
-          <div class="row">
-            <div class="col-12 col-md-6 order-md-2">
-
-              <!-- Card -->
-              <div class="card bg-light border ml-md-4">
-                <div class="card-body">
-
-                  <p class="mb-2">
-                    Password requirements
-                  </p>
-
-                  <p class="small text-muted mb-2">
-                    To create a new password, you have to meet all of the following requirements:
-                  </p>
-
-                  <ul class="small text-muted pl-4 mb-0">
-                    <li>
-                      Minimum 8 character
-                    </li>
-                    <li>
-                      At least one special character
-                    </li>
-                    <li>
-                      At least one number
-                    </li>
-                    <li>
-                    Can’t be the same as a previous password
-                    </li>
-                  </ul>
-
-                </div>
-              </div>
-
-            </div>
-            <div class="col-12 col-md-6">
-
-              <!-- Password -->
-              <div class="form-group">
-
-                <!-- Label -->
-                <label>
-                  Password
-                </label>
-
-                <!-- Input -->
-                <input type="password" class="form-control">
-
-              </div>
-
-              <!-- New password -->
-              <div class="form-group">
-
-                <!-- Label -->
-                <label>
-                  New password
-                </label>
-
-                <!-- Input -->
-                <input type="password" class="form-control">
-
-              </div>
-
-              <!-- Confirm new password -->
-              <div class="form-group">
-
-                <!-- Label -->
-                <label>
-                  Confirm new password
-                </label>
-
-                <!-- Input -->
-                <input type="password" class="form-control">
-
-              </div>
-
-              <!-- Submit -->
-              <button type="submit" class="btn btn-primary">
-                Update password
-              </button>
-
-            </div>
-          </div> <!-- / .row -->
-
         </form>
 
       </div>

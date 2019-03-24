@@ -31,7 +31,7 @@
             </div> <!-- / .row -->
             <div class="row align-items-center">
               <div class="col">
-                <!-- Nav -->
+                <!-- NAV DATOS -->
                 <ul class="nav nav-tabs nav-overflow header-tabs" id="tabDatos">
                   <li class="nav-item">
                     <a href="#datosOficiales" class="nav-link active" id="datosOficiales-tab" data-toggle="tab" role="tab" aria-controls="datosOficiales" aria-selected="true">
@@ -48,8 +48,9 @@
             </div>
           </div>
         </div>
-
+        <!-- CONTENIDO TAB DATOS -->
         <div class="tab-content">
+          <!-- TAB DATOS OFICIALES -->
           <div class="tab-pane fade show  active" id="datosOficiales" role="tabpanel" aria-labelledby="datosOficiales-tab">
             <!-- Form Datos Oficiales -->
             <form class="mb-4" action="" method="post">
@@ -284,8 +285,198 @@
               </div> <!-- / .row -->
             </form>
           </div>
+          <!-- TAB DATOS OTC -->
           <div class="tab-pane fade" id="datosOTC" role="tabpanel" aria-labelledby="datosOTC-tab">
-            <h1>Hola mundo XD</h1>
+            <!-- Form Datos Oficiales -->
+            <form class="mb-4" action="" method="post">
+              <div class="row d-flex justify-content-center">
+                <!-- Fecha Datos OTC -->
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label>
+                      Fecha
+                    </label>
+                    <!-- Input -->
+                    <div class="input-group input-group-merge mb-3">
+                      <input type="text" class="form-control form-control-prepended" placeholder="____/__/__/" data-toggle="flatpickr" id="fecha-OTC"><br>
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <span class="fe fe-calendar"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Hora Datos OTC -->
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label>
+                      Hora
+                    </label>
+                    <!-- Input -->
+                    <div class="input-group input-group-merge mb-3">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="hora-OTC">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <span class="fe fe-clock"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Dolar Today Datos OTC -->
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="mb-1">
+                      Dolar Today
+                    </label>
+                    <!-- Input -->
+                    <div class="input-group input-group-merge mb-3">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarToday" data-mask="#.##0,00" data-mask-reverse="true">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <span class="fe fe-dollar-sign"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Dolar Today (BTC) Datos OTC -->
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="mb-1">
+                      Dolar Today (BTC)
+                    </label>
+                    <!-- Input -->
+                    <div class="input-group input-group-merge mb-3">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarTodayBTC" data-mask="#.##0,00" data-mask-reverse="true">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <span class="fe fe-dollar-sign"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- TheAirTM Datos OTC -->
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="mb-1">
+                      TheAirTM
+                    </label>
+                    <!-- Input -->
+                    <div class="input-group input-group-merge mb-3">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="airTM" data-mask="#.##0,00" data-mask-reverse="true">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <span class="fe fe-dollar-sign"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- DolarTRUE_ Datos OTC -->
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="mb-1">
+                      DolarTrue_
+                    </label>
+                    <!-- Input -->
+                    <div class="input-group input-group-merge mb-3">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarTrue" data-mask="#.##0,00" data-mask-reverse="true">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <span class="fe fe-dollar-sign"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- MonitorDolarVZLA Datos OTC -->
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="mb-1">
+                      MonitorDolarVZLA
+                    </label>
+                    <!-- Input -->
+                    <div class="input-group input-group-merge mb-3">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="monitorDolarVZLA" data-mask="#.##0,00" data-mask-reverse="true">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <span class="fe fe-dollar-sign"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- MKambio Datos OTC -->
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="mb-1">
+                      MKambio
+                    </label>
+                    <!-- Input -->
+                    <div class="input-group input-group-merge mb-3">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="mkambio" data-mask="#.##0,00" data-mask-reverse="true">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <span class="fe fe-bold">s.</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Dolar_Gold Datos OTC -->
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="mb-1">
+                      Dolar_Gold
+                    </label>
+                      <!-- Input -->
+                      <div class="input-group input-group-merge mb-3">
+                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarGold" data-mask="#.##0,00" data-mask-reverse="true">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <span class="fe fe-dollar-sign"></span>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <!-- Dolar_FT Datos OTC -->
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="mb-1">
+                      Dolar_FT
+                    </label>
+                    <!-- Input -->
+                    <div class="input-group input-group-merge mb-3">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="oroBuy" data-mask="#.##0,00" data-mask-reverse="true">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <span class="fe fe-dollar-sign"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Botones -->
+                <div class="col-12 d-flex justify-content-end">
+                  <button type="reset" class="btn btn-outline-white justify-content-end mr-4">Limpiar</button>
+                  <button type="submit" class="btn btn-outline-success justify-content-end">Guardar</button>
+                </div>
+              </div> <!-- / .row -->
+            </form>
           </div>
         </div>
 

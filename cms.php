@@ -50,7 +50,7 @@
         </div>
 
         <!-- Form Datos Oficiales -->
-        <form class="mb-4">
+        <form class="mb-4" action="" method="post">
           <div class="row">
             <!-- Fecha Datos Oficiales -->
             <div class="col-12 col-md-6">
@@ -153,17 +153,56 @@
                 </div>
               </div>
             </div>
-            <!-- Petro (ST) -->
+            <!-- Petro (S y T) -->
             <div class="col-12 col-md-6">
               <div class="form-group">
                 <!-- Label -->
                 <label class="mb-1">
                   Petro
                 </label>
+                <!-- Sub label -->
                 <small class="form-text text-muted"> Salario minimo | Tramite </small>
                 <!-- Input -->
                 <div class="input-group input-group-merge mb-3">
-                  <input type="text" class="form-control form-control-prepended" placeholder="" id="bitcoin" data-mask="#.##0,00" data-mask-reverse="true">
+                  <input type="text" class="form-control form-control-prepended" placeholder="" id="petro1" data-mask="#.##0,00" data-mask-reverse="true">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <span class="fe fe-bold">s.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Petro (PA y C) -->
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <!-- Label -->
+                <label class="mb-1">
+                  Petro
+                </label>
+                <!-- Sub label -->
+                <small class="form-text text-muted"> Plan de Ahorro | Crypto </small>
+                <!-- Input -->
+                <div class="input-group input-group-merge mb-3">
+                  <input type="text" class="form-control form-control-prepended" placeholder="" id="petro2" data-mask="#.##0,00" data-mask-reverse="true">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <span class="fe fe-bold">s.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Petroleo -->
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <!-- Label -->
+                <label class="mb-1">
+                  Petroleo
+                </label>
+                <!-- Input -->
+                <div class="input-group input-group-merge mb-3">
+                  <input type="text" class="form-control form-control-prepended" placeholder="" id="petro2" data-mask="#.##0,00" data-mask-reverse="true">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
                       <span class="fe fe-dollar-sign"></span>
@@ -171,6 +210,29 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <!-- Oro -->
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <!-- Label -->
+                <label class="mb-1">
+                  Oro
+                </label>
+                <!-- Input -->
+                <div class="input-group input-group-merge mb-3">
+                  <input type="text" class="form-control form-control-prepended" placeholder="" id="petro2" data-mask="#.##0,00" data-mask-reverse="true">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <span class="fe fe-dollar-sign"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Botones -->
+            <div class="col-12 d-flex justify-content-end">
+              <button type="reset" class="btn btn-outline-white justify-content-end mr-4">Limpiar</button>
+              <button type="submit" class="btn btn-outline-success justify-content-end">Guardar</button>
             </div>
           </div> <!-- / .row -->
         </form>

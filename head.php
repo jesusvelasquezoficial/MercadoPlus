@@ -30,6 +30,16 @@
     .blue-alpha-0{
       background-color: rgba(21, 46, 77, .7) !important;
     }
+    @media (min-width: 768px){
+     .navbar-brand-img {
+        max-height: 9rem !important;
+      }
+    }
+    @media (max-width: 768px){
+     .navbar-brand-img {
+        max-height: 2.5rem !important;
+      }
+    }
   </style>
 
   <title>Mercado Plus</title>

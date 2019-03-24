@@ -52,8 +52,8 @@
         <!-- Form Datos Oficiales -->
         <form class="mb-4">
           <div class="row">
+            <!-- Fecha Datos Oficiales -->
             <div class="col-12 col-md-6">
-              <!-- First name -->
               <div class="form-group">
                 <!-- Label -->
                 <label>
@@ -61,13 +61,10 @@
                 </label>
                 <!-- Input -->
                 <input type="text" class="form-control" placeholder="____/__/__/" data-toggle="flatpickr" id="fecha-DO"><br>
-                <input type="text" class="form-control" placeholder="__/__/____" data-mask="00/00/0000" id="fecha-DO"><br>
-                <input type="text" class="form-control" id="fecha-DO">
               </div>
-
             </div>
+            <!-- Hora Datos Oficiales -->
             <div class="col-12 col-md-6">
-              <!-- Last name -->
               <div class="form-group">
                 <!-- Label -->
                 <label>
@@ -75,7 +72,7 @@
                 </label>
                 <!-- Input -->
                 <div class="input-group input-group-merge mb-3">
-                  <input type="text" class="form-control form-control-prepended" placeholder="">
+                  <input type="text" class="form-control form-control-prepended" placeholder="" id="hora-DO">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
                       <span class="fe fe-clock"></span>
@@ -84,12 +81,8 @@
                 </div>
               </div>
             </div>
-            <!-- Form text -->
-            <!-- <small class="form-text text-muted">
-              This contact will be shown to others publicly, so choose it carefully.
-            </small> -->
-            <div class="col-12">
-              <!-- Email address -->
+            <!-- Dolar Dicom Datos Oficiales -->
+            <div class="col-12 col-md-6">
               <div class="form-group">
                 <!-- Label -->
                 <label class="mb-1">
@@ -97,7 +90,7 @@
                 </label>
                 <!-- Input -->
                 <div class="input-group input-group-merge mb-3">
-                  <input type="text" class="form-control form-control-prepended" placeholder="">
+                  <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarDicom" data-mask="#.##0,00" data-mask-reverse="true">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
                       <span class="fe fe-bold">s.</span>
@@ -106,37 +99,78 @@
                 </div>
               </div>
             </div>
+            <!-- Euro Dicom Datos Oficiales -->
             <div class="col-12 col-md-6">
-
-              <!-- Phone -->
               <div class="form-group">
-
                 <!-- Label -->
-                <label>
-                  Phone
+                <label class="mb-1">
+                  Euro Dicom
                 </label>
-
                 <!-- Input -->
-                <input type="text" class="form-control mb-3" placeholder="(___)___-____" data-mask="(000) 000-0000">
-
+                <div class="input-group input-group-merge mb-3">
+                  <input type="text" class="form-control form-control-prepended" placeholder="" id="euroDicom" data-mask="#.##0,00" data-mask-reverse="true">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <span class="fe fe-bold">s.</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-
             </div>
+            <!-- Euro Dolar Datos Oficiales -->
             <div class="col-12 col-md-6">
-
-              <!-- Birthday -->
               <div class="form-group">
-
                 <!-- Label -->
-                <label>
-                  Birthday
+                <label class="mb-1">
+                  Euro Dolar
                 </label>
-
                 <!-- Input -->
-                <input type="text" class="form-control" data-toggle="flatpickr">
-
+                <div class="input-group input-group-merge mb-3">
+                  <input type="text" class="form-control form-control-prepended" placeholder="" id="euroDolar" data-mask="#.##0,00" data-mask-reverse="true">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <span class="fe fe-bold">s.</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-
+            </div>
+            <!-- Bitcoin Datos Oficiales -->
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <!-- Label -->
+                <label class="mb-1">
+                  Bitcoin (BTC)
+                </label>
+                <!-- Input -->
+                <div class="input-group input-group-merge mb-3">
+                  <input type="text" class="form-control form-control-prepended" placeholder="" id="bitcoin" data-mask="#.##0,00" data-mask-reverse="true">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <span class="fe fe-dollar-sign"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Petro (ST) -->
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <!-- Label -->
+                <label class="mb-1">
+                  Petro
+                </label>
+                <small class="form-text text-muted"> Salario minimo | Tramite </small>
+                <!-- Input -->
+                <div class="input-group input-group-merge mb-3">
+                  <input type="text" class="form-control form-control-prepended" placeholder="" id="bitcoin" data-mask="#.##0,00" data-mask-reverse="true">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <span class="fe fe-dollar-sign"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div> <!-- / .row -->
         </form>

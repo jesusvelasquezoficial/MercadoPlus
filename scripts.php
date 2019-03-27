@@ -22,10 +22,47 @@
   //   $('#myTab li a').tab('show');
   // });
 
+  $(document).ready(function() {
+    fechayhora();
+
+  });
 
   $('body').scrollspy(
     { target: '#principal' }
   );
+
+  function fechayhora() {
+    var datetime = new Date();
+    var year = datetime.getFullYear();
+    var mes = (datetime.getMonth()+1);
+    if (mes < 9) {
+      mes = "0"+mes;
+    }
+    var dia = datetime.getDate();
+
+    var fecha = year + "-" + mes + "-" + dia;
+
+    $('#fecha-DO').val(fecha);
+    $('#fecha-OTC').val(fecha);
+
+    // HORA
+    /////////////////////////////////
+    var hora = datetime.getHours();
+    var min = datetime.getMinutes();
+    var tip = "PM"
+
+    if (hora > 12) {
+      tip = "AM";
+      hora = hora - 12;
+      hora = "0"+hora;
+    }
+
+    var time = hora + ":" + min + " " + tip;
+
+    $('#hora-DO').val(time);
+    $('#hora-OTC').val(time);
+
+  }
 
   function promediar(precioCompra, precioVenta, promedio) {
     var valorCompra = precioCompra.value;
@@ -40,7 +77,7 @@
 
       console.log(Compra, Venta, calculoPromedio.toFixed(2), idPromedio);
 
-      $(idPromedio).val(calculoPromedio.toFixed(2)).mask('#,###.00');
+      $(idPromedio).val(calculoPromedio.toFixed(2)).mask('#,###.##');
 
     }else{
       promedio.value = '';
@@ -48,26 +85,67 @@
 
   }
 
-  function valorEuroDolar(precioDolar, precioEuro,valorEuroDolar) {
+  function valorPetroleo(precioCompra, precioVenta, promedio) {
+    var valorCompra = precioCompra.value;
+    var valorVenta = precioVenta.value;
+    var idPromedio = "#"+promedio.id;
+
+    if (valorCompra != "" && valorVenta != "") {
+      var Compra = parseFloat(valorCompra.replace(",", ""));
+      var Venta = parseFloat(valorVenta.replace(",", ""));
+
+      var calculoPromedio = (Compra + Venta) / 2;
+
+      console.log(Compra, Venta, calculoPromedio.toFixed(2), idPromedio);
+
+      $(idPromedio).val(calculoPromedio.toFixed(2)).mask('#,###.##', { reverse: true });
+
+    }else{
+      promedio.value = '';
+    }
+  }
+
+  function valorEuroDolar(precioDolar, precioEuro,valorED) {
     var dolar = precioDolar.value;
     var euro = precioEuro.value;
-    var idEuroDolar = "#"+valorEuroDolar.id;
+    var idEuroDolar = "#"+valorED.id;
 
     if (dolar != "" && euro != "") {
       var d = parseFloat(dolar.replace(",", ""));
       var e = parseFloat(euro.replace(",", ""));
 
-      var valorED = e / d;
+      var euroDolar = e / d;
 
-      console.log(valorED.toFixed(2));
+      console.log(d, e, euroDolar.toFixed(2), idEuroDolar);
 
-      $(idEuroDolar).val(valorED.toFixed(2)).mask('#,###.00');
+      $(idEuroDolar).val(euroDolar.toFixed(2)).mask('#,###.##');
 
     }else {
-      valorEuroDolar.value = '';
+      valorED.value = '';
     }
 
+  }
 
+  function petroPlanAhorroYCrypto(precioDolar, precioPetro, petroPAyC) {
+    var dolar = precioDolar.value;
+    var petro = precioPetro.value;
+    var idPetroPAyC = "#"+petroPAyC.id;
+
+    console.log(dolar,petro,idPetroPAyC);
+
+    if (dolar != "" && petro != "") {
+      var d = parseFloat(dolar.replace(",", ""));
+      var p = parseFloat(petro.replace(",", ""));
+
+      var valorPetroPAyC = d * p;
+
+      console.log(d, p, valorPetroPAyC.toFixed(2), idPetroPAyC);
+
+      $(idPetroPAyC).val(valorPetroPAyC.toFixed(2)).mask('###,###.##');
+
+    }else {
+      petroPAyC.value = '';
+    }
   }
 
 </script>

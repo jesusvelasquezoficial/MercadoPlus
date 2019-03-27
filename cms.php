@@ -84,7 +84,7 @@
                     </label>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="hora-DO">
+                      <input type="text" class="form-control form-control-prepended" placeholder="00:00 AM" id="hora-DO" data-mask="##:## AA" data-mask-reverse="true">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-clock"></span>
@@ -102,7 +102,7 @@
                     </label>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarDICOM" data-mask="#,###.00" data-mask-reverse="true" onchange="valorEuroDolar(this,euroDICOM,euroDolar);">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarDICOM" data-mask="#,###.00" data-mask-reverse="true" onchange="valorEuroDolar(this,euroDICOM,euroDolar);petroPlanAhorroYCrypto(this,petro,petro2);">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-bold">s.</span>
@@ -207,10 +207,10 @@
                     </label>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro" data-mask="#,###.00" data-mask-reverse="true">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro" data-mask="#,###.00" data-mask-reverse="true" onchange="petroPlanAhorroYCrypto(dolarDICOM,this,petro2);">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
-                          <span class="fe fe-bold">s.</span>
+                          <span class="fe fe-dollar-sign"></span>
                         </div>
                       </div>
                     </div>
@@ -247,7 +247,7 @@
                     <small class="form-text text-muted"> Plan de Ahorro | Crypto </small>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro2" data-mask="#,###.00" data-mask-reverse="true" disabled>
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro2" data-mask="###,###.00" data-mask-reverse="true" disabled>
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-bold">s.</span>
@@ -277,7 +277,7 @@
                     <div class="row">
                       <!-- Input -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended border-success" placeholder="" id="wti" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(this,brent,petroleo);">
+                        <input type="text" class="form-control form-control-prepended border-success" placeholder="" id="wti" data-mask="#,###.00" data-mask-reverse="true" onchange="valorPetroleo(this,brent,petroleo);">
                         <div class="input-group-prepend">
                           <div class="input-group-text border-success">
                             <span class="fe fe-dollar-sign"></span>
@@ -286,7 +286,7 @@
                       </div>
                       <!-- Input -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended border-danger" placeholder="" id="brent" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(wti,this,petroleo);">
+                        <input type="text" class="form-control form-control-prepended border-danger" placeholder="" id="brent" data-mask="#,###.00" data-mask-reverse="true" onchange="valorPetroleo(wti,this,petroleo);">
                         <div class="input-group-prepend">
                           <div class="input-group-text border-danger">
                             <span class="fe fe-dollar-sign"></span>
@@ -295,7 +295,7 @@
                       </div>
                       <!-- Input -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="petroleo" data-mask="#,###.00" data-mask-reverse="true" disabled>
+                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="petroleo" data-mask="#,###.##" data-mask-reverse="true" disabled>
                         <div class="input-group-prepend">
                           <div class="input-group-text" style="border-color:orange;">
                             <span class="fe fe-dollar-sign"></span>
@@ -377,7 +377,7 @@
                     </label>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="____/__/__/" data-toggle="flatpickr" id="fecha-OTC"><br>
+                      <input type="text" class="form-control form-control-prepended"  data-toggle="flatpickr" id="fecha-OTC"><br>
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-calendar"></span>
@@ -395,7 +395,7 @@
                     </label>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="hora-OTC">
+                      <input type="text" class="form-control form-control-prepended" placeholder="00:00 AM" id="hora-OTC" data-mask="##:## AA" data-mask-reverse="true">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-clock"></span>

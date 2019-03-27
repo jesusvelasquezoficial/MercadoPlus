@@ -377,7 +377,7 @@
                     </label>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended"  data-toggle="flatpickr" id="fecha-OTC"><br>
+                      <input type="text" class="form-control form-control-prepended" data-toggle="flatpickr" id="fecha-OTC"><br>
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-calendar"></span>
@@ -443,7 +443,7 @@
                       </div>
                       <!-- PROMEDIO -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="dolartodayPromedio" data-mask="#,###.00" data-mask-reverse="true" disabled>
+                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" onchange="promedioTotalOTC(this);" id="dolartodayPromedio" data-mask="#,###.00" data-mask-reverse="true" disabled>
                         <div class="input-group-prepend">
                           <div class="input-group-text" style="border-color:orange;">
                             <span class="fe fe-dollar-sign"></span>
@@ -492,7 +492,7 @@
                       </div>
                       <!-- PROMEDIO -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="dolartodayBTCPromedio" data-mask="#,###.00" data-mask-reverse="true" disabled>
+                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" onchange="promedioTotalOTC(this);" id="dolartodayBTCPromedio" data-mask="#,###.00" data-mask-reverse="true" disabled>
                         <div class="input-group-prepend">
                           <div class="input-group-text" style="border-color:orange;">
                             <span class="fe fe-dollar-sign"></span>

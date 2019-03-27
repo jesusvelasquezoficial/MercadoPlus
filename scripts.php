@@ -148,4 +148,10 @@
     }
   }
 
+  function promedioTotalOTC(promedio) {
+    var valorPromedio = promedio.value;
+    console.log(valorPromedio);
+
+  }
+
 </script>

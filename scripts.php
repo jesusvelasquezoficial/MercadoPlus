@@ -27,5 +27,25 @@
     { target: '#principal' }
   );
 
+  function promediar(precioCompra, precioVenta, promedio) {
+    var valorCompra = precioCompra.value;
+    var valorVenta = precioVenta.value;
+    var idPromedio = "#"+promedio.id;
+
+    if (valorCompra != "" && valorVenta != "") {
+      var Compra = parseFloat(valorCompra.replace(",", ""));
+      var Venta = parseFloat(valorVenta.replace(",", ""));
+
+      var calculoPromedio = (Compra + Venta) / 2;
+
+      console.log(Compra, Venta, calculoPromedio.toFixed(2), idPromedio);
+
+      $(idPromedio).val(calculoPromedio.toFixed(2)).mask('#,###.00');
+
+    }else{
+      promedio.value = '';
+    }
+
+  }
 
 </script>

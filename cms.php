@@ -93,16 +93,16 @@
                     </div>
                   </div>
                 </div>
-                <!-- Dolar Dicom Datos Oficiales -->
+                <!-- Dolar DICOM Datos Oficiales -->
                 <div class="col-12 col-md-6">
                   <div class="form-group">
                     <!-- Label -->
                     <label class="mb-1">
-                      Dolar Dicom
+                      Dolar DICOM
                     </label>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarDicom" data-mask="#.##0,00" data-mask-reverse="true">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarDICOM" data-mask="#,###.00" data-mask-reverse="true">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-bold">s.</span>
@@ -111,16 +111,16 @@
                     </div>
                   </div>
                 </div>
-                <!-- Euro Dicom Datos Oficiales -->
+                <!-- Euro DICOM Datos Oficiales -->
                 <div class="col-12 col-md-6">
                   <div class="form-group">
                     <!-- Label -->
                     <label class="mb-1">
-                      Euro Dicom
+                      Euro DICOM
                     </label>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="euroDicom" data-mask="#.##0,00" data-mask-reverse="true">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="euroDICOM" data-mask="#,###.00" data-mask-reverse="true">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-bold">s.</span>
@@ -129,16 +129,17 @@
                     </div>
                   </div>
                 </div>
-                <!-- Euro Dolar Datos Oficiales -->
+                <!-- Valor Euro Dolar Datos Oficiales -->
                 <div class="col-12 col-md-6">
                   <div class="form-group">
+                    <div class="d-none d-md-block" style="margin-bottom: .5rem !important;height:1.2rem;"></div>
                     <!-- Label -->
                     <label class="mb-1">
-                      Euro Dolar
+                      Valor Euro Dolar
                     </label>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="euroDolar" data-mask="#.##0,00" data-mask-reverse="true">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="euroDolar" data-mask="#,###.00" data-mask-reverse="true">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-bold">s.</span>
@@ -155,28 +156,40 @@
                       Bitcoin (BTC)
                     </label>
                     <div class="row">
-                      <div class="col-6">
+                      <div class="col-4">
                         <small class="form-text text-muted">COMPRA</small>
                       </div>
-                      <div class="col-6">
+                      <div class="col-4">
                         <small class="form-text text-muted">VENTA</small>
+                      </div>
+                      <div class="col-4">
+                        <small class="form-text text-muted">PROMEDIO</small>
                       </div>
                     </div>
                     <div class="row">
                       <!-- Input -->
-                      <div class="input-group input-group-merge mb-3 col-6">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="bitcoinBuy" data-mask="#.##0,00" data-mask-reverse="true">
+                      <div class="input-group input-group-merge mb-3 col-4">
+                        <input type="text" class="form-control form-control-prepended border-success" placeholder="" id="bitcoinBuy" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(this,bitcoinSell,bitcoinPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text  border-success">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- Input -->
-                      <div class="input-group input-group-merge mb-3 col-6">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="bitcoinSell" data-mask="#.##0,00" data-mask-reverse="true">
+                      <div class="input-group input-group-merge mb-3 col-4">
+                        <input type="text" class="form-control form-control-prepended border-danger" placeholder="" id="bitcoinSell" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(bitcoinBuy,this,bitcoinPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-danger">
+                            <span class="fe fe-dollar-sign"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Input -->
+                      <div class="input-group input-group-merge mb-3 col-4">
+                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="bitcoinPromedio" data-mask="#,###.00" data-mask-reverse="true" disabled>
+                        <div class="input-group-prepend">
+                          <div class="input-group-text" style="border-color:orange;">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
@@ -184,8 +197,27 @@
                     </div>
                   </div>
                 </div>
+                <!-- Valor Petro -->
+                <div class="col-12 col-md-4">
+                  <div class="form-group">
+                    <div class="d-none d-md-block" style="margin-bottom: .5rem !important;height:1.2rem;"></div>
+                    <!-- Label -->
+                    <label class="mb-1">
+                      Valor Petro
+                    </label>
+                    <!-- Input -->
+                    <div class="input-group input-group-merge mb-3">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro" data-mask="#,###.00" data-mask-reverse="true">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <span class="fe fe-bold">s.</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <!-- Petro (S y T) -->
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-4">
                   <div class="form-group">
                     <!-- Label -->
                     <label class="mb-1">
@@ -195,7 +227,7 @@
                     <small class="form-text text-muted"> Salario minimo | Tramite </small>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro1" data-mask="#.##0,00" data-mask-reverse="true">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro1" data-mask="#,###.00" data-mask-reverse="true">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-bold">s.</span>
@@ -204,8 +236,8 @@
                     </div>
                   </div>
                 </div>
-                <!-- Petro (PA y C) -->
-                <div class="col-12 col-md-6">
+                <!-- Petro (PdA y C) -->
+                <div class="col-12 col-md-4">
                   <div class="form-group">
                     <!-- Label -->
                     <label class="mb-1">
@@ -215,7 +247,7 @@
                     <small class="form-text text-muted"> Plan de Ahorro | Crypto </small>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro2" data-mask="#.##0,00" data-mask-reverse="true">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro2" data-mask="#,###.00" data-mask-reverse="true" disabled>
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-bold">s.</span>
@@ -232,28 +264,40 @@
                       Petroleo
                     </label>
                     <div class="row">
-                      <div class="col-6">
+                      <div class="col-4">
                         <small class="form-text text-muted">WTI</small>
                       </div>
-                      <div class="col-6">
+                      <div class="col-4">
                         <small class="form-text text-muted">BRENT</small>
+                      </div>
+                      <div class="col-4">
+                        <small class="form-text text-muted">VALOR</small>
                       </div>
                     </div>
                     <div class="row">
                       <!-- Input -->
-                      <div class="input-group input-group-merge mb-3 col-6">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="wti" data-mask="#.##0,00" data-mask-reverse="true">
+                      <div class="input-group input-group-merge mb-3 col-4">
+                        <input type="text" class="form-control form-control-prepended border-success" placeholder="" id="wti" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(this,brent,petroleo);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-success">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- Input -->
-                      <div class="input-group input-group-merge mb-3 col-6">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="brent" data-mask="#.##0,00" data-mask-reverse="true">
+                      <div class="input-group input-group-merge mb-3 col-4">
+                        <input type="text" class="form-control form-control-prepended border-danger" placeholder="" id="brent" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(wti,this,petroleo);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-danger">
+                            <span class="fe fe-dollar-sign"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Input -->
+                      <div class="input-group input-group-merge mb-3 col-4">
+                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="petroleo" data-mask="#,###.00" data-mask-reverse="true" disabled>
+                        <div class="input-group-prepend">
+                          <div class="input-group-text" style="border-color:orange;">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
@@ -269,28 +313,40 @@
                       Oro
                     </label>
                     <div class="row">
-                      <div class="col-6">
+                      <div class="col-4">
                         <small class="form-text text-muted">COMPRA</small>
                       </div>
-                      <div class="col-6">
+                      <div class="col-4">
                         <small class="form-text text-muted">VENTA</small>
+                      </div>
+                      <div class="col-4">
+                        <small class="form-text text-muted">PROMEDIO</small>
                       </div>
                     </div>
                     <div class="row">
                       <!-- Input -->
-                      <div class="input-group input-group-merge mb-3 col-6">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="oroBuy" data-mask="#.##0,00" data-mask-reverse="true">
+                      <div class="input-group input-group-merge mb-3 col-4">
+                        <input type="text" class="form-control form-control-prepended border-success" placeholder="" id="oroBuy" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(this,oroSell,oroPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-success">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- Input -->
-                      <div class="input-group input-group-merge mb-3 col-6">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="oroSell" data-mask="#.##0,00" data-mask-reverse="true">
+                      <div class="input-group input-group-merge mb-3 col-4">
+                        <input type="text" class="form-control form-control-prepended border-danger" placeholder="" id="oroSell" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(oroBuy,this,oroPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-danger">
+                            <span class="fe fe-dollar-sign"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Input -->
+                      <div class="input-group input-group-merge mb-3 col-4">
+                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="oroPromedio" data-mask="#,###.00" data-mask-reverse="true" disabled>
+                        <div class="input-group-prepend">
+                          <div class="input-group-text" style="border-color:orange;">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
@@ -369,27 +425,27 @@
                     <div class="row">
                       <!-- COMPRA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolartodayBuy" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-success" placeholder="" id="dolartodayBuy" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(this,dolartodaySell,dolartodayPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-success">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- VENTA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolartodaySell" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-danger" placeholder="" id="dolartodaySell" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(dolartodayBuy,this,dolartodayPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-danger">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- PROMEDIO -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolartodayPromedio" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="dolartodayPromedio" data-mask="#,###.00" data-mask-reverse="true" disabled>
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text" style="border-color:orange;">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
@@ -418,27 +474,27 @@
                     <div class="row">
                       <!-- COMPRA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolartodayBTCBuy" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-success" placeholder="" id="dolartodayBTCBuy" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(this,dolartodayBTCSell,dolartodayBTCPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-success">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- VENTA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolartodayBTCSell" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-danger" placeholder="" id="dolartodayBTCSell" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(dolartodayBTCBuy,this,dolartodayBTCPromedio)">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-danger">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- PROMEDIO -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolartodayBTCPromedio" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="dolartodayBTCPromedio" data-mask="#,###.00" data-mask-reverse="true" disabled>
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text" style="border-color:orange;">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
@@ -467,27 +523,27 @@
                     <div class="row">
                       <!-- COMPRA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="airTMBuy" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-success" placeholder="" id="airTMBuy" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(this,airTMSell,airTMPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-success">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- VENTA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="airTMSell" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-danger" placeholder="" id="airTMSell" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(airTMBuy,this,airTMPromedio)">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-danger">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- PROMEDIO -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="airTMPromedio" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="airTMPromedio" data-mask="#,###.00" data-mask-reverse="true" disabled>
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text" style="border-color:orange;">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
@@ -516,27 +572,27 @@
                     <div class="row">
                       <!-- COMPRA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarTrueBuy" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-success" placeholder="" id="dolarTrueBuy" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(this,dolarTrueSell,dolarTruePromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-success">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- VENTA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarTrueSell" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-danger" placeholder="" id="dolarTrueSell" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(dolarTrueBuy,this,dolarTruePromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-danger">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- PROMEDIO -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarTruePromedio" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="dolarTruePromedio" data-mask="#,###.00" data-mask-reverse="true" disabled>
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text" style="border-color:orange;">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
@@ -565,27 +621,27 @@
                     <div class="row">
                       <!-- COMPRA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="monitorDolarVZLABuy" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-success" placeholder="" id="monitorDolarVZLABuy" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(this,monitorDolarVZLASell,monitorDolarVZLAPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-success">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- VENTA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="monitorDolarVZLASell" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-danger" placeholder="" id="monitorDolarVZLASell" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(monitorDolarVZLABuy,this,monitorDolarVZLAPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-danger">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- PROMEDIO -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="monitorDolarVZLAPromedio" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="monitorDolarVZLAPromedio" data-mask="#,###.00" data-mask-reverse="true" disabled>
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text" style="border-color:orange;">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
@@ -614,27 +670,27 @@
                     <div class="row">
                       <!-- COMPRA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="MKambioBuy" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-success" placeholder="" id="MKambioBuy" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(this,MKambioSell,MKambioPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-success">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- VENTA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="MKambioSell" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-danger" placeholder="" id="MKambioSell" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(MKambioBuy,this,MKambioPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-danger">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- PROMEDIO -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="MKambioPromedio" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="MKambioPromedio" data-mask="#,###.00" data-mask-reverse="true" disabled>
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text" style="border-color:orange;">
                             <span class="fe fe-bold">s.</span>
                           </div>
                         </div>
@@ -663,27 +719,27 @@
                     <div class="row">
                       <!-- COMPRA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarGoldBuy" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-success" placeholder="" id="dolarGoldBuy" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(this,dolarGoldSell,dolarGoldPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-success">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- VENTA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarGoldSell" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-danger" placeholder="" id="dolarGoldSell" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(dolarGoldBuy,this,dolarGoldPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-danger">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- PROMEDIO -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarGoldPromedio" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="dolarGoldPromedio" data-mask="#,###.00" data-mask-reverse="true" disabled>
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text" style="border-color:orange;">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
@@ -713,27 +769,47 @@
                     <div class="row">
                       <!-- COMPRA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarFTBuy" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-success" placeholder="" id="dolarFTBuy" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(this,dolarFTSell,dolarFTPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-success">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- VENTA -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarFTSell" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended border-danger" placeholder="" id="dolarFTSell" data-mask="#,###.00" data-mask-reverse="true" onchange="promediar(dolarFTBuy,this,dolarFTPromedio);">
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text border-danger">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- PROMEDIO -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarFTPromedio" data-mask="#.##0,00" data-mask-reverse="true">
+                        <input type="text" class="form-control form-control-prepended" style="border-color:orange;" placeholder="" id="dolarFTPromedio" data-mask="#,###.00" data-mask-reverse="true" disabled>
                         <div class="input-group-prepend">
-                          <div class="input-group-text">
+                          <div class="input-group-text" style="border-color:orange;">
+                            <span class="fe fe-dollar-sign"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Promedio Total -->
+                <div class="col-12">
+                  <div class="form-group">
+                    <!-- Label -->
+                    <label class="mb-1">
+                      PROMEDIO
+                    </label>
+                    <div class="row">
+                      <!-- PROMEDIO -->
+                      <div class="input-group input-group-merge mb-3 col-12 text-white ">
+                        <input type="text" class="form-control form-control-prepended text-white" value="325500" style="border-color:orange;background-color:rgba(241,90,34,.7);" placeholder="" id="promedioTotal" data-mask="#,###.00" data-mask-reverse="true" disabled>
+                        <div class="input-group-prepend">
+                          <div class="input-group-text text-white" style="border-color:orange;background-color:rgba(241,90,34,.7);">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>

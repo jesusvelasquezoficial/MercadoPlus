@@ -48,4 +48,26 @@
 
   }
 
+  function valorEuroDolar(precioDolar, precioEuro,valorEuroDolar) {
+    var dolar = precioDolar.value;
+    var euro = precioEuro.value;
+    var idEuroDolar = "#"+valorEuroDolar.id;
+
+    if (dolar != "" && euro != "") {
+      var d = parseFloat(dolar.replace(",", ""));
+      var e = parseFloat(euro.replace(",", ""));
+
+      var valorED = e / d;
+
+      console.log(valorED.toFixed(2));
+
+      $(idEuroDolar).val(valorED.toFixed(2)).mask('#,###.00');
+
+    }else {
+      valorEuroDolar.value = '';
+    }
+
+
+  }
+
 </script>

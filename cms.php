@@ -102,7 +102,7 @@
                     </label>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarDICOM" data-mask="#,###.00" data-mask-reverse="true">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="dolarDICOM" data-mask="#,###.00" data-mask-reverse="true" onchange="valorEuroDolar(this,euroDICOM,euroDolar);">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-bold">s.</span>
@@ -120,7 +120,7 @@
                     </label>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="euroDICOM" data-mask="#,###.00" data-mask-reverse="true">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="euroDICOM" data-mask="#,###.00" data-mask-reverse="true" onchange="valorEuroDolar(dolarDICOM,this,euroDolar);">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-bold">s.</span>
@@ -139,7 +139,7 @@
                     </label>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="euroDolar" data-mask="#,###.00" data-mask-reverse="true">
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="euroDolar" data-mask="#,###.00" data-mask-reverse="true" disabled>
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-bold">s.</span>

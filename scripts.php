@@ -87,9 +87,11 @@
 
       console.log(Compra, Venta, calculoPromedio.toFixed(2), idPromedio);
 
+      console.log();
       $(idPromedio).val(calculoPromedio.toFixed(2)).mask('#,###.##');
-
-      promedioTotalOTC(promedio);
+      if (idPromedio != "#oroPromedio" && idPromedio != "#bitcoinPromedio") {
+        promedioTotalOTC(promedio);
+      }
 
     }else{
       promedio.value = '';
@@ -190,6 +192,8 @@
       console.log("Agrego Nuevo");
       promedios.push(promedio);
       console.log(promedios);
+      calcularPromedioTotal();
+      
     }else{
       console.log("Verifica si es una correccion o un nuevo Promedio para Agregarlo");
       for (var i = 0; i < promedios.length; i++) {
@@ -229,10 +233,27 @@
     var promedioFinal = suma.toFixed(2) / divisor;
     console.log("divisor: "+divisor);
     console.log("PROMEDIO TOTAL : " + promedioFinal.toFixed(2));
+
     $('#promedioTotal').val(promedioFinal.toFixed(2)).mask('#,###.##');
+
+    // DOLAR COMPRA | VENTA
     var dolarBuy = promedioFinal - ((promedioFinal * 5) / 100);
-    console.log(dolarBuy);
-    $('#dolar').val(dolarBuy.toFixed(2)).mask('#,###.##');
+    var dolarSell = promedioFinal + ((promedioFinal * 4.75) / 100);
+
+    $('#dolarC').val(dolarBuy.toFixed(2)).mask('#,###.##');
+    $('#dolarV').val(dolarSell.toFixed(2)).mask('#,###.##');
+
+    // EURO COMPRA | VENTA
+    var euroDolar = $('#euroDolar').val();
+
+    var euro = parseFloat(promedioFinal) * parseFloat(euroDolar.replace(",", ""));
+    var euroBuy = (euro) - ((euro) * 4.7813 / 100);
+
+    var euroSell = (euro) + ((euro) * 4.9912 / 100);
+
+    $('#euroC').val(euroBuy.toFixed(2)).mask('#,###.##');
+    $('#euroV').val(euroSell.toFixed(2)).mask('#,###.##');
+
   }
 
 </script>

@@ -854,11 +854,20 @@
                           </div>
                         </div>
                       </div>
-                      <!-- EURO -->
-                      <div class="input-group input-group-merge mb-3 col-4 text-white ">
-                        <input type="text" class="form-control form-control-prepended text-white" style="border-color:orange;background-color:rgba(253,126,20,.7);" placeholder="" id="euro" data-mask="#,###.##" data-mask-reverse="true" disabled>
+                      <!-- EURO COMPRA -->
+                      <div class="input-group input-group-merge mb-3 col-2 text-white ">
+                        <input type="text" class="form-control form-control-prepended text-white" style="border-color:Limegreen;background-color:rgba(40,167,69,.7);" placeholder="" id="euroC" data-mask="#,###.##" data-mask-reverse="true" disabled>
                         <div class="input-group-prepend">
-                          <div class="input-group-text text-white" style="border-color:orange;background-color:rgba(253,126,20,.7);">
+                          <div class="input-group-text text-white" style="border-color:Limegreen;background-color:rgba(40,167,69,.7);">
+                            <span class="fe fe-dollar-sign"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- EURO VENTA -->
+                      <div class="input-group input-group-merge mb-3 col-2 text-white ">
+                        <input type="text" class="form-control form-control-prepended text-white" style="border-color:red;background-color:rgba(220,53,69,.7);" placeholder="" id="euroV" data-mask="#,###.##" data-mask-reverse="true" disabled>
+                        <div class="input-group-prepend">
+                          <div class="input-group-text text-white" style="border-color:red;background-color:rgba(220,53,69,.7);">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>

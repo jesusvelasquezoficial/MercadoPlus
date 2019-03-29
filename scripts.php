@@ -49,12 +49,22 @@
     /////////////////////////////////
     var hora = datetime.getHours();
     var min = datetime.getMinutes();
-    var tip = "PM"
+    var tip = "AM"
+
+    if (hora < 10) {
+      hora = "0"+hora;
+    }
 
     if (hora > 12) {
-      tip = "AM";
+      tip = "PM";
       hora = hora - 12;
-      hora = "0"+hora;
+      if (hora < 10) {
+        hora = "0"+hora;
+      }
+    }
+
+    if (min < 10) {
+      min = "0"+min;
     }
 
     var time = hora + ":" + min + " " + tip;
@@ -78,6 +88,8 @@
       console.log(Compra, Venta, calculoPromedio.toFixed(2), idPromedio);
 
       $(idPromedio).val(calculoPromedio.toFixed(2)).mask('#,###.##');
+
+      promedioTotalOTC(promedio);
 
     }else{
       promedio.value = '';
@@ -148,10 +160,79 @@
     }
   }
 
-  function promedioTotalOTC(promedio) {
-    var valorPromedio = promedio.value;
-    console.log(valorPromedio);
+  function promedioTotalOTC(data) {
+    // 1.1 Cremos las variables capturando el "id" del campo y el "valor"
+    var idPromedio = data.id;
+    var valorPromedio = data.value;
 
+    // 1- Construimos la estructura del Objeto Promedio que recibe 2 parametros (id,valor)
+    function objPromedio(id,valor) {
+      this.id = id;
+      this.valor = valor;
+    }
+
+    // 2- Creamos un nuevo Objeto Promedio y le pasamos los datos capturados en la funcion
+    // como parametros (idPromedio, valorPromedio)
+     promedio = new objPromedio(idPromedio,valorPromedio);
+     // 3- Ejecutamos la funcion "agregar" enviando el Objeto Promedio como parametro
+     agregar();
+
+   }
+
+  // PROMEDIOS DATABASE
+  var promedios = [];
+
+  // 2.1 Construimos la funcion "agregar" que recibe el parametro (promedio)
+  function agregar() {
+    console.log(promedio);
+    // 3.1 Si la DataBase "promedios" esta vacia entonces entra.
+    if (promedios == "") {
+      console.log("Agrego Nuevo");
+      promedios.push(promedio);
+      console.log(promedios);
+    }else{
+      console.log("Verifica si es una correccion o un nuevo Promedio para Agregarlo");
+      for (var i = 0; i < promedios.length; i++) {
+        if (promedios[i].id == promedio.id) {
+          console.log("Realiza una correccion de un promedio existente");
+          promedios[i] = promedio;
+          console.log(promedios);
+          calcularPromedioTotal();
+          return;
+
+        }
+      }
+      console.log("Los datos no existen");
+      console.log("Se Agrego nuevo promedio al arreglo Promedios");
+      promedios.push(promedio);
+      console.log(promedios);
+
+      calcularPromedioTotal();
+    }
+  }
+
+  function calcularPromedioTotal() {
+    var suma = 0;
+    var divisor = promedios.length;
+
+    for (var i = 0; i < promedios.length; i++) {
+      var valor = promedios[i].valor;
+      var num = valor.replace(",", "");
+      suma += parseFloat(num);
+      console.log("valor"+i+": "+ valor);
+      if (parseFloat(num) == 0) {
+        console.log("encontro 0 y resta al divisor");
+        divisor -= 1;
+      }
+    }
+
+    var promedioFinal = suma.toFixed(2) / divisor;
+    console.log("divisor: "+divisor);
+    console.log("PROMEDIO TOTAL : " + promedioFinal.toFixed(2));
+    $('#promedioTotal').val(promedioFinal.toFixed(2)).mask('#,###.##');
+    var dolarBuy = promedioFinal - ((promedioFinal * 5) / 100);
+    console.log(dolarBuy);
+    $('#dolar').val(dolarBuy.toFixed(2)).mask('#,###.##');
   }
 
 </script>

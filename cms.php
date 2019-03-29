@@ -797,19 +797,77 @@
                     </div>
                   </div>
                 </div>
-                <!-- Promedio Total -->
+                <!-- DOLAR/EURO/PROMEDIO TOTAL -->
                 <div class="col-12">
                   <div class="form-group">
                     <!-- Label -->
-                    <label class="mb-1">
-                      PROMEDIO
-                    </label>
+                    <div class="row justify-content-end">
+                      <div class="col-4">
+                        <label class="mb-1">
+                          DOLAR
+                        </label>
+                      </div>
+                      <div class="col-4">
+                        <label class="mb-1">
+                          EURO
+                        </label>
+                      </div>
+                      <div class="col-4">
+                        <label class="mb-1">
+                          PROMEDIO
+                        </label>
+                      </div>
+                    </div>
                     <div class="row">
-                      <!-- PROMEDIO -->
-                      <div class="input-group input-group-merge mb-3 col-12 text-white ">
-                        <input type="text" class="form-control form-control-prepended text-white" value="325500" style="border-color:orange;background-color:rgba(241,90,34,.7);" placeholder="" id="promedioTotal" data-mask="#,###.00" data-mask-reverse="true" disabled>
+                      <div class="col-2">
+                        <small class="form-text text-muted">COMPRA</small>
+                      </div>
+                      <div class="col-2">
+                        <small class="form-text text-muted">VENTA</small>
+                      </div>
+                      <div class="col-2">
+                        <small class="form-text text-muted">COMPRA</small>
+                      </div>
+                      <div class="col-2">
+                        <small class="form-text text-muted">VENTA</small>
+                      </div>
+                      <div class="col-4">
+                        <small class="form-text text-muted">TOTAL</small>
+                      </div>
+                    </div>
+                    <div class="row justify-content-end">
+                      <!-- DOLAR COMPRA -->
+                      <div class="input-group input-group-merge mb-3 col-2 text-white ">
+                        <input type="text" class="form-control form-control-prepended text-white" style="border-color:Limegreen;background-color:rgba(40,167,69,.7);" placeholder="" id="dolarC" data-mask="#,###.##" data-mask-reverse="true" disabled>
                         <div class="input-group-prepend">
-                          <div class="input-group-text text-white" style="border-color:orange;background-color:rgba(241,90,34,.7);">
+                          <div class="input-group-text text-white" style="border-color:Limegreen;background-color:rgba(40,167,69,.7);">
+                            <span class="fe fe-dollar-sign"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- DOLAR VENTA -->
+                      <div class="input-group input-group-merge mb-3 col-2 text-white ">
+                        <input type="text" class="form-control form-control-prepended text-white" style="border-color:red;background-color:rgba(220,53,69,.7);" placeholder="" id="dolarV" data-mask="#,###.##" data-mask-reverse="true" disabled>
+                        <div class="input-group-prepend">
+                          <div class="input-group-text text-white" style="border-color:red;background-color:rgba(220,53,69,.7);">
+                            <span class="fe fe-dollar-sign"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- EURO -->
+                      <div class="input-group input-group-merge mb-3 col-4 text-white ">
+                        <input type="text" class="form-control form-control-prepended text-white" style="border-color:orange;background-color:rgba(253,126,20,.7);" placeholder="" id="euro" data-mask="#,###.##" data-mask-reverse="true" disabled>
+                        <div class="input-group-prepend">
+                          <div class="input-group-text text-white" style="border-color:orange;background-color:rgba(253,126,20,.7);">
+                            <span class="fe fe-dollar-sign"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- PROMEDIO -->
+                      <div class="input-group input-group-merge mb-3 col-4 text-white ">
+                        <input type="text" class="form-control form-control-prepended text-white" style="border-color:orange;background-color:rgba(253,126,20,.7);" placeholder="" id="promedioTotal" data-mask="#,###.##" data-mask-reverse="true" disabled>
+                        <div class="input-group-prepend">
+                          <div class="input-group-text text-white" style="border-color:orange;background-color:rgba(253,126,20,.7);">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>

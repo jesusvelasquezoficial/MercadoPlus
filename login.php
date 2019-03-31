@@ -33,7 +33,7 @@
             </label>
 
             <!-- Input -->
-            <input type="email" class="form-control" placeholder="name@address.com">
+            <input type="email" class="form-control" placeholder="usuario@gmail.com" required>
 
           </div>
 
@@ -49,7 +49,7 @@
             <div class="input-group input-group-merge">
 
               <!-- Input -->
-              <input type="password" class="form-control form-control-appended" placeholder="Enter your password">
+              <input type="password" class="form-control form-control-appended" placeholder="*************" required>
 
               <!-- Icon -->
               <div class="input-group-append">
@@ -62,14 +62,14 @@
           </div>
 
           <!-- Submit -->
-          <a class="btn btn-lg btn-block btn-primary mb-3" href="index.php">
-            Sign up
+          <a class="btn btn-lg btn-block btn-primary mb-3" href=".php">
+            Iniciar Sesión
           </a>
 
           <!-- Link -->
           <div class="text-center">
             <small class="text-muted text-center">
-              Already have an account? <a href="sign-in-cover.html">Log in</a>.
+              Already have an account? <a href="#">Log in</a>.
             </small>
           </div>
 

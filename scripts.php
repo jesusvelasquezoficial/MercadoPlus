@@ -42,8 +42,8 @@
 
     var fecha = year + "-" + mes + "-" + dia;
 
-    $('#fecha-DO').val(fecha);
-    $('#fecha-OTC').val(fecha);
+    $('#fechaDO').val(fecha);
+    $('#fechaOTC').val(fecha);
 
     // HORA
     /////////////////////////////////
@@ -69,8 +69,8 @@
 
     var time = hora + ":" + min + " " + tip;
 
-    $('#hora-DO').val(time);
-    $('#hora-OTC').val(time);
+    $('#horaDO').val(time);
+    $('#horaOTC').val(time);
 
   }
 
@@ -133,6 +133,7 @@
       console.log(d, e, euroDolar.toFixed(2), idEuroDolar);
 
       $(idEuroDolar).val(euroDolar.toFixed(2)).mask('#,###.##');
+      calcularPromedioTotal();
 
     }else {
       valorED.value = '';
@@ -181,35 +182,35 @@
 
    }
 
-  // PROMEDIOS DATABASE
+  // PROMEDIOS ARRAY
   var promedios = [];
 
   // 2.1 Construimos la funcion "agregar" que recibe el parametro (promedio)
   function agregar() {
-    console.log(promedio);
+    // console.log(promedio);
     // 3.1 Si la DataBase "promedios" esta vacia entonces entra.
     if (promedios == "") {
-      console.log("Agrego Nuevo");
+      // console.log("Agrego Nuevo");
       promedios.push(promedio);
-      console.log(promedios);
+      // console.log(promedios);
       calcularPromedioTotal();
-      
+
     }else{
       console.log("Verifica si es una correccion o un nuevo Promedio para Agregarlo");
       for (var i = 0; i < promedios.length; i++) {
         if (promedios[i].id == promedio.id) {
-          console.log("Realiza una correccion de un promedio existente");
+          // console.log("Realiza una correccion de un promedio existente");
           promedios[i] = promedio;
-          console.log(promedios);
+          // console.log(promedios);
           calcularPromedioTotal();
           return;
 
         }
       }
-      console.log("Los datos no existen");
-      console.log("Se Agrego nuevo promedio al arreglo Promedios");
+      // console.log("Los datos no existen");
+      // console.log("Se Agrego nuevo promedio al arreglo Promedios");
       promedios.push(promedio);
-      console.log(promedios);
+      // console.log(promedios);
 
       calcularPromedioTotal();
     }
@@ -223,14 +224,15 @@
       var valor = promedios[i].valor;
       var num = valor.replace(",", "");
       suma += parseFloat(num);
-      console.log("valor"+i+": "+ valor);
+      // console.log("valor"+i+": "+ valor);
       if (parseFloat(num) == 0) {
         console.log("encontro 0 y resta al divisor");
         divisor -= 1;
       }
     }
 
-    var promedioFinal = suma.toFixed(2) / divisor;
+    var promedioFinal = suma / divisor;
+
     console.log("divisor: "+divisor);
     console.log("PROMEDIO TOTAL : " + promedioFinal.toFixed(2));
 
@@ -238,22 +240,51 @@
 
     // DOLAR COMPRA | VENTA
     var dolarBuy = promedioFinal - ((promedioFinal * 5) / 100);
-    var dolarSell = promedioFinal + ((promedioFinal * 4.75) / 100);
+    var dolarSell = promedioFinal + ((dolarBuy * 5) / 100);
 
     $('#dolarC').val(dolarBuy.toFixed(2)).mask('#,###.##');
     $('#dolarV').val(dolarSell.toFixed(2)).mask('#,###.##');
 
     // EURO COMPRA | VENTA
     var euroDolar = $('#euroDolar').val();
+    console.log(euroDolar);
 
-    var euro = parseFloat(promedioFinal) * parseFloat(euroDolar.replace(",", ""));
-    var euroBuy = (euro) - ((euro) * 4.7813 / 100);
+    var euro = parseFloat(promedioFinal) * parseFloat(euroDolar.replace(",", "."));
+    console.log(euro);
+    console.log(euro.toFixed(2));
 
-    var euroSell = (euro) + ((euro) * 4.9912 / 100);
+    var euroBuy =  euro - ((euro) * 5 / 100);
+    console.log(euroBuy);
+    console.log(euroBuy.toFixed(2));
+
+    var euroSell = euro + ((euroBuy) * 5 / 100);
+    console.log(euroSell);
+    console.log(euroSell.toFixed(2));
 
     $('#euroC').val(euroBuy.toFixed(2)).mask('#,###.##');
     $('#euroV').val(euroSell.toFixed(2)).mask('#,###.##');
 
   }
 
+</script>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
 </script>

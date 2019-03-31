@@ -18,13 +18,14 @@
         <!-- Subheading -->
         <p class="text-muted text-center mb-5"> Bienvenidos a nuestro panel de control. </p>
         <!-- Form -->
-        <form class="" action="loginScript.php" method="POST">
+        <form class="" action="./core.php" method="post">
+          <input type="hidden" name="node" value="1">
           <!-- Email address -->
           <div class="form-group">
             <!-- Label -->
             <label> Email Address </label>
             <!-- Input -->
-            <input type="email" id="email" name="email" class="form-control" placeholder="usuario@gmail.com" required>
+            <input type="email" id="email" name="email" class="form-control form-control-appended" placeholder="usuario@gmail.com" required>
           </div>
           <!-- Password -->
           <div class="form-group">
@@ -33,7 +34,7 @@
             <!-- Input group -->
             <div class="input-group input-group-merge">
               <!-- Input -->
-              <input type="password" id="password" name="password" class="form-control form-control-appended" placeholder="*************" required>
+              <input type="password" id="pass" name="pass" class="form-control form-control-appended" placeholder="*************" required>
               <!-- Icon -->
               <div class="input-group-append">
                 <span class="input-group-text">

@@ -1,14 +1,28 @@
 <?php
 
-  switch ($_REQUEST['node']) {
-    // LOGIN (INICIO DE SESION)
-    case 1:
-      // code...
-      break;
+session_start();
 
+  switch ($_REQUEST['node']) {
+    case 1: // LOGIN (INICIO DE SESION)
+      if ($_POST['email'] && $_POST['pass']) {
+
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
+
+        header('location:index.php');
+
+      }else {
+        header('location:login.php');
+        // echo "<script>history.back();</script>";
+      }
+      break;
     default:
-      // code...
+        header('location:login.php');
       break;
   }
+
+
+
+
 
  ?>

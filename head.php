@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/libs/quill/dist/quill.core.css">
   <link rel="stylesheet" href="assets/libs/select2/dist/css/select2.min.css">
   <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
   <!-- Theme CSS -->
   <link rel="stylesheet" href="assets/css/theme.min.css" id="stylesheetLight">
@@ -28,7 +29,7 @@
        background-color: rgba(21, 46, 77, 0.5) !important;
     }
     .blue-alpha-0{
-      background-color: rgba(21, 46, 77, .7) !important;
+      background-color: rgba(21, 46, 77, .2) !important;
     }
     @media (min-width: 768px){
      .navbar-brand-img {
@@ -38,6 +39,9 @@
     @media (max-width: 768px){
      .navbar-brand-img {
         max-height: 2.5rem !important;
+      }
+      .navbar-light{
+        background-color: rgba(21, 46, 77, 1) !important;
       }
     }
   </style>

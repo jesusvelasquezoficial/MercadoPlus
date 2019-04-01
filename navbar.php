@@ -22,6 +22,9 @@
         </a>
         <!-- Menu -->
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sidebarIcon">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input dropdown-item" id="switch1080">
+          </div>
           <a href="cms.php" class="dropdown-item">CMS</a>
         </div>
       </div>
@@ -41,12 +44,12 @@
                 <li class="nav-item">
                   <a class="nav-link active" href="index.php#view1">
                     Datos OTC
+                    <span class="badge badge-soft-success ml-auto">New</span>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="index.php#view2">
-                    Datos Oficial
-                    <span class="badge badge-soft-success ml-auto">New</span>
+                    Datos Oficiales
                   </a>
                 </li>
               </ul>

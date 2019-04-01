@@ -1,3 +1,9 @@
+<?php
+if (isset($_SESSIO['id'])) {
+  session_unset();
+  session_destroy();
+}
+?>
 <!doctype html>
 <html lang="es">
 <?php

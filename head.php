@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="assets/libs/select2/dist/css/select2.min.css">
   <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
 
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
   <!-- Theme CSS -->
   <link rel="stylesheet" href="assets/css/theme.min.css" id="stylesheetLight">

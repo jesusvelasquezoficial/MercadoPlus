@@ -91,9 +91,11 @@
         <div class="dropdown">
           <!-- Toggle -->
           <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 2) { ?>
-          <a href="#" class="avatar avatar-sm avatar-online dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="assets/img/avatars/profiles/0.png" alt="..." class="avatar-img rounded-circle">
-          </a>
+            <a href="#" class="avatar avatar-sm avatar-online dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div data-toggle="tooltip" data-placement="left" title="<?= $_SESSION['nombre'] ." ". $_SESSION['apellido'] ?>">
+                <img src="assets/img/avatars/profiles/0.png" alt="..." class="avatar-img rounded-circle">
+              </div>
+            </a>
           <?php }else{ ?>
           <div class="avatar avatar-sm dropdown-toggle"> </div>
           <?php } ?>

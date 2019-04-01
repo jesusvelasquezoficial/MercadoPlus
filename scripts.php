@@ -270,4 +270,8 @@
     $('#cajaContenido').toggleClass('formatoCaja');
   }
 
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
 </script>

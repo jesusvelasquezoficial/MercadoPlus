@@ -15,11 +15,17 @@
       <!-- Dropdown -->
       <div class="dropdown">
         <!-- Toggle -->
-        <a href="#" id="sidebarIcon" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <div class="avatar avatar-sm avatar-online">
-            <img src="assets/img/avatars/profiles/0.png" class="avatar-img rounded-circle" alt="...">
-          </div>
-        </a>
+        <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 2) { ?>
+          <a href="#" id="sidebarIcon" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="avatar avatar-sm avatar-online">
+              <div data-toggle="tooltip" data-placement="left" title="<?= $_SESSION['nombre'] ." ". $_SESSION['apellido'] ?>">
+                <img src="assets/img/avatars/profiles/0.png" alt="..." class="avatar-img rounded-circle">
+              </div>
+            </div>
+          </a>
+        <?php }else{ ?>
+        <div id="sidebarIcon" class="avatar avatar-sm dropdown-toggle"> </div>
+        <?php } ?>
         <!-- Menu -->
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sidebarIcon">
           <a href="cms.php" class="dropdown-item">CMS</a>

@@ -16,7 +16,7 @@ if (isset($_SESSION['id'])) {
   ================================================== -->
   <div class="container-fluid">
     <div class="row align-items-center justify-content-center blue-alpha-0">
-      <div class="col-12 col-md-5 col-lg-5 col-xl-4 px-lg-6 my-5 p-5 animated flipInX shadow" style="background-color: rgba(0,0,0,.15);">
+      <div class="col-12 col-md-5 col-lg-5 col-xl-3 px-lg-6 my-5 p-5 animated flipInX shadow" style="background-color: rgba(0,0,0,.15);">
         <div class="col-12 text-center mb-4">
           <a href="index.php"><img src="assets/img/logo.png" class="mx-auto img-fluid" alt="..."></a>
         </div>

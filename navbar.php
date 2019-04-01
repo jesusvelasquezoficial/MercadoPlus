@@ -61,7 +61,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link " href="login.php">
-            <i class="fe fe-log-in"></i> Iniciar Sessión
+            <i class="fe fe-log-in"></i> Iniciar Sesión
           </a>
         </li>
       </ul>
@@ -108,6 +108,7 @@
           <!-- Menu -->
           <div class="dropdown-menu dropdown-menu-right">
             <a href="cms.php" class="dropdown-item">CMS</a>
+            <a href="login.php" class="dropdown-item">Cerrar Sesión</a>
           </div>
         </div>
       </div>

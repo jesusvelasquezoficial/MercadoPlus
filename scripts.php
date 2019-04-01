@@ -39,8 +39,14 @@
       mes = "0"+mes;
     }
     var dia = datetime.getDate();
+    
+    if (dia < 10) {
+      dia = "0"+dia;
+    }
 
     var fecha = year + "-" + mes + "-" + dia;
+
+
 
     $('#fechaDO').val(fecha);
     $('#fechaOTC').val(fecha);

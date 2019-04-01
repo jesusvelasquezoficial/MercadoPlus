@@ -43,6 +43,11 @@
                     </a>
                   </li>
                   <li class="nav-item">
+                    <a href="#tablaDatosOficiales" class="nav-link" id="tablaDatosOficiales-tab" data-toggle="tab" role="tab" aria-controls="tablaDatosOficiales" aria-selected="true">
+                      Tabla Datos Oficiales
+                    </a>
+                  </li>
+                  <li class="nav-item">
                     <a href="#datosOTC" class="nav-link" id="datosOTC-tab" data-toggle="tab" role="tab" aria-controls="datosOTC" aria-selected="false">
                       Datos OTC
                     </a>
@@ -59,7 +64,8 @@
           <!-- TAB DATOS OFICIALES -->
           <div class="tab-pane fade show  active" id="datosOficiales" role="tabpanel" aria-labelledby="datosOficiales-tab">
             <!-- Form Datos Oficiales -->
-            <form class="mb-4 " action="guardarDO.php" method="post">
+            <form class="mb-4 " action="./core.php" method="post">
+              <input type="hidden" name="node" value="2">
               <div class="row d-flex justify-content-center">
                 <!-- Fecha Datos Oficiales -->
                 <div class="col-12 col-md-6">
@@ -211,7 +217,7 @@
                     </label>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro" name="petro" data-mask="#,###.00" data-mask-reverse="true" onchange="petroPlanAhorroYCrypto(dolarDICOM,this,petro2);" required>
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro" name="petro" value="6000" data-mask="#,###.00" data-mask-reverse="true" onchange="petroPlanAhorroYCrypto(dolarDICOM,this,petro2);" readonly>
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-dollar-sign"></span>
@@ -281,18 +287,18 @@
                     <div class="row">
                       <!-- Input -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended border-success" placeholder="" id="wti" name="wti" data-mask="#,###.00" data-mask-reverse="true" onchange="valorPetroleo(this,brent,petroleo);" required>
+                        <input type="text" class="form-control form-control-prepended border-primary" placeholder="" id="wti" name="wti" data-mask="#,###.00" data-mask-reverse="true" onchange="valorPetroleo(this,brent,petroleo);" required>
                         <div class="input-group-prepend">
-                          <div class="input-group-text border-success">
+                          <div class="input-group-text border-primary">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
                       </div>
                       <!-- Input -->
                       <div class="input-group input-group-merge mb-3 col-4">
-                        <input type="text" class="form-control form-control-prepended border-danger" placeholder="" id="brent" name="brent" data-mask="#,###.00" data-mask-reverse="true" onchange="valorPetroleo(wti,this,petroleo);" required>
+                        <input type="text" class="form-control form-control-prepended border-primary" placeholder="" id="brent" name="brent" data-mask="#,###.00" data-mask-reverse="true" onchange="valorPetroleo(wti,this,petroleo);" required>
                         <div class="input-group-prepend">
-                          <div class="input-group-text border-danger">
+                          <div class="input-group-text border-primary">
                             <span class="fe fe-dollar-sign"></span>
                           </div>
                         </div>
@@ -365,6 +371,67 @@
                 </div>
               </div> <!-- / .row -->
             </form>
+          </div>
+
+          <!-- TAB TABLA DATOS OFICIALES -->
+          <div class="tab-pane fade" id="tablaDatosOficiales" role="tabpanel" aria-labelledby="datosOficiales-tab">
+            <!-- Tabla Datos Oficiales -->
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Hora</th>
+                  <th scope="col">dolarDICOM</th>
+                  <th scope="col">euroDICOM</th>
+                  <th scope="col">euroDolar</th>
+                  <th scope="col">bitcoinBuy</th>
+                  <th scope="col">bitcoinSell</th>
+                  <th scope="col">bitcoinPromedio</th>
+                  <th scope="col">petro</th>
+                  <th scope="col">petro1</th>
+                  <th scope="col">petro2</th>
+                  <th scope="col">wti</th>
+                  <th scope="col">brent</th>
+                  <th scope="col">petroleo</th>
+                  <th scope="col">oroBuy</th>
+                  <th scope="col">oroSell</th>
+                  <th scope="col">oroPromedio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Fecha</th>
+                  <th>Hora</th>
+                  <th>dolarDICOM</th>
+                  <th>euroDICOM</th>
+                  <th>euroDolar</th>
+                  <th >bitcoinBuy</th>
+                  <th >bitcoinSell</th>
+                  <th >bitcoinPromedio</th>
+                  <th >petro</th>
+                  <th >petro1</th>
+                  <th >petro2</th>
+                  <th >wti</th>
+                  <th >brent</th>
+                  <th >petroleo</th>
+                  <th >oroBuy</th>
+                  <th >oroSell</th>
+                  <th >oroPromedio</th>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           <!-- TAB DATOS OTC -->

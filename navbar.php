@@ -22,9 +22,6 @@
         </a>
         <!-- Menu -->
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sidebarIcon">
-          <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input dropdown-item" id="switch1080">
-          </div>
           <a href="cms.php" class="dropdown-item">CMS</a>
         </div>
       </div>
@@ -63,7 +60,14 @@
         </li>
       </ul>
       <!-- Push content down -->
-      <div class="mt-auto"></div>
+      <div class="mt-auto">
+        <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 2) { ?>
+          <div class="custom-control custom-switch my-4">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1" onchange="formatoCajaInstagram();">
+            <label class="custom-control-label" for="customSwitch1">1080px</label>
+          </div>
+        <?php } ?>
+      </div>
       <!-- Customize -->
       <!-- <a href="#modalDemo" class="btn btn-block btn-primary mb-4" data-toggle="modal">
         <i class="fe fe-sliders mr-2"></i> Customize
@@ -81,13 +85,18 @@
       <!-- Form -->
       <div class="d-flex"></div>
       <!-- User -->
+
       <div class="navbar-user">
         <!-- Dropdown -->
         <div class="dropdown">
           <!-- Toggle -->
+          <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 2) { ?>
           <a href="#" class="avatar avatar-sm avatar-online dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img src="assets/img/avatars/profiles/0.png" alt="..." class="avatar-img rounded-circle">
           </a>
+          <?php }else{ ?>
+          <div class="avatar avatar-sm dropdown-toggle"> </div>
+          <?php } ?>
           <!-- Menu -->
           <div class="dropdown-menu dropdown-menu-right">
             <a href="cms.php" class="dropdown-item">CMS</a>

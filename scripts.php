@@ -266,8 +266,8 @@
 
   }
 
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
-   
+  function formatoCajaInstagram() {
+    $('#cajaContenido').toggleClass('formatoCaja');
+  }
+
 </script>

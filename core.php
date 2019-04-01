@@ -1,5 +1,5 @@
 <?php
-  
+  // Iniciamos una Session.
   session_start();
 
   // Trabajamos el nucleo con un switch

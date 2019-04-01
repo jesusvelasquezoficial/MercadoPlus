@@ -1,3 +1,7 @@
+<?php
+  session_start();
+  if (isset($_SESSION['id']) && $_SESSION['role'] == "2") {
+?>
 <!doctype html>
 <html lang="es">
 <?php
@@ -11,7 +15,7 @@
 
   <!-- MAIN CONTENT
   ================================================== -->
-  <div style="width:1080px /*!important;" class="main-content w-auto " >
+  <div class="main-content w-auto " id="cajaContenidoCMS">
     <div class="container-fluid">
       <div class="pt-6 h-auto" id="cms">
         <!-- Header -->
@@ -965,3 +969,8 @@
   ?>
 </body>
 </html>
+<?php
+}else {
+  echo '<script>history.back();</script>';
+}
+?>

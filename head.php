@@ -45,6 +45,9 @@
         background-color: rgba(21, 46, 77, 1) !important;
       }
     }
+    .formatoCaja{
+      width : 1080px !important;
+    }
   </style>
 
   <title>Mercado Plus</title>

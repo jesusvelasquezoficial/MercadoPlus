@@ -14,7 +14,7 @@
 
   <!-- MAIN CONTENT
   ================================================== -->
-  <div style="width:1080px /*!important;" class="main-content w-auto " >
+  <div class="main-content w-auto " id="cajaContenido">
     <div>
       <?php
         include 'view2.php';

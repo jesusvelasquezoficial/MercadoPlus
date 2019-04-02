@@ -374,64 +374,68 @@
           </div>
 
           <!-- TAB TABLA DATOS OFICIALES -->
-          <div class="tab-pane fade" id="tablaDatosOficiales" role="tabpanel" aria-labelledby="datosOficiales-tab">
+          <div class="tab-pane fade" id="tablaDatosOficiales" role="tabpanel" aria-labelledby="tablaDatosOficiales-tab">
             <!-- Tabla Datos Oficiales -->
-            <table class="table">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">Fecha</th>
-                  <th scope="col">Hora</th>
-                  <th scope="col">dolarDICOM</th>
-                  <th scope="col">euroDICOM</th>
-                  <th scope="col">euroDolar</th>
-                  <th scope="col">bitcoinBuy</th>
-                  <th scope="col">bitcoinSell</th>
-                  <th scope="col">bitcoinPromedio</th>
-                  <th scope="col">petro</th>
-                  <th scope="col">petro1</th>
-                  <th scope="col">petro2</th>
-                  <th scope="col">wti</th>
-                  <th scope="col">brent</th>
-                  <th scope="col">petroleo</th>
-                  <th scope="col">oroBuy</th>
-                  <th scope="col">oroSell</th>
-                  <th scope="col">oroPromedio</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Fecha</th>
-                  <th>Hora</th>
-                  <th>dolarDICOM</th>
-                  <th>euroDICOM</th>
-                  <th>euroDolar</th>
-                  <th >bitcoinBuy</th>
-                  <th >bitcoinSell</th>
-                  <th >bitcoinPromedio</th>
-                  <th >petro</th>
-                  <th >petro1</th>
-                  <th >petro2</th>
-                  <th >wti</th>
-                  <th >brent</th>
-                  <th >petroleo</th>
-                  <th >oroBuy</th>
-                  <th >oroSell</th>
-                  <th >oroPromedio</th>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table ">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">dolarDICOM</th>
+                    <th scope="col">%</th>
+                    <th scope="col">euroDICOM</th>
+                    <th scope="col">%</th>
+                    <th scope="col">euroDolar</th>
+                    <th scope="col">%</th>
+                    <th scope="col">bitcoinBuy</th>
+                    <th scope="col">%</th>
+                    <th scope="col">bitcoinSell</th>
+                    <th scope="col">%</th>
+                    <th scope="col">bitcoinPromedio</th>
+                    <th scope="col">%</th>
+                    <th scope="col">petro</th>
+                    <th scope="col">%</th>
+                    <th scope="col">petro1</th>
+                    <th scope="col">%</th>
+                    <th scope="col">petro2</th>
+                    <th scope="col">%</th>
+                    <th scope="col">wti</th>
+                    <th scope="col">%</th>
+                    <th scope="col">brent</th>
+                    <th scope="col">%</th>
+                    <th scope="col">petroleo</th>
+                    <th scope="col">%</th>
+                    <th scope="col">oroBuy</th>
+                    <th scope="col">%</th>
+                    <th scope="col">oroSell</th>
+                    <th scope="col">%</th>
+                    <th scope="col">oroPromedio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Fecha</th>
+                    <th>Hora</th>
+                    <th>dolarDICOM</th>
+                    <th>euroDICOM</th>
+                    <th>euroDolar</th>
+                    <th >bitcoinBuy</th>
+                    <th >bitcoinSell</th>
+                    <th >bitcoinPromedio</th>
+                    <th >petro</th>
+                    <th >petro1</th>
+                    <th >petro2</th>
+                    <th >wti</th>
+                    <th >brent</th>
+                    <th >petroleo</th>
+                    <th >oroBuy</th>
+                    <th >oroSell</th>
+                    <th >oroPromedio</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <!-- TAB DATOS OTC -->

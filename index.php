@@ -4,7 +4,7 @@
 <!doctype html>
 <html lang="es">
 <?php
-  include 'head.php';
+include 'head.php';
 ?>
 <body data-spy="scroll" data-target="#principal" data-offset="0" style="position:relative;">
   <?php

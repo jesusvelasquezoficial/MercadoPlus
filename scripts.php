@@ -16,6 +16,7 @@
 <!-- Theme JS -->
 <script src="assets/js/theme.min.js"></script>
 
+<!-- SCRIPT JAVASCRIPT -->
 <script type="text/javascript">
   // $('#myTab a').on('click', function (e) {
   //   e.preventDefault()
@@ -23,8 +24,8 @@
   // });
 
   $(document).ready(function() {
+    tablaDatosOficiales(3);
     fechayhora();
-
   });
 
   $('body').scrollspy(
@@ -39,7 +40,7 @@
       mes = "0"+mes;
     }
     var dia = datetime.getDate();
-    
+
     if (dia < 10) {
       dia = "0"+dia;
     }
@@ -180,10 +181,10 @@
       this.valor = valor;
     }
 
-    // 2- Creamos un nuevo Objeto Promedio y le pasamos los datos capturados en la funcion
+    // 2- Creamos un nuevo Objeto Promedio y le pasamos los datos capturados en la function
     // como parametros (idPromedio, valorPromedio)
      promedio = new objPromedio(idPromedio,valorPromedio);
-     // 3- Ejecutamos la funcion "agregar" enviando el Objeto Promedio como parametro
+     // 3- Ejecutamos la function "agregar" enviando el Objeto Promedio como parametro
      agregar();
 
    }
@@ -191,7 +192,7 @@
   // PROMEDIOS ARRAY
   var promedios = [];
 
-  // 2.1 Construimos la funcion "agregar" que recibe el parametro (promedio)
+  // 2.1 Construimos la function "agregar" que recibe el parametro (promedio)
   function agregar() {
     // console.log(promedio);
     // 3.1 Si la DataBase "promedios" esta vacia entonces entra.
@@ -276,8 +277,41 @@
     $('#cajaContenido').toggleClass('formatoCaja');
   }
 
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
+  // $(function () {
+  //   $('[data-toggle="tooltip"]').tooltip()
+  // })
+
+  function tablaDatosOficiales(num) {
+    $.ajax({
+      url: 'core.php',
+      dataType: 'json',
+      type:'POST',
+  		data: {
+  			node: num,
+  		}
+    }).done(function(response) {
+      console.log(response);
+      if (response.length != 0) {
+        for (var i in response) {
+          console.log(response[i]);
+        }
+      }else{
+        console.log('la respuesta esta en 0');
+      }
+      console.log("RESPUESTA:\n");
+      console.log(response);
+
+    }).fail(function(xhr, status, error) {
+
+      console.log("ERROR:\n");
+      console.log(xhr.responseText);
+
+    }).always(function(response) {
+
+      console.log("COMPLETE:\n");
+      console.log(response);
+
+    });
+  }
 
 </script>

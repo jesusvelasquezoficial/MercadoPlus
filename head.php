@@ -17,6 +17,22 @@
   <link rel="stylesheet" href="assets/css/theme-dark.min.css" id="stylesheetDark">
 
   <style>
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+     /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0,0,0,.1);
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(0,0,0,.2);
+    }
     body {
       display: none;
       position: relative !important;

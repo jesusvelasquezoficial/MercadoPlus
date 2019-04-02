@@ -140,7 +140,7 @@
                 pctvorosell,
                 oropromedio,
                 pctvoropromedio
-              ) VALUES(
+              ) VALUES (
                 0,
                 '".$fecha."',
                 '".$hora."',
@@ -180,20 +180,50 @@
               // SI NO HAY ERRORES DE CONEXION
               if (!mysqli_error($link)) {
                 echo "<script>alert('Datos Ingresados Correctamente.');</script>";
+                mysqli_close($link);
                 echo "<script>location.href='index.php'</script>";
-              // }else {
-              //   echo "<script>alert('DATOS ERROR.');</script>";
-              //   mysqli_close($link);
-              //   echo "<script>history.back();</script>";
-              // }
+              }else {
+                echo "<script>alert('DATOS ERROR.');</script>";
+                mysqli_close($link);
+                echo "<script>history.back();</script>";
+              }
 
 
-            }else{
-              // SEGUNDA ETAPA DE LOGICA
-            }
+            // }else{
+            //   // SEGUNDA ETAPA DE LOGICA
+            // }
         }else {
           echo "<script>alert('ENTRO');</script>";
         }
+      break;
+    case 3: // MOSTRAR DATOS OFICIALES
+
+      include 'link.php';
+      $sql = 'SELECT * FROM datosoficiales ORDER BY id DESC';
+      $query = mysqli_query($link,$sql);
+      $num = mysqli_num_rows($query);
+      mysqli_close($link);
+
+      if ($num != 0) {
+
+        while ($row = mysqli_fetch_assoc($query)) {
+          for ($i=0; $i < count($row) ; $i++) {
+            $data[$i]= $row;
+          }
+        }
+
+        echo json_encode($row);
+
+        header('Content-Type: application/json');
+        // echo json_encode($data);
+
+      }else{
+
+      }
+
+      break;
+    case 4:
+      // code...
       break;
     default:
         header('location:login.php');

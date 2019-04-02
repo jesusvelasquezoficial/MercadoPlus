@@ -377,8 +377,8 @@
           <div class="tab-pane fade" id="tablaDatosOficiales" role="tabpanel" aria-labelledby="tablaDatosOficiales-tab">
             <!-- Tabla Datos Oficiales -->
             <div class="table-responsive">
-              <table class="table ">
-                <thead class="thead-dark">
+              <table class="table table-bordered">
+                <thead>
                   <tr>
                     <th scope="col">Fecha</th>
                     <th scope="col">Hora</th>
@@ -388,10 +388,6 @@
                     <th scope="col">%</th>
                     <th scope="col">euroDolar</th>
                     <th scope="col">%</th>
-                    <th scope="col">bitcoinBuy</th>
-                    <th scope="col">%</th>
-                    <th scope="col">bitcoinSell</th>
-                    <th scope="col">%</th>
                     <th scope="col">bitcoinPromedio</th>
                     <th scope="col">%</th>
                     <th scope="col">petro</th>
@@ -400,17 +396,10 @@
                     <th scope="col">%</th>
                     <th scope="col">petro2</th>
                     <th scope="col">%</th>
-                    <th scope="col">wti</th>
-                    <th scope="col">%</th>
-                    <th scope="col">brent</th>
-                    <th scope="col">%</th>
                     <th scope="col">petroleo</th>
                     <th scope="col">%</th>
-                    <th scope="col">oroBuy</th>
-                    <th scope="col">%</th>
-                    <th scope="col">oroSell</th>
-                    <th scope="col">%</th>
                     <th scope="col">oroPromedio</th>
+                    <th scope="col">%</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -418,20 +407,23 @@
                     <th scope="row">Fecha</th>
                     <th>Hora</th>
                     <th>dolarDICOM</th>
+                    <th>%</th>
                     <th>euroDICOM</th>
+                    <th>%</th>
                     <th>euroDolar</th>
-                    <th >bitcoinBuy</th>
-                    <th >bitcoinSell</th>
+                    <th>%</th>
                     <th >bitcoinPromedio</th>
+                    <th>%</th>
                     <th >petro</th>
+                    <th>%</th>
                     <th >petro1</th>
+                    <th>%</th>
                     <th >petro2</th>
-                    <th >wti</th>
-                    <th >brent</th>
+                    <th>%</th>
                     <th >petroleo</th>
-                    <th >oroBuy</th>
-                    <th >oroSell</th>
+                    <th>%</th>
                     <th >oroPromedio</th>
+                    <th>%</th>
                   </tr>
                 </tbody>
               </table>

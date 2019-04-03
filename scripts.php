@@ -290,11 +290,37 @@
   			node: num,
   		}
     }).done(function(response) {
-      console.log(response);
-      if (response.length != 0) {
+       long = Object.keys(response).length;
+      var bodyTable = '';
+
+      if (long != 0) {
         for (var i in response) {
-          console.log(response[i]);
+          bodyTable += '<tr>';
+          bodyTable += '<th scope="row">' + response[i].fecha + '</th>';
+          bodyTable +='<th>' + response[i].hora + '</th>';
+          bodyTable +='<th>' + response[i].dolardicom + '</th>';
+          bodyTable +='<th>' + response[i].pctvdolardicom + '</th>';
+          bodyTable +='<th>' + response[i].eurodicom + '</th>';
+          bodyTable +='<th>' + response[i].pctveurodicom + '</th>';
+          bodyTable +='<th>' + response[i].eurodolar + '</th>';
+          bodyTable +='<th>' + response[i].pctveurodolar + '</th>';
+          bodyTable +='<th>' + response[i].bitcoinpromedio + '</th>';
+          bodyTable +='<th>' + response[i].pctvbitcoinpromedio + '</th>';
+          bodyTable +='<th>' + response[i].petro + '</th>';
+          bodyTable +='<th>' + response[i].pctvpetro + '</th>';
+          bodyTable +='<th>' + response[i].petro1 + '</th>';
+          bodyTable +='<th>' + response[i].pctvpetro1 + '</th>';
+          bodyTable +='<th>' + response[i].petro2 + '</th>';
+          bodyTable +='<th>' + response[i].pctvpetro2 + '</th>';
+          bodyTable +='<th>' + response[i].petroleo + '</th>';
+          bodyTable +='<th>' + response[i].pctvpetroleo + '</th>';
+          bodyTable +='<th>' + response[i].oropromedio + '</th>';
+          bodyTable +='<th>' + response[i].pctvoropromedio + '</th>';
+          bodyTable +='</tr>';
         }
+
+        $('#bodyTableDO').html(bodyTable);
+
       }else{
         console.log('la respuesta esta en 0');
       }
@@ -309,7 +335,6 @@
     }).always(function(response) {
 
       console.log("COMPLETE:\n");
-      console.log(response);
 
     });
   }

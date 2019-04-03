@@ -55,7 +55,7 @@
         // echo "<script>history.back();</script>";
       }
       break;
-    case 2: // INSERTAR Datos Oficiales
+    case 2: // INSERTAR DATOS OFICIALES
       // SI LLEGARON TODOS LOS DATOS
       if ($_POST['fechaDO']          != "" &&
           $_POST['horaDO']           != "" &&
@@ -76,29 +76,29 @@
           $_POST['oroPromedio']      != "") {
 
             // DATA TIME
-            $fecha = $_POST['fechaDO'];
-            $hora  = $_POST['horaDO'];
+            $fecha            = $_POST['fechaDO'];
+            $hora             = $_POST['horaDO'];
             // DICOM
-            $dolarDicom = $_POST['dolarDICOM'];
-            $euroDicom  = $_POST['euroDICOM'];
+            $dolarDicom       = $_POST['dolarDICOM'];
+            $euroDicom        = $_POST['euroDICOM'];
             // EURO|DOLAR
-            $euroDolar = $_POST['euroDolar'];
+            $euroDolar        = $_POST['euroDolar'];
             // BITCOIN (BTC)
-            $bitcoinBuy  = $_POST['bitcoinBuy'];
-            $bitcoinSell = $_POST['bitcoinSell'];
-            $bitcoinPromedio = $_POST['bitcoinPromedio'];
+            $bitcoinBuy       = $_POST['bitcoinBuy'];
+            $bitcoinSell      = $_POST['bitcoinSell'];
+            $bitcoinPromedio  = $_POST['bitcoinPromedio'];
             // PETRO
-            $petro    = $_POST['petro'];
-            $petroSyT = $_POST['petro1'];
-            $petroPyC = $_POST['petro2'];
+            $petro            = $_POST['petro'];
+            $petroSyT         = $_POST['petro1'];
+            $petroPyC         = $_POST['petro2'];
             // PETROLEO
             $petroleoWTI      = $_POST['wti'];
             $petroleoBRENT    = $_POST['brent'];
             $petroleoPromedio = $_POST['petroleo'];
             // ORO
-            $oroBuy      = $_POST['oroBuy'];
-            $oroSell     = $_POST['oroSell'];
-            $oroPromedio = $_POST['oroPromedio'];
+            $oroBuy           = $_POST['oroBuy'];
+            $oroSell          = $_POST['oroSell'];
+            $oroPromedio      = $_POST['oroPromedio'];
 
             include 'link.php';
             $sql   = "SELECT * FROM datosoficiales";
@@ -181,7 +181,7 @@
               if (!mysqli_error($link)) {
                 echo "<script>alert('Datos Ingresados Correctamente.');</script>";
                 mysqli_close($link);
-                echo "<script>location.href='index.php'</script>";
+                echo "<script>history.back();</script>";
               }else {
                 echo "<script>alert('DATOS ERROR.');</script>";
                 mysqli_close($link);
@@ -205,10 +205,12 @@
 
       if ($num != 0) {
         $data = array();
+        $nro = 0;
         while ($row = mysqli_fetch_assoc($query)) {
           for ($i=0; $i < count($row) ; $i++) {
-            $data[$i] = $row;
+            $data[$num] = $row;
           }
+          $num += 1;
         }
 
         header('Content-Type: application/json');
@@ -219,8 +221,104 @@
       mysqli_close($link);
 
       break;
-    case 4:
-      // code...
+    case 4: // INSERTAR DATOS OTC
+      $fecha = ($_POST['fechaOTC'] != "") ? $_POST['fechaOTC'] : "";
+      if ($_POST['fechaOTC']                 != "" &&
+          $_POST['horaOTC']                  != "" &&
+          $_POST['dolartodayBuy']            != "" &&
+          $_POST['dolartodaySell']           != "" &&
+          $_POST['dolartodayPromedio']       != "" &&
+          $_POST['dolartodayBTCBuy']         != "" &&
+          $_POST['dolartodayBTCSell']        != "" &&
+          $_POST['dolartodayBTCPromedio']    != "" &&
+          $_POST['airTMBuy']                 != "" &&
+          $_POST['airTMSell']                != "" &&
+          $_POST['airTMPromedio']            != "" &&
+          $_POST['dolarTrueBuy']             != "" &&
+          $_POST['dolarTrueSell']            != "" &&
+          $_POST['dolarTruePromedio']        != "" &&
+          $_POST['monitorDolarVZLABuy']      != "" &&
+          $_POST['monitorDolarVZLASell']     != "" &&
+          $_POST['monitorDolarVZLAPromedio'] != "" &&
+          $_POST['MKambioBuy']               != "" &&
+          $_POST['MKambioSell']              != "" &&
+          $_POST['MKambioPromedio']          != "" &&
+          $_POST['dolarGoldBuy']             != "" &&
+          $_POST['dolarGoldSell']            != "" &&
+          $_POST['dolarGoldPromedio']        != "" &&
+          $_POST['dolarFTBuy']               != "" &&
+          $_POST['dolarFTSell']              != "" &&
+          $_POST['dolarFTPromedio']          != "" &&
+          $_POST['dolarC']                   != "" &&
+          $_POST['dolarV']                   != "" &&
+          $_POST['euroC']                    != "" &&
+          $_POST['euroV']                    != "" &&
+          $_POST['promedioTotal']            != ""
+        ){
+          $fecha = $_POST['fechaOTC'];
+          $hora  = $_POST['horaOTC'];
+          $dolartodayBuy = $_POST['dolartodayBuy'];
+          $dolartodaySell = $_POST['dolartodaySell'];
+          $dolartodayPromedio = $_POST['dolartodayPromedio'];
+          $dolartodaybtcBuy = $_POST['dolartodayBTCBuy'];
+          $dolartodaybtcSell = $_POST['dolartodayBTCSell'];
+          $dolartodaybtcPromedio = $_POST['dolartodayBTCPromedio'];
+          $airtmBuy = $_POST['airTMBuy'];
+          $airtmSell = $_POST['airTMSell'];
+          $airtmPromedio = $_POST['airTMPromedio'];
+          $dolartrueBuy = $_POST['dolarTrueBuy'];
+          $dolartrueSell = $_POST['dolarTrueSell'];
+          $dolartruePromedio = $_POST['dolarTruePromedio'];
+          $monitordolarvzlaBuy = $_POST['monitorDolarVZLABuy'];
+          $monitordolarvzlaSell = $_POST['monitorDolarVZLASell'];
+          $monitordolarvzlaPromedio = $_POST['monitorDolarVZLAPromedio'];
+          $mkambioBuy = $_POST['MKambioBuy'];
+          $mkambioSell = $_POST['MKambioSell'];
+          $mkambioPromedio = $_POST['MKambioPromedio'];
+          $dolargoldBuy = $_POST['dolarGoldBuy'];
+          $dolargoldSell = $_POST['dolarGoldSell'];
+          $dolargoldPromedio = $_POST['dolarGoldPromedio'];
+          $dolarftBuy = $_POST['dolarFTBuy'];
+          $dolarftSell = $_POST['dolarFTSell'];
+          $dolarftPromedio = $_POST['dolarFTPromedio'];
+          $dolarC = $_POST['dolarC'];
+          $dolarV = $_POST['dolarV'];
+          $euroC = $_POST['euroC'];
+          $euroV = $_POST['euroV'];
+          $promediototal = $_POST['promedioTotal'];
+
+          echo $fecha;
+          echo $hora;
+          echo $dolartodayBuy;
+          echo $dolartodaySell;
+          echo $dolartodayPromedio;
+          echo $dolartodaybtcBuy;
+          echo $dolartodaybtcSell;
+          echo $dolartodaybtcPromedio;
+          echo $airtmBuy;
+          echo $airtmSell;
+          echo $airtmPromedio;
+          echo $dolartrueBuy;
+          echo $dolartrueSell;
+          echo $dolartruePromedio;
+          echo $monitordolarvzlaBuy;
+          echo $monitordolarvzlaSell;
+          echo $monitordolarvzlaPromedio;
+          echo $mkambioBuy;
+          echo $mkambioSell;
+          echo $mkambioPromedio;
+          echo $dolargoldBuy;
+          echo $dolargoldSell;
+          echo $dolargoldPromedio;
+          echo $dolarftBuy;
+          echo $dolarftSell;
+          echo $dolarftPromedio;
+          echo $dolarC;
+          echo $dolarV;
+          echo $euroC;
+          echo $euroV;
+          echo $promediototal;
+      }
       break;
     default:
         header('location:login.php');

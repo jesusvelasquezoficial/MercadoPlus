@@ -38,7 +38,7 @@
       position: relative !important;
       background-image: url("assets/img/fondo7.jpg");
       background-repeat: repeat;
-      background-position: top;
+      background-position: top right;
       background-attachment: fixed;
       background-size: cover;
     }

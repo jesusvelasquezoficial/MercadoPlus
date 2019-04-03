@@ -202,24 +202,21 @@
       $sql = 'SELECT * FROM datosoficiales ORDER BY id DESC';
       $query = mysqli_query($link,$sql);
       $num = mysqli_num_rows($query);
-      mysqli_close($link);
 
       if ($num != 0) {
-
+        $data = array();
         while ($row = mysqli_fetch_assoc($query)) {
           for ($i=0; $i < count($row) ; $i++) {
-            $data[$i]= $row;
+            $data[$i] = $row;
           }
         }
 
-        echo json_encode($row);
-
         header('Content-Type: application/json');
-        // echo json_encode($data);
-
+        echo json_encode($data);
       }else{
 
       }
+      mysqli_close($link);
 
       break;
     case 4:

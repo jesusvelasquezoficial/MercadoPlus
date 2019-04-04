@@ -478,18 +478,24 @@
         $('#bodyTasasMercados').html(bodyTasasMercados);
 
         var promediosDia = '';
-        for (var i = 1; i <= 2; i++) {
-          promediosDia += '<div class="row justify-content-center align-items-center p-4 border ">';
-          promediosDia += '<div class="col-12 col-sm-4">';
-          promediosDia += '<div class="display-4 " style="font-size:1.8em;">DOLAR</div>';
-          promediosDia += '</div><div class="col-12 col-sm-4">';
-          promediosDia += '<h3 class="mb-1"> COMPRA </h3>';
-          promediosDia += '<div class="display-4 border-success text-success" style="font-size:1.7em;">3.136.69</div>';
-          promediosDia += '</div><div class="col-12 col-sm-4">';
-          promediosDia += '</div><div class="col-12 col-sm-4">';
-          promediosDia += '<h3 class="mb-1"> VENTA </h3>';
-          promediosDia += '<div class="display-4 border-danger text-danger" style="font-size:1.7em;">3.458.61</div></div></div>';
-        }
+            promediosDia += '<div class="row justify-content-center align-items-center p-4 border ">';
+            promediosDia += '<div class="col-12 col-sm-4">';
+            promediosDia += '<div class="display-4 " style="font-size:1.8em;">DOLAR</div>';
+            promediosDia += '</div><div class="col-12 col-sm-4">';
+            promediosDia += '<h3 class="mb-1"> COMPRA </h3>';
+            promediosDia += '<div class="display-4 border-success text-success" style="font-size:1.7em;">3.136.69</div>';
+            promediosDia += '</div><div class="col-12 col-sm-4">';
+            promediosDia += '<h3 class="mb-1"> VENTA </h3>';
+            promediosDia += '<div class="display-4 border-danger text-danger" style="font-size:1.7em;">3.458.61</div></div></div>';
+            promediosDia += '<div class="row justify-content-center align-items-center p-4 border mt-4">';
+            promediosDia += '<div class="col-12 col-sm-4">';
+            promediosDia += '<div class="display-4 " style="font-size:1.8em;">EURO</div>';
+            promediosDia += '</div><div class="col-12 col-sm-4">';
+            promediosDia += '<h3 class="mb-1"> COMPRA </h3>';
+            promediosDia += '<div class="display-4 border-success text-success" style="font-size:1.7em;">3.556.68</div>';
+            promediosDia += '</div><div class="col-12 col-sm-4">';
+            promediosDia += '<h3 class="mb-1"> VENTA </h3>';
+            promediosDia += '<div class="display-4 border-danger text-danger" style="font-size:1.7em;">3.921.71</div></div></div>';
 
         $('#promediosDia').html(promediosDia);
 

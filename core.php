@@ -222,7 +222,7 @@
 
       break;
     case 4: // INSERTAR DATOS OTC
-      $fecha = ($_POST['fechaOTC'] != "") ? $_POST['fechaOTC'] : "";
+      //
       if ($_POST['fechaOTC']                 != "" &&
           $_POST['horaOTC']                  != "" &&
           $_POST['dolartodayBuy']            != "" &&
@@ -287,38 +287,174 @@
           $euroV = $_POST['euroV'];
           $promediototal = $_POST['promedioTotal'];
 
-          echo $fecha;
-          echo $hora;
-          echo $dolartodayBuy;
-          echo $dolartodaySell;
-          echo $dolartodayPromedio;
-          echo $dolartodaybtcBuy;
-          echo $dolartodaybtcSell;
-          echo $dolartodaybtcPromedio;
-          echo $airtmBuy;
-          echo $airtmSell;
-          echo $airtmPromedio;
-          echo $dolartrueBuy;
-          echo $dolartrueSell;
-          echo $dolartruePromedio;
-          echo $monitordolarvzlaBuy;
-          echo $monitordolarvzlaSell;
-          echo $monitordolarvzlaPromedio;
-          echo $mkambioBuy;
-          echo $mkambioSell;
-          echo $mkambioPromedio;
-          echo $dolargoldBuy;
-          echo $dolargoldSell;
-          echo $dolargoldPromedio;
-          echo $dolarftBuy;
-          echo $dolarftSell;
-          echo $dolarftPromedio;
-          echo $dolarC;
-          echo $dolarV;
-          echo $euroC;
-          echo $euroV;
-          echo $promediototal;
+          include 'link.php';
+          $sql = "INSERT INTO datosotc (
+            id,
+            fecha,
+            hora,
+            dolartodaybuy,
+            pctvdolartodaybuy,
+            dolartodaysell,
+            pctvdolartodaysell,
+            dolartodaypromedio,
+            pctvdolartodapromedio,
+            dolartodaybtcbuy,
+            pctvdolartodaybtcbuy,
+            dolartodaybtcsell,
+            pctvdolartodaybtcsell,
+            dolartodaybtcpromedio,
+            pctvdolartodaybtcpromedio,
+            airtmbuy,
+            pctvairtmbuy,
+            airtmsell,
+            pctvairtmsell,
+            airtmpromedio,
+            pctvairtmpromedio,
+            dolartruebuy,
+            pctvdolartruebuy,
+            dolartruesell,
+            pctvdolartruesell,
+            dolartruepromedio,
+            pctvdolartruepromedio,
+            monitordolarvzlabuy,
+            pctvmonitordolarvzlabuy,
+            monitordolarvzlasell,
+            pctvmonitordolarvzlasell,
+            monitordolarvzlapromedio,
+            pctvmonitordolarvzlapromedio,
+            mkambiobuy,
+            pctvmkambiobuy,
+            mkambiosell,
+            pctvmkambiosell,
+            mkambiopromedio,
+            pctvmkambiopromedio,
+            dolargoldbuy,
+            pctvdolargoldbuy,
+            dolargoldsell,
+            pctvdolargoldsell,
+            dolargoldpromedio,
+            pctvdolargoldpromedio,
+            dolarftbuy,
+            pctvdolarftbuy,
+            dolarftsell,
+            pctvdolarftsell,
+            dolarftpromedio,
+            pctvdolarftpromedio,
+            dolarc,
+            pctvdolarc,
+            dolarv,
+            pctvdolarv,
+            euroc,
+            pctveuroc,
+            eurov,
+            pctveurov,
+            promediototal,
+            pctvpromediototal
+          ) VALUES (
+            0,
+            '".$fecha."',
+            '".$hora."',
+            '".$dolartodayBuy."',
+            0,
+            '".$dolartodaySell."',
+            0,
+            '".$dolartodayPromedio."',
+            0,
+            '".$dolartodaybtcBuy."',
+            0,
+            '".$dolartodaybtcSell."',
+            0,
+            '".$dolartodaybtcPromedio."',
+            0,
+            '".$airtmBuy."',
+            0,
+            '".$airtmSell."',
+            0,
+            '".$airtmPromedio."',
+            0,
+            '".$dolartrueBuy."',
+            0,
+            '".$dolartrueSell."',
+            0,
+            '".$dolartruePromedio."',
+            0,
+            '".$monitordolarvzlaBuy."',
+            0,
+            '".$monitordolarvzlaSell."',
+            0,
+            '".$monitordolarvzlaPromedio."',
+            0,
+            '".$mkambioBuy."',
+            0,
+            '".$mkambioSell."',
+            0,
+            '".$mkambioPromedio."',
+            0,
+            '".$dolargoldBuy."',
+            0,
+            '".$dolargoldSell."',
+            0,
+            '".$dolargoldPromedio."',
+            0,
+            '".$dolarftBuy."',
+            0,
+            '".$dolarftSell."',
+            0,
+            '".$dolarftPromedio."',
+            0,
+            '".$dolarC."',
+            0,
+            '".$dolarV."',
+            0,
+            '".$euroC."',
+            0,
+            '".$euroV."',
+            0,
+            '".$promediototal."',
+            0
+          )";
+          $query = mysqli_query($link,$sql);
+          // SI NO HAY ERRORES DE CONEXION
+          if (!mysqli_error($link)) {
+            echo "<script>alert('Datos Ingresados Correctamente.');</script>";
+            mysqli_close($link);
+            echo "<script>history.back();</script>";
+          }else {
+            echo "<script>alert('DATOS ERROR.');</script>";
+            mysqli_close($link);
+            echo "<script>history.back();</script>";
+          }
+
+
+        // }else{
+        //   // SEGUNDA ETAPA DE LOGICA
+        // }
       }
+      break;
+    case 5: // MOSTRAR DATOS OTC
+
+      include 'link.php';
+      $sql = 'SELECT * FROM datosotc ORDER BY id DESC';
+      $query = mysqli_query($link,$sql);
+      $num = mysqli_num_rows($query);
+
+      if ($num != 0) {
+        $data = array();
+        $nro = 0;
+        while ($row = mysqli_fetch_assoc($query)) {
+          for ($i=0; $i < count($row) ; $i++) {
+            $data[$num] = $row;
+          }
+          $num += 1;
+        }
+
+        header('Content-Type: application/json');
+        echo json_encode($data);
+      }else{
+
+      }
+      mysqli_close($link);
+
       break;
     default:
         header('location:login.php');

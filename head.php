@@ -64,6 +64,9 @@
     .formatoCaja{
       width : 1080px !important;
     }
+    .table-striped{
+      
+    }
   </style>
 
   <title>Mercado Plus</title>

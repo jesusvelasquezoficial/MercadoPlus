@@ -383,24 +383,24 @@
                 <thead>
                   <tr>
                     <th scope="col" style="min-width:120px;">Fecha</th>
-                    <th scope="col" style="min-width:120px;">Hora</th>
+                    <th scope="col" style="min-width:100px;">Hora</th>
                     <th scope="col">dolarDICOM</th>
                     <th scope="col">%</th>
                     <th scope="col">euroDICOM</th>
                     <th scope="col">%</th>
                     <th scope="col">euroDolar</th>
                     <th scope="col">%</th>
-                    <th scope="col">bitcoinPromedio</th>
+                    <th scope="col">bitcoin</th>
                     <th scope="col">%</th>
                     <th scope="col">petro</th>
                     <th scope="col">%</th>
-                    <th scope="col">petro1</th>
+                    <th scope="col">petro(syt)</th>
                     <th scope="col">%</th>
-                    <th scope="col">petro2</th>
+                    <th scope="col">petro(payc)</th>
                     <th scope="col">%</th>
                     <th scope="col">petroleo</th>
                     <th scope="col">%</th>
-                    <th scope="col">oroPromedio</th>
+                    <th scope="col">oro</th>
                     <th scope="col">%</th>
                   </tr>
                 </thead>
@@ -926,24 +926,32 @@
                 <thead>
                   <tr>
                     <th scope="col" style="min-width:120px;">Fecha</th>
-                    <th scope="col" style="min-width:120px;">Hora</th>
-                    <th scope="col">dolarDICOM</th>
+                    <th scope="col" style="min-width:100px;">Hora</th>
+                    <th scope="col">dolartoday</th>
                     <th scope="col">%</th>
-                    <th scope="col">euroDICOM</th>
+                    <th scope="col">dolartoday(btc)</th>
                     <th scope="col">%</th>
-                    <th scope="col">euroDolar</th>
+                    <th scope="col">airtm</th>
                     <th scope="col">%</th>
-                    <th scope="col">bitcoinPromedio</th>
+                    <th scope="col">dolartrue</th>
                     <th scope="col">%</th>
-                    <th scope="col">petro</th>
+                    <th scope="col">monitordolarvzla</th>
                     <th scope="col">%</th>
-                    <th scope="col">petro1</th>
+                    <th scope="col">mkambio</th>
                     <th scope="col">%</th>
-                    <th scope="col">petro2</th>
+                    <th scope="col">dolargold</th>
                     <th scope="col">%</th>
-                    <th scope="col">petroleo</th>
+                    <th scope="col">dolarft</th>
                     <th scope="col">%</th>
-                    <th scope="col">oroPromedio</th>
+                    <th scope="col">dolar compra</th>
+                    <th scope="col">%</th>
+                    <th scope="col">dolar venta</th>
+                    <th scope="col">%</th>
+                    <th scope="col">euro compra</th>
+                    <th scope="col">%</th>
+                    <th scope="col">euro venta</th>
+                    <th scope="col">%</th>
+                    <th scope="col">promedio estandar</th>
                     <th scope="col">%</th>
                   </tr>
                 </thead>

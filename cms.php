@@ -943,7 +943,7 @@
                     <th scope="col">%</th>
                     <th scope="col">dolarft</th>
                     <th scope="col">%</th>
-                    <th scope="col">dolar compra</th>
+                    <th scope="col">dolarcompra</th>
                     <th scope="col">%</th>
                     <th scope="col">dolar venta</th>
                     <th scope="col">%</th>

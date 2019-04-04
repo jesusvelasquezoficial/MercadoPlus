@@ -116,7 +116,7 @@
               </div>
             </div> <!-- / .row -->
           </div>
-          <div class="card-body text-center">
+          <div class="card-body text-center" id="promediosDia">
 
             <div class="row justify-content-center align-items-center p-4 border ">
               <div class="col-12 col-sm-4">

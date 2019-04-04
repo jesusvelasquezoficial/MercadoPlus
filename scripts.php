@@ -27,6 +27,7 @@
     fechayhora();
     tablaDatosOficiales(3);
     tablaDatosOTC(5);
+    mostrarDatosOTC(5)
   });
 
   $('body').scrollspy(
@@ -96,6 +97,7 @@
       console.log(Compra, Venta, calculoPromedio.toFixed(2), idPromedio);
 
       console.log();
+      $(idPromedio).mask('#,###.##',{ reverse: true });
       $(idPromedio).val(calculoPromedio.toFixed(2)).mask('#,###.##');
       if (idPromedio != "#oroPromedio" && idPromedio != "#bitcoinPromedio") {
         promedioTotalOTC(promedio);
@@ -120,7 +122,8 @@
 
       console.log(Compra, Venta, calculoPromedio.toFixed(2), idPromedio);
 
-      $(idPromedio).val(calculoPromedio.toFixed(2)).mask('#,###.##', { reverse: true });
+      $(idPromedio).mask('##,###.##', { reverse: true });
+      $(idPromedio).val(calculoPromedio.toFixed(2)).mask('##,###.##');
 
     }else{
       promedio.value = '';
@@ -140,6 +143,7 @@
 
       console.log(d, e, euroDolar.toFixed(2), idEuroDolar);
 
+      $(idEuroDolar).mask('#,###.##', { reverse: true });
       $(idEuroDolar).val(euroDolar.toFixed(2)).mask('#,###.##');
       calcularPromedioTotal();
 
@@ -164,6 +168,7 @@
 
       console.log(d, p, valorPetroPAyC.toFixed(2), idPetroPAyC);
 
+      $(idPetroPAyC).mask('###,###.##', { reverse: true });
       $(idPetroPAyC).val(valorPetroPAyC.toFixed(2)).mask('###,###.##');
 
     }else {
@@ -244,13 +249,16 @@
     console.log("divisor: "+divisor);
     console.log("PROMEDIO TOTAL : " + promedioFinal.toFixed(2));
 
+    $('#promedioTotal').mask('#,###.##', {reverse:true});
     $('#promedioTotal').val(promedioFinal.toFixed(2)).mask('#,###.##');
 
     // DOLAR COMPRA | VENTA
     var dolarBuy = promedioFinal - ((promedioFinal * 5) / 100);
     var dolarSell = promedioFinal + ((dolarBuy * 5) / 100);
 
+    $('#dolarC').mask('#,###.##', {reverse:true});
     $('#dolarC').val(dolarBuy.toFixed(2)).mask('#,###.##');
+    $('#dolarV').mask('#,###.##', {reverse:true});
     $('#dolarV').val(dolarSell.toFixed(2)).mask('#,###.##');
 
     // EURO COMPRA | VENTA
@@ -269,7 +277,9 @@
     console.log(euroSell);
     console.log(euroSell.toFixed(2));
 
+    $('#euroC').mask('#,###.##', {reverse:true});
     $('#euroC').val(euroBuy.toFixed(2)).mask('#,###.##');
+    $('#euroV').mask('#,###.##', {reverse:true});
     $('#euroV').val(euroSell.toFixed(2)).mask('#,###.##');
 
   }
@@ -295,8 +305,9 @@
       var bodyTable = '';
 
       if (long != 0) {
+        var fondoFila = "";
         for (var i in response) {
-          bodyTable += '<tr>';
+          bodyTable += '<tr class="'+ fondoFila +'">';
           bodyTable += '<th scope="row">' + response[i].fecha + '</th>';
           bodyTable +='<th>' + response[i].hora + '</th>';
           bodyTable +='<th>' + response[i].dolardicom + '</th>';
@@ -318,6 +329,9 @@
           bodyTable +='<th>' + response[i].oropromedio + '</th>';
           bodyTable +='<th>' + response[i].pctvoropromedio + '</th>';
           bodyTable +='</tr>';
+
+          fondoFila = (fondoFila == "") ? "fondoFila" : "";
+
         }
 
         $('#bodyTableDO').html(bodyTable);
@@ -343,18 +357,19 @@
   function tablaDatosOTC(num) {
     $.ajax({
       url: 'core.php',
-      dataType: 'json',
-      type:'POST',
   		data: {
   			node: num,
-  		}
+  		},
+      type:'POST',
+      dataType: 'json'
     }).done(function(response) {
       long = Object.keys(response).length;
       var bodyTable = '';
 
       if (long != 0) {
+        var fondoFila = "";
         for (var i in response) {
-          bodyTable += '<tr>';
+          bodyTable += '<tr class="'+ fondoFila +'">';
           bodyTable += '<th scope="row">' + response[i].fecha + '</th>';
           bodyTable +='<th>' + response[i].hora + '</th>';
           bodyTable +='<th>' + response[i].dolartodaypromedio + '</th>';
@@ -383,8 +398,9 @@
           bodyTable +='<th>' + response[i].pctveurov + '</th>';
           bodyTable +='<th>' + response[i].promediototal + '</th>';
           bodyTable +='<th>' + response[i].pctvpromediototal + '</th>';
-
           bodyTable +='</tr>';
+
+          fondoFila = (fondoFila == "") ? "fondoFila" : "";
         }
 
         $('#bodyTableOTC').html(bodyTable);
@@ -402,8 +418,73 @@
 
     }).always(function(response) {
 
-      console.log("COMPLETE:\n");
+      console.log("COMPLETE\n");
 
+    });
+  }
+
+  function mostrarDatosOTC(num){
+    $.ajax({
+      url: 'core.php',
+      data: {
+        node: num
+      },
+      type: 'POST',
+      dataType: 'json'
+    }).done(function(response) {
+      long = Object.keys(response).length;
+      var bodyTasasMercados = '';
+
+      if (long != 0) {
+        bodyTasasMercados += '<tr>';
+        bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> DolarToday </td>';
+        bodyTasasMercados +='<td class="text-right h2 font-weight-bold"  data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].dolartodaypromedio +'</td>';
+        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-chevron-up text-success">'+ response[1]["pctvdolartodaypromedio"] +'</i> </td>';
+        bodyTasasMercados +='</tr><tr>';
+        bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> DolarToday (BTC) </td>';
+        bodyTasasMercados +='<td class="text-right h2 font-weight-bold"  data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].dolartodaybtcpromedio +'</td>';
+        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-chevron-down text-danger">'+ response[1]["pctvdolartodaybtcpromedio"] +'</i> </td>';
+        bodyTasasMercados +='</tr><tr>';
+        bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> TheAirTM </td>';
+        bodyTasasMercados +='<td class="text-right h2 font-weight-bold"  data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].airtmpromedio +'</td>';
+        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-chevron-down text-danger">'+ response[1]["pctvairtmpromedio"] +'</i> </td>';
+        bodyTasasMercados +='</tr><tr>';
+        bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> DolarTrue_ </td>';
+        bodyTasasMercados +='<td class="text-right h2 font-weight-bold"  data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].dolartruepromedio +'</td>';
+        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-chevron-up text-success">'+ response[1]["pctvdolartruepromedio"] +'</i> </td>';
+        bodyTasasMercados +='</tr><tr>';
+        bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> MonitorDolarVZLA </td>';
+        bodyTasasMercados +='<td class="text-right h2 font-weight-bold"  data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].monitordolarvzlapromedio +'</td>';
+        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-chevron-up text-success">'+ response[1]["pctvmonitordolarvzlapromedio"] +'</i> </td>';
+        bodyTasasMercados +='</tr><tr>';
+        bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> MKambio </td>';
+        bodyTasasMercados +='<td class="text-right h2 font-weight-bold"  data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].mkambiopromedio +'</td>';
+        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-chevron-up text-success">'+ response[1]["pctvmkambiopromedio"] +'</i> </td>';
+        bodyTasasMercados +='</tr><tr>';
+        bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> Dolar_Gold </td>';
+        bodyTasasMercados +='<td class="text-right h2 font-weight-bold"  data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].dolargoldpromedio +'</td>';
+        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-chevron-down text-danger">'+ response[1]["pctvdolargoldpromedio"] +'</i> </td>';
+        bodyTasasMercados +='</tr><tr>';
+        bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-danger"></i> Dolar_FT </td>';
+        bodyTasasMercados +='<td class="text-right h2 font-weight-bold"  data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].dolarftpromedio +'</td>';
+        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-chevron-down text-danger">'+ response[1]["pctvdolarftpromedio"] +'</i> </td>';
+        bodyTasasMercados +='</tr>';
+        bodyTasasMercados +='<tr class="text-white" style="background-color:#f95d02;">';
+        bodyTasasMercados +='<td class="pb-0 text-right" style="font-size:1.9em;"> <h2>PROMEDIO</h2> </td>';
+        bodyTasasMercados +='<td class="pb-0 pt-2 text-right font-weight-bold" data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;font-size:1.9em;"> <h2 class="pt-3">'+ response[1].promediototal +'</h2></td>';
+        bodyTasasMercados +='<td class="pb-0 text-right" style="font-size:1.9em;"><h2><i class="fe fe-minus "></i>'+ response[1]["pctvpromediototal"] +'</h2></td>';
+        bodyTasasMercados +='</tr>';
+
+        $('#bodyTasasMercados').html(bodyTasasMercados);
+
+      }else {
+        console.log('la respuesta esta en 0');
+      }
+    }).fail(function(xhr, status, error) {
+      console.log("ERROR:\n");
+      console.log(xhr.responseText);
+    }).always(function(response) {
+      console.log("COMPLETE\n");
     });
   }
 

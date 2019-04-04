@@ -205,12 +205,12 @@
 
       if ($num != 0) {
         $data = array();
-        $nro = 0;
+        $nro = 1;
         while ($row = mysqli_fetch_assoc($query)) {
           for ($i=0; $i < count($row) ; $i++) {
-            $data[$num] = $row;
+            $data[$nro] = $row;
           }
-          $num += 1;
+          $nro += 1;
         }
 
         header('Content-Type: application/json');
@@ -297,7 +297,7 @@
             dolartodaysell,
             pctvdolartodaysell,
             dolartodaypromedio,
-            pctvdolartodapromedio,
+            pctvdolartodaypromedio,
             dolartodaybtcbuy,
             pctvdolartodaybtcbuy,
             dolartodaybtcsell,
@@ -440,12 +440,12 @@
 
       if ($num != 0) {
         $data = array();
-        $nro = 0;
+        $nro = 1;
         while ($row = mysqli_fetch_assoc($query)) {
           for ($i=0; $i < count($row) ; $i++) {
-            $data[$num] = $row;
+            $data[$nro] = $row;
           }
-          $num += 1;
+          $nro += 1;
         }
 
         header('Content-Type: application/json');

@@ -64,8 +64,17 @@
     .formatoCaja{
       width : 1080px !important;
     }
-    .table-striped{
-      
+    .fondoFila {
+      background-color: rgba(21, 46, 77, .6) !important;
+    }
+    thead th{
+      padding-top: .5rem !important;
+      padding-bottom: .5rem !important;
+    }
+    tbody th{
+        padding-top: .35rem !important;
+        padding-bottom: .35rem !important;
+        font-family:courier;
     }
   </style>
 

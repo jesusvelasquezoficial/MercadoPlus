@@ -220,7 +220,7 @@
                     </label>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro" name="petro" value="6000" data-mask="#,###.00" data-mask-reverse="true" readonly>
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro" name="petro" value="6000" data-mask="#,###.00" data-mask-reverse="true" onchange="petroPlanAhorroYCrypto(dolarDICOM,this,petro2);" readonly>
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-dollar-sign"></span>
@@ -260,7 +260,7 @@
                     <small class="form-text text-muted"> Plan de Ahorro | Crypto </small>
                     <!-- Input -->
                     <div class="input-group input-group-merge mb-3">
-                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro2" name="petro2" data-mask="###,###.00" data-mask-reverse="true" onchange="this.mask('#,###.##');" readonly>
+                      <input type="text" class="form-control form-control-prepended" placeholder="" id="petro2" name="petro2" data-mask="###,###.00" data-mask-reverse="true" readonly>
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <span class="fe fe-bold">s.</span>
@@ -379,11 +379,11 @@
           <div class="tab-pane fade" id="tablaDatosOficiales" role="tabpanel" aria-labelledby="tablaDatosOficiales-tab">
             <!-- Tabla Datos Oficiales -->
             <div class="table-responsive">
-              <table class="table table-bordered">
+              <table class="table table-bordered text-center">
                 <thead>
                   <tr>
-                    <th scope="col" style="min-width:120px;">Fecha</th>
-                    <th scope="col" style="min-width:100px;">Hora</th>
+                    <th scope="col" style="min-width:122px;">Fecha</th>
+                    <th scope="col" style="min-width:105px;">Hora</th>
                     <th scope="col">dolarDICOM</th>
                     <th scope="col">%</th>
                     <th scope="col">euroDICOM</th>
@@ -922,11 +922,11 @@
           <div class="tab-pane fade" id="tablaDatosOTC" role="tabpanel" aria-labelledby="tablaDatosOTC-tab">
             <!-- Tabla Datos Oficiales -->
             <div class="table-responsive">
-              <table class="table table-bordered">
+              <table class="table table-bordered text-center">
                 <thead>
                   <tr>
-                    <th scope="col" style="min-width:120px;">Fecha</th>
-                    <th scope="col" style="min-width:100px;">Hora</th>
+                    <th scope="col" style="min-width:122px;">Fecha</th>
+                    <th scope="col" style="min-width:105px;">Hora</th>
                     <th scope="col">dolartoday</th>
                     <th scope="col">%</th>
                     <th scope="col">dolartoday(btc)</th>
@@ -943,15 +943,15 @@
                     <th scope="col">%</th>
                     <th scope="col">dolarft</th>
                     <th scope="col">%</th>
-                    <th scope="col">dolarcompra</th>
+                    <th scope="col" style="min-width:150px;">dolar compra</th>
                     <th scope="col">%</th>
-                    <th scope="col">dolar venta</th>
+                    <th scope="col" style="min-width:135px;">dolar venta</th>
                     <th scope="col">%</th>
-                    <th scope="col">euro compra</th>
+                    <th scope="col" style="min-width:140px;">euro compra</th>
                     <th scope="col">%</th>
-                    <th scope="col">euro venta</th>
+                    <th scope="col" style="min-width:125px;">euro venta</th>
                     <th scope="col">%</th>
-                    <th scope="col">promedio estandar</th>
+                    <th scope="col" style="min-width:190px;">promedio estandar</th>
                     <th scope="col">%</th>
                   </tr>
                 </thead>

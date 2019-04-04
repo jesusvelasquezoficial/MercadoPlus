@@ -49,7 +49,7 @@
 
           <div class="table-responsive mb-0">
             <table class="table table-sm table-nowrap card-table">
-              <tbody class="list">
+              <tbody class="list" id="bodyTasasMercados">
                 <tr>
                   <td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> DolarToday </td>
                   <td class="text-right h2 font-weight-bold"  data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;"> 329771 </td>

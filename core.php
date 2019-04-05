@@ -104,8 +104,9 @@
             $sql   = "SELECT * FROM datosoficiales";
             $query = mysqli_query($link,$sql);
             $num = mysqli_num_rows($query);
+
             // SI NO EXISTEN DATOS EN LA TABLA 'datosoficiales'
-            // if ($num == 0) {
+            if ($num == 0) {
               $sql2 = "INSERT INTO datosoficiales (
                 id,
                 fecha,
@@ -189,9 +190,18 @@
               }
 
 
-            // }else{
-            //   // SEGUNDA ETAPA DE LOGICA
-            // }
+            }else{
+              // SEGUNDA ETAPA DE LOGICA
+              $sql   = "SELECT * FROM datosoficiales ORDER BY id DESC LIMIT 1";
+              $query = mysqli_query($link,$sql);
+
+              while ($row = mysqli_fetch_assoc($query)) {
+                $pctvdolardicom = $row['pctvdolardicom'];
+              }
+
+              echo $pctvdolardicom;
+
+            }
         }else {
           echo "<script>alert('ENTRO');</script>";
         }

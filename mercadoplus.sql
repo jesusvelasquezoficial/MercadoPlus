@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : ec2
-Source Server Version : 50505
-Source Host           : 18.224.121.228:3306
+Source Server         : LOCALHOST
+Source Server Version : 50719
+Source Host           : localhost:3306
 Source Database       : mercadoplus
 
 Target Server Type    : MYSQL
-Target Server Version : 50505
+Target Server Version : 50719
 File Encoding         : 65001
 
-Date: 2019-04-05 11:57:11
+Date: 2019-04-05 15:01:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -174,7 +174,7 @@ CREATE TABLE `usuarios` (
   `apellido` text COLLATE utf8_spanish2_ci NOT NULL,
   `email` text COLLATE utf8_spanish2_ci NOT NULL,
   `password` text COLLATE utf8_spanish2_ci NOT NULL,
-  `role` int(11) NOT NULL DEFAULT 1,
+  `role` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci ROW_FORMAT=COMPACT;
 
@@ -183,4 +183,4 @@ CREATE TABLE `usuarios` (
 -- ----------------------------
 INSERT INTO `usuarios` VALUES ('1', 'Jesus', 'Velasquez', 'jesusvelasquezoficial@gmail.com', 'b643eb0d9479f6f6a21ff65c13fa57d6', '2');
 INSERT INTO `usuarios` VALUES ('2', 'Fernando', 'Agreda', 'fagredameza@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '2');
-INSERT INTO `usuarios` VALUES ('3', 'Jairo', 'Moncada', 'moncada319@hotmail.com', 'b643eb0d9479f6f6a21ff65c13fa57d6', '2');
+INSERT INTO `usuarios` VALUES ('3', 'Jairo', 'Moncada', 'moncada319@hotmail.com', '21232f297a57a5a743894a0e4a801fc3', '2');

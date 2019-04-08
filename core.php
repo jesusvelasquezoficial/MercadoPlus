@@ -199,20 +199,33 @@
               $b = ($dolarDicom);
 
               while ($row = mysqli_fetch_assoc($query)) {
-                $a = ($row['dolardicom']);
+
+                $Adolardicom = $row['dolardicom'];
+                $Aeurodicom = $row['eurodicom'];
+                $Aeurodolar = $row['eurodolar'];
+                $Abitcoinbuy = $row['bitcoinbuy'];
+                $Abitcoinsell = $row['bitcoinsell'];
+                $Abitcoinpromedio = $row['bitcoinpromedio'];
+                $Apetro = $row['petro'];
+                $Apetro1 = $row['petro1'];
+                $Apetro2 = $row['petro2'];
+                $Awti = $row['wti'];
+                $Abrent = $row['brent'];
+                $Apetroleo = $row['petroleo'];
+                $Aorobuy = $row['orobuy'];
+                $Aorosell = $row['orosell'];
+                $Aoropromedio = $row['oropromedio'];
+
+
+
+
               }
 
-              $result = $a - $b;
-              $pctv = $result / $b;
+              $Adolardi = str_replace(",",".", $Adolardicom);
+              $dolardi = str_replace(",",".", $dolarDicom);
 
-              var_dump($a);
-              var_dump($b);
-              var_dump($result);
-
-              echo $a." - ".$b." = ".$result." / ".$b." = " ;
-              echo $result;
-              echo $pctv;
-              echo parseFloat($pctv.toFixed(2)) * 100 + " % ";
+              $Rdolardicom = ($dolardi > $Adolardi) ? (($dolardi - $Adolardi) / $dolardi) * 100 : (($Adolardi - $dolardi) / $dolardi) * 100;
+              echo number_format($Rdolardicom,2);
 
             }
         }else {

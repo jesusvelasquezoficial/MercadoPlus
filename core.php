@@ -196,36 +196,172 @@
               $sql   = "SELECT * FROM datosoficiales ORDER BY id DESC LIMIT 1";
               $query = mysqli_query($link,$sql);
 
-              $b = ($dolarDicom);
+              $b = $dolarDicom;
 
               while ($row = mysqli_fetch_assoc($query)) {
 
-                $Adolardicom = $row['dolardicom'];
-                $Aeurodicom = $row['eurodicom'];
-                $Aeurodolar = $row['eurodolar'];
-                $Abitcoinbuy = $row['bitcoinbuy'];
-                $Abitcoinsell = $row['bitcoinsell'];
-                $Abitcoinpromedio = $row['bitcoinpromedio'];
-                $Apetro = $row['petro'];
-                $Apetro1 = $row['petro1'];
-                $Apetro2 = $row['petro2'];
-                $Awti = $row['wti'];
-                $Abrent = $row['brent'];
-                $Apetroleo = $row['petroleo'];
-                $Aorobuy = $row['orobuy'];
-                $Aorosell = $row['orosell'];
-                $Aoropromedio = $row['oropromedio'];
-
-
+                $Adolardicom = str_replace(",","", $row['dolardicom']);
+                $Aeurodicom = str_replace(",","", $row['eurodicom']);
+                $Aeurodolar = str_replace(",","", $row['eurodolar']);
+                $Abitcoinbuy = str_replace(",","", $row['bitcoinbuy']);
+                $Abitcoinsell = str_replace(",","", $row['bitcoinsell']);
+                $Abitcoinpromedio = str_replace(",","", $row['bitcoinpromedio']);
+                $Apetro = str_replace(",","", $row['petro']);
+                $Apetro1 = str_replace(",","", $row['petro1']);
+                $Apetro2 = str_replace(",","", $row['petro2']);
+                $Awti = str_replace(",","", $row['wti']);
+                $Abrent = str_replace(",","", $row['brent']);
+                $Apetroleo = str_replace(",","", $row['petroleo']);
+                $Aorobuy = str_replace(",","", $row['orobuy']);
+                $Aorosell = str_replace(",","", $row['orosell']);
+                $Aoropromedio = str_replace(",","", $row['oropromedio']);
 
 
               }
 
-              $Adolardi = str_replace(",",".", $Adolardicom);
-              $dolardi = str_replace(",",".", $dolarDicom);
 
-              $Rdolardicom = ($dolardi > $Adolardi) ? (($dolardi - $Adolardi) / $dolardi) * 100 : (($Adolardi - $dolardi) / $dolardi) * 100;
-              echo number_format($Rdolardicom,2);
+              $b = str_replace(",","", $dolarDicom);
+              $c = ($b - $Adolardicom);
+              $pctvdolardicom = number_format($c / $b,2);
+
+              $b2 = str_replace(",","", $euroDicom);
+              $c2 = ($b2 - $Aeurodicom);
+              $pctveurodicom = number_format($c2 / $b2,2);
+
+              $b3 = str_replace(",","", $euroDolar);
+              $c3 = ($b3 - $Aeurodolar);
+              $pctveurodolar = number_format($c3 / $b3,2);
+
+              $b4 = str_replace(",","", $bitcoinBuy);
+              $c4 = ($b4 - $Abitcoinbuy);
+              $pctvbitcoinbuy = number_format($c4 / $b4,2);
+
+              $b5 = str_replace(",","", $bitcoinSell);
+              $c5 = ($b5 - $Abitcoinsell);
+              $pctvbitcoinsell = number_format($c5 / $b5,2);
+
+              $b6 = str_replace(",","", $bitcoinPromedio);
+              $c6 = ($b6 - $Abitcoinpromedio);
+              $pctvbitcoinpromedio = number_format($c6 / $b6,2);
+
+              $b7 = str_replace(",","", $petro);
+              $c7 = ($b7 - $Apetro);
+              $pctvpetro = number_format($c7 / $b7,2);
+
+              $b8 = str_replace(",","", $petroSyT);
+              $c8 = ($b8 - $Apetro1);
+              $pctvpetro1 = number_format($c8 / $b8,2);
+
+              $b9 = str_replace(",","", $petroPyC);
+              $c9 = ($b9 - $Apetro2);
+              $pctvpetro2 = number_format($c9 / $b9,2);
+
+              $b10 = str_replace(",","", $petroleoWTI);
+              $c10 = ($b10 - $Awti);
+              $pctvwti = number_format($c10 / $b10,2);
+
+              $b11 = str_replace(",","", $petroleoBRENT);
+              $c11 = ($b11 - $Abrent);
+              $pctvbrent = number_format($c11 / $b11,2);
+
+              $b12 = str_replace(",","", $petroleoPromedio);
+              $c12 = ($b12 - $Apetroleo);
+              $pctvpetroleo = number_format($c12 / $b12,2);
+
+              $b13 = str_replace(",","", $oroBuy);
+              $c13 = ($b13 - $Aorobuy);
+              $pctvorobuy = number_format($c13 / $b13,2);
+
+              $b14 = str_replace(",","", $oroSell);
+              $c14 = ($b14 - $Aorosell);
+              $pctvorosell = number_format($c14 / $b14,2);
+
+              $b15 = str_replace(",","", $oroPromedio);
+              $c15 = ($b15 - $Aoropromedio);
+              $pctvoropromedio = number_format($c15 / $b15,2);
+
+              $sql2 = "INSERT INTO datosoficiales (
+                id,
+                fecha,
+                hora,
+                dolardicom,
+                pctvdolardicom,
+                eurodicom,
+                pctveurodicom,
+                eurodolar,
+                pctveurodolar,
+                bitcoinbuy,
+                pctvbitcoinbuy,
+                bitcoinsell,
+                pctvbitcoinsell,
+                bitcoinpromedio,
+                pctvbitcoinpromedio,
+                petro,
+                pctvpetro,
+                petro1,
+                pctvpetro1,
+                petro2,
+                pctvpetro2,
+                wti,
+                pctvwti,
+                brent,
+                pctvbrent,
+                petroleo,
+                pctvpetroleo,
+                orobuy,
+                pctvorobuy,
+                orosell,
+                pctvorosell,
+                oropromedio,
+                pctvoropromedio
+              ) VALUES (
+                0,
+                '".$fecha."',
+                '".$hora."',
+                '".$dolarDicom."',
+                '".$pctvdolardicom."',
+                '".$euroDicom."',
+                '".$pctveurodicom."',
+                '".$euroDolar."',
+                '".$pctveurodolar."',
+                '".$bitcoinBuy."',
+                '".$pctvbitcoinbuy."',
+                '".$bitcoinSell."',
+                '".$pctvbitcoinsell."',
+                '".$bitcoinPromedio."',
+                '".$pctvbitcoinpromedio."',
+                '".$petro."',
+                '".$pctvpetro."',
+                '".$petroSyT."',
+                '".$pctvpetro1."',
+                '".$petroPyC."',
+                '".$pctvpetro2."',
+                '".$petroleoWTI."',
+                '".$pctvwti."',
+                '".$petroleoBRENT."',
+                '".$pctvbrent."',
+                '".$petroleoPromedio."',
+                '".$pctvpetroleo."',
+                '".$oroBuy."',
+                '".$pctvorobuy."',
+                '".$oroSell."',
+                '".$pctvorosell."',
+                '".$oroPromedio."',
+                '".$pctvoropromedio."'
+              )";
+
+              $query2 = mysqli_query($link,$sql2);
+
+              // SI NO HAY ERRORES DE CONEXION
+              if (!mysqli_error($link)) {
+                echo "<script>alert('Datos Ingresados Correctamente.');</script>";
+                mysqli_close($link);
+                echo "<script>history.back();</script>";
+              }else {
+                echo "<script>alert('DATOS ERROR.');</script>";
+                mysqli_close($link);
+                echo "<script>history.back();</script>";
+              }
 
             }
         }else {

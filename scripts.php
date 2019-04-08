@@ -440,40 +440,40 @@
         bodyTasasMercados += '<tr>';
         bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> DolarToday </td>';
         bodyTasasMercados +='<td class="text-right h2 font-weight-bold" data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].dolartodaypromedio +'</td>';
-        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-arrow-up text-success">'+ response[1]["pctvdolartodaypromedio"] +'</i> </td>';
+        bodyTasasMercados +='<td class="text-right h2">'+ updown(response[1]["pctvdolartodaypromedio"]) +'</td>';
         bodyTasasMercados +='</tr><tr>';
         bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> DolarToday (BTC) </td>';
         bodyTasasMercados +='<td class="text-right h2 font-weight-bold" data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].dolartodaybtcpromedio +'</td>';
-        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-arrow-down text-danger">'+ response[1]["pctvdolartodaybtcpromedio"] +'</i> </td>';
+        bodyTasasMercados +='<td class="text-right h2">'+ updown(response[1]["pctvdolartodaybtcpromedio"]) +'</td>';
         bodyTasasMercados +='</tr><tr>';
         bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> TheAirTM </td>';
         bodyTasasMercados +='<td class="text-right h2 font-weight-bold" data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].airtmpromedio +'</td>';
-        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-arrow-down text-danger">'+ response[1]["pctvairtmpromedio"] +'</i> </td>';
+        bodyTasasMercados +='<td class="text-right h2">'+ updown(response[1]["pctvairtmpromedio"]) +'</td>';
         bodyTasasMercados +='</tr><tr>';
         bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> DolarTrue_ </td>';
         bodyTasasMercados +='<td class="text-right h2 font-weight-bold" data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].dolartruepromedio +'</td>';
-        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-arrow-up text-success">'+ response[1]["pctvdolartruepromedio"] +'</i> </td>';
+        bodyTasasMercados +='<td class="text-right h2">'+ updown(response[1]["pctvdolartruepromedio"]) +'</td>';
         bodyTasasMercados +='</tr><tr>';
         bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> MonitorDolarVZLA </td>';
         bodyTasasMercados +='<td class="text-right h2 font-weight-bold" data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].monitordolarvzlapromedio +'</td>';
-        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-arrow-up text-success">'+ response[1]["pctvmonitordolarvzlapromedio"] +'</i> </td>';
+        bodyTasasMercados +='<td class="text-right h2">'+ updown(response[1]["pctvmonitordolarvzlapromedio"]) +'</td>';
         bodyTasasMercados +='</tr><tr>';
         bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> MKambio </td>';
         bodyTasasMercados +='<td class="text-right h2 font-weight-bold" data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].mkambiopromedio +'</td>';
-        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-arrow-up text-success">'+ response[1]["pctvmkambiopromedio"] +'</i> </td>';
+        bodyTasasMercados +='<td class="text-right h2">'+ updown(response[1]["pctvmkambiopromedio"]) +'</td>';
         bodyTasasMercados +='</tr><tr>';
         bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-success"></i> Dolar_Gold </td>';
         bodyTasasMercados +='<td class="text-right h2 font-weight-bold" data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].dolargoldpromedio +'</td>';
-        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-arrow-down text-danger">'+ response[1]["pctvdolargoldpromedio"] +'</i> </td>';
+        bodyTasasMercados +='<td class="text-right h2">'+ updown(response[1]["pctvdolargoldpromedio"]) +'</td>';
         bodyTasasMercados +='</tr><tr>';
         bodyTasasMercados += '<td class="h3 font-italic"> <i class="fe fe-check-circle text-danger"></i> Dolar_FT </td>';
         bodyTasasMercados +='<td class="text-right h2 font-weight-bold" data-mask="#.000,00" data-mask-reverse="true" style="font-family:courier;color:orange;">'+ response[1].dolarftpromedio +'</td>';
-        bodyTasasMercados +='<td class="text-right h2"> <i class="fe fe-arrow-down text-danger">'+ response[1]["pctvdolarftpromedio"] +'</i> </td>';
+        bodyTasasMercados +='<td class="text-right h2">'+ updown(response[1]["pctvdolarftpromedio"]) +'</td>';
         bodyTasasMercados +='</tr>';
         bodyTasasMercados +='<tr class="text-white" style="background-color:#f95d02;">';
         bodyTasasMercados +='<td class="pb-0 text-right" style="font-size:2.5em;"> <h1 class="pt-2">PROMEDIO</h1> </td>';
         bodyTasasMercados +='<td class="pb-0 pt-2 text-right font-weight-bold" data-mask="#.000,00" data-mask-reverse="true" style="font-size:2.5em;font-weight:bold!important;"> <h1 class="pt-3">'+ response[1].promediototal +'</h1></td>';
-        bodyTasasMercados +='<td class="pb-0 text-right" style="font-size:1.9em;"><h1>='+ response[1]["pctvpromediototal"] +'</h1></td>';
+        bodyTasasMercados +='<td class="pb-0 text-right" style="font-size:1.9em; color:white!important;"><h1>'+ updown(response[1]["pctvpromediototal"]) +'</h1></td>';
         bodyTasasMercados +='</tr>';
 
         $('#bodyTasasMercados').html(bodyTasasMercados);
@@ -528,56 +528,56 @@
         bodyTasasMercados += '<h4 class="card-title text-uppercase mb-2">Tasa del Dolar Dicom</h4>';
         bodyTasasMercados +='<span class="h2 mb-0 text-muted">Tasa Establecida por BCV</span>';
         bodyTasasMercados +='</div><div class="col-auto align-items-center justify-content-center"><div class="">';
-        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-bold mb-0">s.</span> '+ response[1]["dolardicom"] +' </h2>';
+        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-bold mb-0">s.</span> '+ response[1]["dolardicom"] +" "+ updown(response[1]["pctvdolardicom"]) + ' </h2>';
         bodyTasasMercados += '</div></div></div></div></div></div>';
 
         bodyTasasMercados += '<div class="col-12 col-lg-6"><div class="card"><div class="card-body"><div class="row align-items-center justify-content-center"><div class="col">';
         bodyTasasMercados += '<h4 class="card-title text-uppercase mb-2">Tasa del Euro Dicom</h4>';
         bodyTasasMercados +='<span class="h2 mb-0 text-muted">Tasa Establecida por BCV</span>';
         bodyTasasMercados +='</div><div class="col-auto align-items-center justify-content-center"><div class="">';
-        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-bold mb-0">s.</span> '+ response[1]["eurodicom"] +' </h2>';
+        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-bold mb-0">s.</span> '+ response[1]["eurodicom"] +" "+ updown(response[1]["pctveurodicom"]) + ' </h2>';
         bodyTasasMercados += '</div></div></div></div></div></div>';
 
         bodyTasasMercados += '<div class="col-12 col-lg-6"><div class="card"><div class="card-body"><div class="row align-items-center justify-content-center"><div class="col">';
         bodyTasasMercados += '<h4 class="card-title text-uppercase mb-2">Valor del</h4>';
         bodyTasasMercados +='<span class="h2 mb-0 text-muted">Euro | Dolar</span>';
         bodyTasasMercados +='</div><div class="col-auto align-items-center justify-content-center"><div class="">';
-        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> '+ response[1]["eurodolar"] +' </h2>';
+        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> '+ response[1]["eurodolar"] +" "+ updown(response[1]["pctveurodolar"]) + '</h2>';
         bodyTasasMercados += '</div></div></div></div></div></div>';
 
         bodyTasasMercados += '<div class="col-12 col-lg-6"><div class="card"><div class="card-body"><div class="row align-items-center justify-content-center"><div class="col">';
         bodyTasasMercados += '<h4 class="card-title text-uppercase mb-2">Valor del</h4>';
         bodyTasasMercados +='<span class="h2 mb-0 text-muted">Bitcoin | Dolar</span>';
         bodyTasasMercados +='</div><div class="col-auto align-items-center justify-content-center"><div class="">';
-        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-dollar-sign mb-0"></span> '+ response[1]["bitcoinpromedio"] +' </h2>';
+        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-dollar-sign mb-0"></span> '+ response[1]["bitcoinpromedio"] +" "+ updown(response[1]["pctvbitcoinpromedio"]) + '</h2>';
         bodyTasasMercados += '</div></div></div></div></div></div>';
 
         bodyTasasMercados += '<div class="col-12 col-lg-6"><div class="card"><div class="card-body"><div class="row align-items-center justify-content-center"><div class="col">';
         bodyTasasMercados += '<h4 class="card-title text-uppercase mb-2">Valor del Petro</h4>';
         bodyTasasMercados +='<span class="h2 mb-0 text-muted">Salario minimo | Tramite</span>';
         bodyTasasMercados +='</div><div class="col-auto align-items-center justify-content-center"><div class="">';
-        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-bold mb-0">s.</span> '+ response[1]["petro1"] +' </h2>';
+        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-bold mb-0">s.</span> '+ response[1]["petro1"] +" "+ updown(response[1]["pctvpetro1"]) + '</h2>';
         bodyTasasMercados += '</div></div></div></div></div></div>';
 
         bodyTasasMercados += '<div class="col-12 col-lg-6"><div class="card"><div class="card-body"><div class="row align-items-center justify-content-center"><div class="col">';
         bodyTasasMercados += '<h4 class="card-title text-uppercase mb-2">Valor del Petro</h4>';
         bodyTasasMercados +='<span class="h2 mb-0 text-muted">Plan de Ahorro | Crypto</span>';
         bodyTasasMercados +='</div><div class="col-auto align-items-center justify-content-center"><div class="">';
-        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-bold mb-0">s.</span> '+ response[1]["petro2"] +' </h2>';
+        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-bold mb-0">s.</span> '+ response[1]["petro2"] +" "+ updown(response[1]["pctvpetro2"]) + '</h2>';
         bodyTasasMercados += '</div></div></div></div></div></div>';
 
         bodyTasasMercados += '<div class="col-12 col-lg-6"><div class="card"><div class="card-body"><div class="row align-items-center justify-content-center"><div class="col">';
         bodyTasasMercados += '<h4 class="card-title text-uppercase mb-2">Valor del Petroleo</h4>';
         bodyTasasMercados +='<span class="h2 mb-0 text-muted">WTI | BRENT (USD)</span>';
         bodyTasasMercados +='</div><div class="col-auto align-items-center justify-content-center"><div class="">';
-        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-dollar-sign mb-0"></span> '+ response[1]["petroleo"] +' </h2>';
+        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-dollar-sign mb-0"></span> '+ response[1]["petroleo"] +" "+ updown(response[1]["pctvpetroleo"]) + '</h2>';
         bodyTasasMercados += '</div></div></div></div></div></div>';
 
         bodyTasasMercados += '<div class="col-12 col-lg-6"><div class="card"><div class="card-body"><div class="row align-items-center justify-content-center"><div class="col">';
         bodyTasasMercados += '<h4 class="card-title text-uppercase mb-2">Valor del Oro</h4>';
         bodyTasasMercados +='<span class="h2 mb-0 text-muted">Precio Internacional (USD)</span>';
         bodyTasasMercados +='</div><div class="col-auto align-items-center justify-content-center"><div class="">';
-        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-dollar-sign mb-0"></span> '+ response[1]["oropromedio"] +' </h2>';
+        bodyTasasMercados +='<h2 class="m-0 p-0 font-weight-bold" style="font-family:courier;color:orange;"> <span class="h2 fe fe-dollar-sign mb-0"></span> '+ response[1]["oropromedio"] +" "+ updown(response[1]["pctvoropromedio"]) + '</h2>';
         bodyTasasMercados += '</div></div></div></div></div></div>';
 
         $('#bodyTasasMercadosOficiales').html(bodyTasasMercados);
@@ -591,6 +591,16 @@
     }).always(function(response) {
       console.log("COMPLETE\n");
     });
+  }
+
+  function updown(num) {
+    num = parseFloat(num);
+    if (num > 0) {
+      return '<i class="fe fe-arrow-up text-success">'+ num.toFixed(2) +'%</i>';
+    }else{
+      result = num * -1;
+      return '<i class="fe fe-arrow-down text-danger">'+ result.toFixed(2) +'%</i>';
+    }
   }
 
 </script>

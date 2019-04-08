@@ -196,10 +196,36 @@
               $query = mysqli_query($link,$sql);
 
               while ($row = mysqli_fetch_assoc($query)) {
-                $pctvdolardicom = $row['pctvdolardicom'];
+
+
+
+                $Adolardicom = $row['dolardicom'];
+                $Aeurodicom = $row['eurodicom'];
+                $Aeurodolar = $row['eurodolar'];
+                $Abitcoinbuy = $row['bitcoinbuy'];
+                $Abitcoinsell = $row['bitcoinsell'];
+                $Abitcoinpromedio = $row['bitcoinpromedio'];
+                $Apetro = $row['petro'];
+                $Apetro1 = $row['petro1'];
+                $Apetro2 = $row['petro2'];
+                $Awti = $row['wti'];
+                $Abrent = $row['brent'];
+                $Apetroleo = $row['petroleo'];
+                $Aorobuy = $row['orobuy'];
+                $Aorosell = $row['orosell'];
+                $Aoropromedio = $row['oropromedio'];
+
+
+
+
               }
 
-              echo $pctvdolardicom;
+              $Adolardi = str_replace(",",".", $Adolardicom);
+              $dolardi = str_replace(",",".", $dolarDicom);
+
+              $Rdolardicom = ($dolardi > $Adolardi) ? (($dolardi - $Adolardi) / $dolardi) * 100 : (($Adolardi - $dolardi) / $dolardi) * 100;
+              echo number_format($Rdolardicom,2);
+
 
             }
         }else {

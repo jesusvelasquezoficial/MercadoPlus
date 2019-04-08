@@ -176,6 +176,7 @@
                 '".$oroPromedio."',
                 0
               )";
+
               $query2 = mysqli_query($link,$sql2);
 
               // SI NO HAY ERRORES DE CONEXION
@@ -195,11 +196,23 @@
               $sql   = "SELECT * FROM datosoficiales ORDER BY id DESC LIMIT 1";
               $query = mysqli_query($link,$sql);
 
+              $b = ($dolarDicom);
+
               while ($row = mysqli_fetch_assoc($query)) {
-                $pctvdolardicom = $row['pctvdolardicom'];
+                $a = ($row['dolardicom']);
               }
 
-              echo $pctvdolardicom;
+              $result = $a - $b;
+              $pctv = $result / $b;
+
+              var_dump($a);
+              var_dump($b);
+              var_dump($result);
+
+              echo $a." - ".$b." = ".$result." / ".$b." = " ;
+              echo $result;
+              echo $pctv;
+              echo parseFloat($pctv.toFixed(2)) * 100 + " % ";
 
             }
         }else {

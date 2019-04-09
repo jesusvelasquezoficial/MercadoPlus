@@ -43,6 +43,11 @@
           </div>
           <div class="table-responsive mb-0">
             <table class="table table-sm table-nowrap card-table">
+              <thead>
+                <th>Nombre</th>
+                <th class="text-center">Precio</th>
+                <th class="text-right">Cambio(24h)</th>
+              </thead>
               <tbody class="list" id="bodyTasasMercados"> </tbody>
             </table>
           </div>

@@ -480,23 +480,27 @@
 
         var promediosDia = '';
             promediosDia += '<div class="row justify-content-center align-items-center p-4 border ">';
-            promediosDia += '<div class="col-12 col-sm-4">';
+            promediosDia += '<div class="col-12 my-2">';
             promediosDia += '<div class="display-4" style="font-size:1.8em;">DOLAR</div>';
-            promediosDia += '</div><div class="col-12 col-sm-4">';
+            promediosDia += '</div><div class="col-6">';
             promediosDia += '<h3 class="mb-1"> COMPRA </h3>';
-            promediosDia += '<div class="display-4 border-success text-success" style="font-size:1.7em;">'+ response[1]["dolarc"] + updown(response[1]["pctvdolarc"]) +'</i></div>';
-            promediosDia += '</div><div class="col-12 col-sm-4">';
+            promediosDia += '<div class="display-4 border-success text-success" style="font-size:1.7em;">'+ response[1]["dolarc"] +'</i></div>';
+            promediosDia += '<small>'+ updown(response[1]["pctvdolarc"]) +'</small>';
+            promediosDia += '</div><div class="col-6">';
             promediosDia += '<h3 class="mb-1"> VENTA </h3>';
-            promediosDia += '<div class="display-4 border-danger text-danger" style="font-size:1.7em;">'+ response[1]["dolarv"] + updown(response[1]["pctvdolarv"]) +'</i></div></div></div>';
+            promediosDia += '<div class="display-4 border-danger text-danger" style="font-size:1.7em;">'+ response[1]["dolarv"] +'</i></div>';
+            promediosDia += '<small>'+ updown(response[1]["pctvdolarv"]) +'</small></div></div>';
             promediosDia += '<div class="row justify-content-center align-items-center p-4 border mt-4">';
-            promediosDia += '<div class="col-12 col-sm-4">';
+            promediosDia += '<div class="col-12 my-2">';
             promediosDia += '<div class="display-4" style="font-size:1.8em;">EURO</div>';
-            promediosDia += '</div><div class="col-12 col-sm-4">';
+            promediosDia += '</div><div class="col-6">';
             promediosDia += '<h3 class="mb-1"> COMPRA </h3>';
-            promediosDia += '<div class="display-4 border-success text-success" style="font-size:1.7em;">'+ response[1]["euroc"] + updown(response[1]["pctveuroc"]) +'</div>';
-            promediosDia += '</div><div class="col-12 col-sm-4">';
+            promediosDia += '<div class="display-4 border-success text-success" style="font-size:1.7em;">'+ response[1]["euroc"] +'</div>';
+            promediosDia += '<small>'+ updown(response[1]["pctveuroc"]) +'</small>';
+            promediosDia += '</div><div class="col-6">';
             promediosDia += '<h3 class="mb-1"> VENTA </h3>';
-            promediosDia += '<div class="display-4 border-danger text-danger" style="font-size:1.7em;">'+ response[1]["eurov"] + updown(response[1]["pctveurov"]) +'</div></div></div>';
+            promediosDia += '<div class="display-4 border-danger text-danger" style="font-size:1.7em;">'+ response[1]["eurov"] +'</div>';
+            promediosDia += '<small>'+ updown(response[1]["pctveurov"]) +'</small></div></div>';
 
         $('#promediosDia').html(promediosDia);
 

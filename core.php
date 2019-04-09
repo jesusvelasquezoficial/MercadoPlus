@@ -629,7 +629,7 @@
               $Amonitordolarvzlapromedio = str_replace(",","", $row['monitordolarvzlapromedio']);
 
               $Amkambiobuy = str_replace(",","", $row['mkambiobuy']);
-              $Amkambiosell = str_replace(",","", $row['monitordolarvzlasell']);
+              $Amkambiosell = str_replace(",","", $row['mkambiosell']);
               $Amkambiopromedio = str_replace(",","", $row['mkambiopromedio']);
 
               $Adolargoldbuy = str_replace(",","", $row['dolargoldbuy']);
@@ -677,7 +677,7 @@
               $pctvmonitordolarvzlabuy = number_format($c7 / $b7,2);
 
               $b8 = str_replace(",","", $monitordolarvzlaSell);
-              $c8 = ($b8 - $monitordolarvzlasell);
+              $c8 = ($b8 - $Amonitordolarvzlasell);
               $pctvmonitordolarvzlasell = number_format($c8 / $b8,2);
 
               $b9 = str_replace(",","", $monitordolarvzlaPromedio);
@@ -758,7 +758,7 @@
 
               $b25 = str_replace(",","", $airtmSell);
               $c25 = ($b25 - $Aairtmsell);
-              $pctvairtmbuy = number_format($c25 / $b25,2);
+              $pctvairtmsell = number_format($c25 / $b25,2);
 
               $b26 = str_replace(",","", $airtmPromedio);
               $c26 = ($b26 - $Aairtmpromedio);

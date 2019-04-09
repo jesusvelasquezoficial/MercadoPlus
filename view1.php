@@ -17,10 +17,7 @@
           </div>
           <!-- Fecha y Hora -->
           <div class="col-auto">
-            <ul class="list-group text-right">
-              <li class="list-group-item p-0 border-0 display-4"><i class="fe fe-calendar"></i> 21/03/2019</li>
-              <li class="list-group-item p-0 border-0 h2"><i class="fe fe-clock"></i> 12:00 AM</li>
-            </ul>
+            <ul class="list-group text-right" id="fechayhora"> </ul>
           </div>
         </div> <!-- / .row -->
       </div> <!-- / .header-body -->

@@ -312,23 +312,23 @@
           bodyTable += '<th scope="row">' + response[i].fecha + '</th>';
           bodyTable +='<th>' + response[i].hora + '</th>';
           bodyTable +='<th>' + response[i].dolardicom + '</th>';
-          bodyTable +='<th>' + response[i].pctvdolardicom + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvdolardicom) + '</th>';
           bodyTable +='<th>' + response[i].eurodicom + '</th>';
-          bodyTable +='<th>' + response[i].pctveurodicom + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctveurodicom) + '</th>';
           bodyTable +='<th>' + response[i].eurodolar + '</th>';
-          bodyTable +='<th>' + response[i].pctveurodolar + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctveurodolar) + '</th>';
           bodyTable +='<th>' + response[i].bitcoinpromedio + '</th>';
-          bodyTable +='<th>' + response[i].pctvbitcoinpromedio + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvbitcoinpromedio) + '</th>';
           bodyTable +='<th>' + response[i].petro + '</th>';
-          bodyTable +='<th>' + response[i].pctvpetro + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvpetro) + '</th>';
           bodyTable +='<th>' + response[i].petro1 + '</th>';
-          bodyTable +='<th>' + response[i].pctvpetro1 + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvpetro1) + '</th>';
           bodyTable +='<th>' + response[i].petro2 + '</th>';
-          bodyTable +='<th>' + response[i].pctvpetro2 + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvpetro2) + '</th>';
           bodyTable +='<th>' + response[i].petroleo + '</th>';
-          bodyTable +='<th>' + response[i].pctvpetroleo + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvpetroleo) + '</th>';
           bodyTable +='<th>' + response[i].oropromedio + '</th>';
-          bodyTable +='<th>' + response[i].pctvoropromedio + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvoropromedio) + '</th>';
           bodyTable +='</tr>';
 
           fondoFila = (fondoFila == "") ? "fondoFila" : "";
@@ -374,31 +374,31 @@
           bodyTable += '<th scope="row">' + response[i].fecha + '</th>';
           bodyTable +='<th>' + response[i].hora + '</th>';
           bodyTable +='<th>' + response[i].dolartodaypromedio + '</th>';
-          bodyTable +='<th>' + response[i].pctvdolartodaypromedio + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvdolartodaypromedio) + '</th>';
           bodyTable +='<th>' + response[i].dolartodaybtcpromedio + '</th>';
-          bodyTable +='<th>' + response[i].pctvdolartodaybtcpromedio + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvdolartodaybtcpromedio) + '</th>';
           bodyTable +='<th>' + response[i].airtmpromedio + '</th>';
-          bodyTable +='<th>' + response[i].pctvairtmpromedio + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvairtmpromedio) + '</th>';
           bodyTable +='<th>' + response[i].dolartruepromedio + '</th>';
-          bodyTable +='<th>' + response[i].pctvdolartruepromedio + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvdolartruepromedio) + '</th>';
           bodyTable +='<th>' + response[i].monitordolarvzlapromedio + '</th>';
-          bodyTable +='<th>' + response[i].pctvmonitordolarvzlapromedio + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvmonitordolarvzlapromedio) + '</th>';
           bodyTable +='<th>' + response[i].mkambiopromedio + '</th>';
-          bodyTable +='<th>' + response[i].pctvmkambiopromedio + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvmkambiopromedio) + '</th>';
           bodyTable +='<th>' + response[i].dolargoldpromedio + '</th>';
-          bodyTable +='<th>' + response[i].pctvdolargoldpromedio + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvdolargoldpromedio) + '</th>';
           bodyTable +='<th>' + response[i].dolarftpromedio + '</th>';
-          bodyTable +='<th>' + response[i].pctvdolarftpromedio + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvdolarftpromedio) + '</th>';
           bodyTable +='<th>' + response[i].dolarc + '</th>';
-          bodyTable +='<th>' + response[i].pctvdolarc + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvdolarc) + '</th>';
           bodyTable +='<th>' + response[i].dolarv + '</th>';
-          bodyTable +='<th>' + response[i].pctvdolarv + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvdolarv) + '</th>';
           bodyTable +='<th>' + response[i].euroc + '</th>';
-          bodyTable +='<th>' + response[i].pctveuroc + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctveuroc) + '</th>';
           bodyTable +='<th>' + response[i].eurov + '</th>';
-          bodyTable +='<th>' + response[i].pctveurov + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctveurov) + '</th>';
           bodyTable +='<th>' + response[i].promediototal + '</th>';
-          bodyTable +='<th>' + response[i].pctvpromediototal + '</th>';
+          bodyTable +='<th>' + updown(response[i].pctvpromediototal) + '</th>';
           bodyTable +='</tr>';
 
           fondoFila = (fondoFila == "") ? "fondoFila" : "";
@@ -484,21 +484,26 @@
             promediosDia += '<div class="display-4" style="font-size:1.8em;">DOLAR</div>';
             promediosDia += '</div><div class="col-12 col-sm-4">';
             promediosDia += '<h3 class="mb-1"> COMPRA </h3>';
-            promediosDia += '<div class="display-4 border-success text-success" style="font-size:1.7em;">3.136.69 <i class="fe fe-arrow-up text-success"></i></div>';
+            promediosDia += '<div class="display-4 border-success text-success" style="font-size:1.7em;">'+ response[1]["dolarc"] + updown(response[1]["pctvdolarc"]) +'</i></div>';
             promediosDia += '</div><div class="col-12 col-sm-4">';
             promediosDia += '<h3 class="mb-1"> VENTA </h3>';
-            promediosDia += '<div class="display-4 border-danger text-danger" style="font-size:1.7em;">3.458.61 <i class="fe fe-arrow-down text-danger"></i></div></div></div>';
+            promediosDia += '<div class="display-4 border-danger text-danger" style="font-size:1.7em;">'+ response[1]["dolarv"] + updown(response[1]["pctvdolarv"]) +'</i></div></div></div>';
             promediosDia += '<div class="row justify-content-center align-items-center p-4 border mt-4">';
             promediosDia += '<div class="col-12 col-sm-4">';
             promediosDia += '<div class="display-4" style="font-size:1.8em;">EURO</div>';
             promediosDia += '</div><div class="col-12 col-sm-4">';
             promediosDia += '<h3 class="mb-1"> COMPRA </h3>';
-            promediosDia += '<div class="display-4 border-success text-success" style="font-size:1.7em;">3.556.68 <i class="fe fe-arrow-up text-success"></i></div>';
+            promediosDia += '<div class="display-4 border-success text-success" style="font-size:1.7em;">'+ response[1]["euroc"] + updown(response[1]["pctveuroc"]) +'</div>';
             promediosDia += '</div><div class="col-12 col-sm-4">';
             promediosDia += '<h3 class="mb-1"> VENTA </h3>';
-            promediosDia += '<div class="display-4 border-danger text-danger" style="font-size:1.7em;">3.921.71 <i class="fe fe-arrow-down text-danger"></i></div></div></div>';
+            promediosDia += '<div class="display-4 border-danger text-danger" style="font-size:1.7em;">'+ response[1]["eurov"] + updown(response[1]["pctveurov"]) +'</div></div></div>';
 
         $('#promediosDia').html(promediosDia);
+
+        fechayhoraOTC = '<li class="list-group-item p-0 border-0 display-4"><i class="fe fe-calendar"></i> '+ response[1]["fecha"] +'</li>';
+        fechayhoraOTC += '<li class="list-group-item p-0 border-0 h2"><i class="fe fe-clock"></i> '+ response[1]["hora"] +'</li>';
+
+        $('#fechayhoraOTC').html(fechayhoraOTC);
 
       }else {
         console.log('la respuesta esta en 0');
@@ -582,6 +587,11 @@
 
         $('#bodyTasasMercadosOficiales').html(bodyTasasMercados);
 
+        fechayhora = '<li class="list-group-item p-0 border-0 display-4"><i class="fe fe-calendar"></i> '+ response[1]["fecha"] +'</li>';
+        fechayhora += '<li class="list-group-item p-0 border-0 h2"><i class="fe fe-clock"></i> '+ response[1]["hora"] +'</li>';
+
+        $('#fechayhora').html(fechayhora);
+
       }else {
         console.log('la respuesta esta en 0');
       }
@@ -595,8 +605,14 @@
 
   function updown(num) {
     num = parseFloat(num);
+    num = (num == 0 || isNaN(num)) ? 0 : num;
+
     if (num > 0) {
       return '<i class="fe fe-arrow-up text-success">'+ num.toFixed(2) +'%</i>';
+    }else if (num == 0) {
+      return '<i class="text-white">='+ num.toFixed(2) +'%</i>';
+    }else if (isNaN(num)) {
+      return '<i class="text-white">='+ num.toFixed(2) +'%</i>';
     }else{
       result = num * -1;
       return '<i class="fe fe-arrow-down text-danger">'+ result.toFixed(2) +'%</i>';

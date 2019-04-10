@@ -9,75 +9,15 @@
   <link rel="stylesheet" href="assets/libs/quill/dist/quill.core.css">
   <link rel="stylesheet" href="assets/libs/select2/dist/css/select2.min.css">
   <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
-
+  <!-- Libs CSS CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
   <!-- Theme CSS -->
   <link rel="stylesheet" href="assets/css/theme.min.css" id="stylesheetLight">
   <link rel="stylesheet" href="assets/css/theme-dark.min.css" id="stylesheetDark">
 
-  <style>
-    /* width */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    /* Track */
-    ::-webkit-scrollbar-track {
-      background: transparent;
-    }
-     /* Handle */
-    ::-webkit-scrollbar-thumb {
-      background: rgba(0,0,0,.1);
-    }
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-      background: rgba(0,0,0,.2);
-    }
-    body {
-      display: none;
-      position: relative !important;
-      background-image: url("assets/img/fondo7.jpg");
-      /* background-image: url("assets/img/illustrations/coworking.svg"); */
-      background-repeat: repeat;
-      background-position: top right;
-      background-attachment: fixed;
-      background-size: cover;
-    }
-    .card, .navbar-light, .alert-light, .blue-alpha{
-       background-color: rgba(21, 46, 77, 0.5) !important;
-    }
-    .blue-alpha-0{
-      background-color: rgba(21, 46, 77, .2) !important;
-    }
-    @media (min-width: 768px){
-     .navbar-brand-img {
-        max-height: 9rem !important;
-      }
-    }
-    @media (max-width: 768px){
-     .navbar-brand-img {
-        max-height: 2.5rem !important;
-      }
-      .navbar-light{
-        background-color: rgba(21, 46, 77, 1) !important;
-      }
-    }
-    .formatoCaja{
-      width : 1080px !important;
-    }
-    .fondoFila {
-      background-color: rgba(21, 46, 77, .6) !important;
-    }
-    thead th{
-      padding-top: .5rem !important;
-      padding-bottom: .5rem !important;
-    }
-    tbody th{
-        padding-top: .35rem !important;
-        padding-bottom: .35rem !important;
-        font-family:courier;
-    }
-  </style>
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
 
   <title>Mercado Plus</title>
 

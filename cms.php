@@ -9,8 +9,8 @@
 ?>
 <body data-spy="scroll" data-target="#principal" data-offset="0" style="position:relative;">
   <?php
-    include 'componets/modals.php';
-    include 'componets/navbar.php';
+    include 'components/modals.php';
+    include 'components/navbar.php';
   ?>
 
   <!-- MAIN CONTENT

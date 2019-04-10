@@ -4,12 +4,12 @@
 <!doctype html>
 <html lang="es">
 <?php
-include 'head.php';
+include 'resources/head.php';
 ?>
 <body data-spy="scroll" data-target="#principal" data-offset="0" style="position:relative;">
   <?php
-    include 'modals.php';
-    include 'navbar.php';
+    include 'componets/modals.php';
+    include 'componets/navbar.php';
   ?>
 
   <!-- MAIN CONTENT
@@ -17,15 +17,14 @@ include 'head.php';
   <div class="main-content w-auto " id="cajaContenido">
     <div>
       <?php
-        include 'view2.php';
-        include 'view1.php';
+        include 'views/datosotc.php';
+        include 'views/datosoficiales.php';
       ?>
-      <div class="pt-6"></div>
     </div>
   </div> <!-- / .main-content -->
 
   <?php
-    include 'scripts.php';
+    include 'resources/scripts.php';
   ?>
 </body>
 </html>

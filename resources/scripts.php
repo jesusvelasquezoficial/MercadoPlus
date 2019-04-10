@@ -295,7 +295,7 @@
 
   function tablaDatosOficiales(num) {
     $.ajax({
-      url: 'core.php',
+      url: 'core/core.php',
       dataType: 'json',
       type:'POST',
   		data: {
@@ -357,7 +357,7 @@
 
   function tablaDatosOTC(num) {
     $.ajax({
-      url: 'core.php',
+      url: 'core/core.php',
   		data: {
   			node: num,
   		},
@@ -426,7 +426,7 @@
 
   function mostrarDatosOTC(num){
     $.ajax({
-      url: 'core.php',
+      url: 'core/core.php',
       data: {
         node: num
       },
@@ -522,7 +522,7 @@
 
   function mostrarDatosOficiales(num){
     $.ajax({
-      url: 'core.php',
+      url: 'core/core.php',
       data: {
         node: num
       },

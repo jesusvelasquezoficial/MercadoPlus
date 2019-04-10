@@ -8,7 +8,7 @@
       // SI LLEGA 'EMAIL' AND 'PASS'
       if ($_POST['email'] && $_POST['pass']) {
         // Incluimos la conexion a la DB.
-        include 'link.php';
+        include 'config/link.php';
         // Variables
         $email = $_POST['email'];
         $pass = $_POST['pass'];
@@ -33,7 +33,7 @@
             // Damos la 'Bienvenida' al Cliente.
             echo "<script>alert('Bienvenido ".$_SESSION['nombre']." ".$_SESSION['apellido']."');</script>";
             // Redireccionamiento a la pagina principal.
-            echo "<script>location.href='index.php'</script>";
+            echo "<script>location.href='../index.php'</script>";
 
           // SI EL PASSWORD ES 'INCORRECTO'.
           }else{
@@ -51,7 +51,7 @@
         }
       // SI NO LLEGA UN 'EMAL' AND 'PASS'
       }else {
-        header('location:login.php');
+        header('location:../login.php');
         // echo "<script>history.back();</script>";
       }
       break;
@@ -100,7 +100,7 @@
             $oroSell          = $_POST['oroSell'];
             $oroPromedio      = $_POST['oroPromedio'];
 
-            include 'link.php';
+            include 'config/link.php';
             $sql   = "SELECT * FROM datosoficiales";
             $query = mysqli_query($link,$sql);
             $num = mysqli_num_rows($query);
@@ -368,7 +368,7 @@
       break;
     case 3: // MOSTRAR DATOS OFICIALES
 
-      include 'link.php';
+      include 'config/link.php';
       $sql = 'SELECT * FROM datosoficiales ORDER BY id DESC';
       $query = mysqli_query($link,$sql);
       $num = mysqli_num_rows($query);
@@ -457,7 +457,7 @@
           $euroV = $_POST['euroV'];
           $promediototal = $_POST['promedioTotal'];
 
-          include 'link.php';
+          include 'config/link.php';
           $sql = "SELECT * FROM datosotc";
           $query = mysqli_query($link,$sql);
           $num = mysqli_num_rows($query);
@@ -908,7 +908,7 @@
       break;
     case 5: // MOSTRAR DATOS OTC
 
-      include 'link.php';
+      include 'config/link.php';
       $sql = 'SELECT * FROM datosotc ORDER BY id DESC';
       $query = mysqli_query($link,$sql);
       $num = mysqli_num_rows($query);
@@ -932,7 +932,7 @@
 
       break;
     default:
-        header('location:login.php');
+        header('location:../login.php');
       break;
   }
 

@@ -1,5 +1,5 @@
 <!-- View 1 -->
-<div class="h-auto" id="view2" style="height:1080px;">
+<div class="h-auto" id="datosoficiales" style="height:1080px;">
   <!-- HEADER -->
   <div class="header">
     <div class="container-fluid">
@@ -39,4 +39,5 @@
       </div>
     </div> <!-- / row -->
   </div>
+
 </div>

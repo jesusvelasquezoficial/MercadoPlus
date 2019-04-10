@@ -5,12 +5,12 @@
 <!doctype html>
 <html lang="es">
 <?php
-  include 'head.php';
+  include 'resources/head.php';
 ?>
 <body data-spy="scroll" data-target="#principal" data-offset="0" style="position:relative;">
   <?php
-    include 'modals.php';
-    include 'navbar.php';
+    include 'componets/modals.php';
+    include 'componets/navbar.php';
   ?>
 
   <!-- MAIN CONTENT
@@ -67,7 +67,7 @@
           <!-- DATOS OFICIALES -->
           <div class="tab-pane fade show  active" id="datosOficiales" role="tabpanel" aria-labelledby="datosOficiales-tab">
             <!-- Form Datos Oficiales -->
-            <form class="mb-4 " action="./core.php" method="post">
+            <form class="mb-4 " action="core/core.php" method="post">
               <input type="hidden" name="node" value="2">
               <div class="row d-flex justify-content-center">
                 <!-- Fecha Datos Oficiales -->
@@ -411,7 +411,7 @@
           <!-- DATOS OTC -->
           <div class="tab-pane fade" id="datosOTC" role="tabpanel" aria-labelledby="datosOTC-tab">
             <!-- Form Datos Oficiales -->
-            <form class="mb-4" action="./core.php" method="post">
+            <form class="mb-4" action="core/core.php" method="post">
               <input type="hidden" name="node" value="4">
               <div class="row d-flex justify-content-center">
                 <!-- Fecha Datos OTC -->
@@ -965,7 +965,7 @@
   </div> <!-- / .main-content -->
 
   <?php
-    include 'scripts.php';
+    include 'resources/scripts.php';
   ?>
 </body>
 </html>

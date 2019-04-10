@@ -45,13 +45,13 @@
             <nav id="principal" >
               <ul class="nav nav-sm flex-column">
                 <li class="nav-item">
-                  <a class="nav-link active" href="index.php#view1">
+                  <a class="nav-link active" href="index.php#datosotc">
                     Datos OTC
                     <span class="badge badge-soft-success ml-auto">New</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="index.php#view2">
+                  <a class="nav-link" href="index.php#datosoficiales">
                     Datos Oficiales
                   </a>
                 </li>

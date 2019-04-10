@@ -8,7 +8,7 @@ if (isset($_SESSION['id'])) {
 <!doctype html>
 <html lang="es">
 <?php
-  include 'head.php';
+  include 'resources/head.php';
 ?>
 <body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary">
 
@@ -25,7 +25,7 @@ if (isset($_SESSION['id'])) {
         <!-- Subheading -->
         <p class="text-muted text-center mb-5"> Bienvenidos a nuestro panel de control. </p>
         <!-- Form -->
-        <form class="" action="./core.php" method="post">
+        <form class="" action="core/core.php" method="post">
           <input type="hidden" name="node" value="1">
           <!-- Email address -->
           <div class="form-group">
@@ -68,7 +68,7 @@ if (isset($_SESSION['id'])) {
   </div>
 
   <?php
-    include 'scripts.php';
+    include 'resources/scripts.php';
   ?>
 </body>
 </html>

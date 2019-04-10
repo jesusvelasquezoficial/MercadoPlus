@@ -1,5 +1,5 @@
 <!-- View 2 -->
-<div class="pt-6 h-auto" id="view1" style="height:1080px;">
+<div class="pt-6 h-auto" id="datosotc" style="height:1080px;">
   <!-- HEADER -->
   <div class="header">
     <div class="container-fluid">

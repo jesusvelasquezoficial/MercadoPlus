@@ -37,6 +37,7 @@
       display: none;
       position: relative !important;
       background-image: url("assets/img/fondo7.jpg");
+      /* background-image: url("assets/img/illustrations/coworking.svg"); */
       background-repeat: repeat;
       background-position: top right;
       background-attachment: fixed;

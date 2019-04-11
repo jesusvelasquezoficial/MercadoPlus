@@ -10,6 +10,7 @@ $(document).ready(function() {
   tablaDatosOTC(5);
   mostrarDatosOTC(5);
   pushAlert();
+  charts();
 
 });
 
@@ -630,4 +631,48 @@ function pushAlert() {
   }).always(function(response) {
 
   });
+}
+
+function charts() {
+  $.ajax({
+    url: 'core/core.php',
+    data:{
+      node: 7
+    },
+    typo: 'POST',
+    dataType: 'json'
+  }).done(function(response) {
+    console.log(response);
+    var ctx = $('#myChart');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+  }).fail(function(xhr,status,error) {
+
+  }).always(function(response) {
+
+  });
+
+
 }

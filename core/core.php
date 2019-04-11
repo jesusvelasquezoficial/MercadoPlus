@@ -933,12 +933,36 @@
       mysqli_close($link);
 
       break;
-    case 6:
+    case 6: // MOSTRAR MENSAJES
       if (isset($_SESSION['msj']) && $_SESSION['msj'] != "") {
         header('Content-Type: application/json');
         echo json_encode($_SESSION['msj']);
         unset($_SESSION['msj']);
       }
+      break;
+    case 7: // MOSTRAR CHARTS
+      include 'config/link.php';
+      $sql = "SELECT OFI.id, OFI.fecha, OFI.dolardicom, OTC.id, OTC.fecha, OTC.promediototal FROM datosoficiales OFI, datosotc OTC WHERE OFI.fecha = OTC.fecha";
+      $query = mysqli_query($link, $sql);
+      $num = mysqli_num_rows($query);
+
+      if ($num != 0) {
+        $data = array();
+        $nro = 1;
+        while ($row = mysqli_fetch_assoc($query)) {
+          for ($i=0; $i < count($row) ; $i++) {
+            $data[$nro] = $row;
+          }
+          $nro += 1;
+        }
+
+        header('Content-Type: application/json');
+        echo json_encode($data);
+      }else{
+
+      }
+      mysqli_close($link);
+
       break;
     default:
         header('location:../login.php');

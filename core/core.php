@@ -29,23 +29,25 @@
             $_SESSION['email'] = $row['email'];
             $_SESSION['role'] = $row['role'];
 
+
             mysqli_close($link);
             // Damos la 'Bienvenida' al Cliente.
-            echo "<script>alert('Bienvenido ".$_SESSION['nombre']." ".$_SESSION['apellido']."');</script>";
+
+            $_SESSION['msj'] = "Bienvenido ".$_SESSION['nombre']." ".$_SESSION['apellido'];
             // Redireccionamiento a la pagina principal.
             echo "<script>location.href='../index.php'</script>";
 
           // SI EL PASSWORD ES 'INCORRECTO'.
           }else{
             // Alertamos de 'Password Incorrecto'.
-            echo "<script>alert('Password Incorrecto');</script>";
+            $_SESSION['msj'] = "Password Incorrecto";
             // Devolvemos al Cliente.
             echo "<script>history.back();</script>";
           }
         // SI EL EMAIL NO EXISTE EN LA DB.
         }else {
           // Alertamos de que el 'Email no existe en la DB.'
-          echo "<script>alert('Password Incorrecto');</script>";
+          $_SESSION['msj'] = "Email Incorrecto";
           // Devolvemos al Cliente.
           echo "<script>history.back();</script>";
         }
@@ -181,11 +183,11 @@
 
               // SI NO HAY ERRORES DE CONEXION
               if (!mysqli_error($link)) {
-                echo "<script>alert('Datos Ingresados Correctamente.');</script>";
+                $_SESSION['msj'] = "Datos Ingresados Correctamente.";
                 mysqli_close($link);
                 echo "<script>history.back();</script>";
               }else {
-                echo "<script>alert('DATOS ERROR.');</script>";
+                $_SESSION['msj'] = "Error de Conexión.";
                 mysqli_close($link);
                 echo "<script>history.back();</script>";
               }
@@ -352,11 +354,11 @@
 
               // SI NO HAY ERRORES DE CONEXION
               if (!mysqli_error($link)) {
-                echo "<script>alert('Datos Ingresados Correctamente.');</script>";
+                $_SESSION['msj'] = "Datos Ingresados Correctamente.";
                 mysqli_close($link);
                 echo "<script>history.back();</script>";
               }else {
-                echo "<script>alert('DATOS ERROR.');</script>";
+                $_SESSION['msj'] = "Error de Conexión.";
                 mysqli_close($link);
                 echo "<script>history.back();</script>";
               }
@@ -592,11 +594,11 @@
             $query = mysqli_query($link,$sql);
             // SI NO HAY ERRORES DE CONEXION
             if (!mysqli_error($link)) {
-              echo "<script>alert('Datos Ingresados Correctamente.');</script>";
+              $_SESSION['msj'] = "Datos Ingresados Correctamente.";
               mysqli_close($link);
               echo "<script>history.back();</script>";
             }else {
-              echo "<script>alert('DATOS ERROR.');</script>";
+              $_SESSION['msj'] = "Error de Conexión.";
               mysqli_close($link);
               echo "<script>history.back();</script>";
             }
@@ -893,11 +895,11 @@
               $query = mysqli_query($link,$sql);
               // SI NO HAY ERRORES DE CONEXION
               if (!mysqli_error($link)) {
-                echo "<script>alert('Datos Ingresados Correctamente.');</script>";
+                $_SESSION['msj'] = "Datos Ingresados Correctamente.";
                 mysqli_close($link);
                 echo "<script>history.back();</script>";
               }else {
-                echo "<script>alert('DATOS ERROR.');</script>";
+                $_SESSION['msj'] = "Error de Conexión.";
                 mysqli_close($link);
                 echo "<script>history.back();</script>";
               }
@@ -930,6 +932,13 @@
       }
       mysqli_close($link);
 
+      break;
+    case 6:
+      if (isset($_SESSION['msj']) && $_SESSION['msj'] != "") {
+        header('Content-Type: application/json');
+        echo json_encode($_SESSION['msj']);
+        unset($_SESSION['msj']);
+      }
       break;
     default:
         header('location:../login.php');

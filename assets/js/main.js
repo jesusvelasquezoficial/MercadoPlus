@@ -9,11 +9,13 @@ $(document).ready(function() {
   mostrarDatosOficiales(3);
   tablaDatosOTC(5);
   mostrarDatosOTC(5);
+  pushAlert();
+
 });
 
-$('body').scrollspy(
-  { target: '#principal' }
-);
+$('body').scrollspy({
+  target: '#principal'
+});
 
 function fechayhora() {
   var datetime = new Date();
@@ -22,6 +24,7 @@ function fechayhora() {
   if (mes < 9) {
     mes = "0"+mes;
   }
+
   var dia = datetime.getDate();
 
   if (dia < 10) {
@@ -29,8 +32,6 @@ function fechayhora() {
   }
 
   var fecha = year + "-" + mes + "-" + dia;
-
-
 
   $('#fechaDO').val(fecha);
   $('#fechaOTC').val(fecha);
@@ -603,4 +604,30 @@ function updown(num,boolean) {
     result = num * -1;
     return '<i class="fe fe-arrow-down '+colorBlanco+'">'+ result.toFixed(2) +'%</i>';
   }
+}
+
+function pushAlert() {
+  $.ajax({
+    url: 'core/core.php',
+    data:{
+      node: 6
+    },
+    type: 'POST',
+    dataType: 'json'
+  }).done(function(response) {
+    Push.Permission.request();
+    Push.create("Mensaje Importante", {
+      body: response,
+      icon: 'assets/img/logo.png',
+      timeout: 4000,
+      onClick: function () {
+          window.focus();
+          this.close();
+      }
+    });
+  }).fail(function(xhr,status,error) {
+
+  }).always(function(response) {
+
+  });
 }

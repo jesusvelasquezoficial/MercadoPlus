@@ -13,6 +13,9 @@
 <script src="assets/libs/select2/dist/js/select2.min.js"></script>
 <script src="assets/libs/chart.js/Chart.extension.min.js"></script>
 
+<!-- CDN JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.9/push.js" integrity="sha256-p73+snCYhrDo9U6USD9P19LnY1EwAe4+VzQxj/kNyBE=" crossorigin="anonymous"></script>
+
 <!-- THEME JS -->
 <script src="assets/js/theme.min.js"></script>
 

@@ -36,9 +36,48 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-6">
+          <div class="col-12 col-lg-6 p-4 border border-light">
             <div class="chart">
-              <canvas id="myChart" ></canvas>
+              <canvas id="myChart"></canvas>
+            </div>
+            <div class="pt-3 text-center">
+              <h4>Dolar Dicom</h4>
+              <small>¡Por ahora!</small>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 p-4 border border-light">
+            <div class="chart">
+              <canvas id="myChart2"></canvas>
+            </div>
+            <div class="pt-3 text-center">
+              <h4>Euro Dicom</h4>
+              <small>¡Por ahora!</small>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-4 p-4 border border-light">
+            <div class="chart">
+              <canvas id="myChart3"></canvas>
+            </div>
+            <div class="pt-3 text-center">
+              <h4>Petroleo</h4>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 p-4 border border-light">
+            <div class="chart">
+              <canvas id="myChart4"></canvas>
+            </div>
+            <div class="pt-3 text-center">
+              <h4>Oro</h4>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 p-4 border border-light">
+            <div class="chart">
+              <canvas id="myChart5"></canvas>
+            </div>
+            <div class="pt-3 text-center">
+              <h4>Bitcoin</h4>
             </div>
           </div>
         </div>

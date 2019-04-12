@@ -56,7 +56,7 @@
         header('location:../login.php');
         // echo "<script>history.back();</script>";
       }
-      break;
+    break;
     case 2: // INSERTAR DATOS OFICIALES
       // SI LLEGARON TODOS LOS DATOS
       if ($_POST['fechaDO']          != "" &&
@@ -367,7 +367,7 @@
         }else {
           echo "<script>alert('ENTRO');</script>";
         }
-      break;
+    break;
     case 3: // MOSTRAR DATOS OFICIALES
 
       include 'config/link.php';
@@ -392,7 +392,7 @@
       }
       mysqli_close($link);
 
-      break;
+    break;
     case 4: // INSERTAR DATOS OTC
       // SI LLEGARON TODOS LOS DATOS
       if ($_POST['fechaOTC']                 != "" &&
@@ -907,7 +907,7 @@
             }
           }
         }
-      break;
+    break;
     case 5: // MOSTRAR DATOS OTC
 
       include 'config/link.php';
@@ -939,29 +939,139 @@
         echo json_encode($_SESSION['msj']);
         unset($_SESSION['msj']);
       }
-      break;
-    case 7: // MOSTRAR CHARTS
+    break;
+    case 7: // MOSTRAR CHART1
       include 'config/link.php';
-      $sql = "SELECT OFI.id, OFI.fecha, OFI.dolardicom, OTC.id, OTC.fecha, OTC.promediototal FROM datosoficiales OFI, datosotc OTC WHERE OFI.fecha = OTC.fecha";
+      $sql = "SELECT id, fecha, dolardicom FROM datosoficiales";
       $query = mysqli_query($link, $sql);
       $num = mysqli_num_rows($query);
 
       if ($num != 0) {
+
         $data = array();
         $nro = 1;
+
         while ($row = mysqli_fetch_assoc($query)) {
           for ($i=0; $i < count($row) ; $i++) {
-            $data[$nro] = $row;
+            $data[$nro] = [$row['fecha'],$row['dolardicom']];
           }
           $nro += 1;
         }
 
         header('Content-Type: application/json');
         echo json_encode($data);
-      }else{
 
-      }
-      mysqli_close($link);
+        }else{
+
+        }
+        mysqli_close($link);
+      break;
+      case 8: // MOSTRAR CHART2
+        include 'config/link.php';
+        $sql = "SELECT id, fecha, eurodicom FROM datosoficiales";
+        $query = mysqli_query($link, $sql);
+        $num = mysqli_num_rows($query);
+
+        if ($num != 0) {
+
+          $data = array();
+          $nro = 1;
+
+          while ($row = mysqli_fetch_assoc($query)) {
+            for ($i=0; $i < count($row) ; $i++) {
+              $data[$nro] = [$row['fecha'],$row['eurodicom']];
+            }
+            $nro += 1;
+          }
+
+          header('Content-Type: application/json');
+          echo json_encode($data);
+
+        }else{
+
+        }
+        mysqli_close($link);
+
+      break;
+      case 9: // MOSTRAR CHART2
+        include 'config/link.php';
+        $sql = "SELECT id, fecha, petroleo FROM datosoficiales";
+        $query = mysqli_query($link, $sql);
+        $num = mysqli_num_rows($query);
+
+        if ($num != 0) {
+
+          $data = array();
+          $nro = 1;
+
+          while ($row = mysqli_fetch_assoc($query)) {
+            for ($i=0; $i < count($row) ; $i++) {
+              $data[$nro] = [$row['fecha'],$row['petroleo']];
+            }
+            $nro += 1;
+          }
+
+          header('Content-Type: application/json');
+          echo json_encode($data);
+
+        }else{
+
+        }
+        mysqli_close($link);
+
+      break;
+      case 10: // MOSTRAR CHART2
+        include 'config/link.php';
+        $sql = "SELECT id, fecha, oropromedio FROM datosoficiales";
+        $query = mysqli_query($link, $sql);
+        $num = mysqli_num_rows($query);
+
+        if ($num != 0) {
+
+          $data = array();
+          $nro = 1;
+
+          while ($row = mysqli_fetch_assoc($query)) {
+            for ($i=0; $i < count($row) ; $i++) {
+              $data[$nro] = [$row['fecha'],$row['oropromedio']];
+            }
+            $nro += 1;
+          }
+
+          header('Content-Type: application/json');
+          echo json_encode($data);
+
+        }else{
+
+        }
+        mysqli_close($link);
+
+      break;
+      case 11: // MOSTRAR CHART2
+        include 'config/link.php';
+        $sql = "SELECT id, fecha, bitcoinpromedio FROM datosoficiales";
+        $query = mysqli_query($link, $sql);
+        $num = mysqli_num_rows($query);
+
+        if ($num != 0) {
+
+          $data = array();
+          $nro = 1;
+
+          while ($row = mysqli_fetch_assoc($query)) {
+            for ($i=0; $i < count($row) ; $i++) {
+              $data[$nro] = [$row['fecha'],$row['bitcoinpromedio']];
+            }
+            $nro += 1;
+          }
+
+          header('Content-Type: application/json');
+          echo json_encode($data);
+
+        }else{
+
+        }
+        mysqli_close($link);
 
       break;
     default:

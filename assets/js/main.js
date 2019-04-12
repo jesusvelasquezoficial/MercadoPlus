@@ -10,7 +10,11 @@ $(document).ready(function() {
   tablaDatosOTC(5);
   mostrarDatosOTC(5);
   pushAlert();
-  charts();
+  chart1();
+  chart2();
+  chart3();
+  chart4();
+  chart5();
 
 });
 
@@ -633,7 +637,7 @@ function pushAlert() {
   });
 }
 
-function charts() {
+function chart1() {
   $.ajax({
     url: 'core/core.php',
     data:{
@@ -642,29 +646,255 @@ function charts() {
     typo: 'POST',
     dataType: 'json'
   }).done(function(response) {
+
+    long = Object.keys(response).length;
     console.log(response);
+
+    fechas = [];
+    precios = [];
+    nro = 1;
+
+    for (var i = 0; i < long; i++) {
+
+      fechas[i] = response[nro][0];
+      precios[i] = parseFloat(response[nro][1].replace(",", ""));
+      nro += 1;
+    }
+
+
     var ctx = $('#myChart');
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: fechas, // FECHAS
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderColor: [
-                    'rgba(75, 192, 192, 1)'
-                ],
+                label: 'Dolar', // NOMBRE
+                data: precios, // PRECIOS
+                borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 2
-            }]
-        },
+            }],
         options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
+          response: true,
+          legend: {
+            display: true
+          }
+        }
+        }
+    });
+
+  }).fail(function(xhr,status,error) {
+
+  }).always(function(response) {
+
+  });
+
+
+}
+
+function chart2() {
+  $.ajax({
+    url: 'core/core.php',
+    data:{
+      node: 8
+    },
+    typo: 'POST',
+    dataType: 'json'
+  }).done(function(response) {
+
+    long = Object.keys(response).length;
+    console.log(response);
+
+    fechas = [];
+    precios = [];
+    nro = 1;
+
+    for (var i = 0; i < long; i++) {
+
+      fechas[i] = response[nro][0];
+      precios[i] = parseFloat(response[nro][1].replace(",", ""));
+      nro += 1;
+    }
+
+
+    var ctx = $('#myChart2');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: fechas, // FECHAS
+            datasets: [{
+                label: 'Dolar', // NOMBRE
+                data: precios, // PRECIOS
+                borderColor: 'rgba(192, 75, 192, 1)',
+                borderWidth: 2
+            }],
+        options: {
+          response: true,
+          legend: {
+            display: true
+          }
+        }
+        }
+    });
+
+  }).fail(function(xhr,status,error) {
+
+  }).always(function(response) {
+
+  });
+
+
+}
+
+function chart3() {
+  $.ajax({
+    url: 'core/core.php',
+    data:{
+      node: 9
+    },
+    typo: 'POST',
+    dataType: 'json'
+  }).done(function(response) {
+
+    long = Object.keys(response).length;
+    console.log(response);
+
+    fechas = [];
+    precios = [];
+    nro = 1;
+
+    for (var i = 0; i < long; i++) {
+
+      fechas[i] = response[nro][0];
+      precios[i] = parseFloat(response[nro][1].replace(",", "."));
+      nro += 1;
+    }
+
+
+    var ctx = $('#myChart3');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: fechas, // FECHAS
+            datasets: [{
+                label: 'Petroleo', // NOMBRE
+                data: precios, // PRECIOS
+                borderColor: 'rgba(255, 105, 5, 1)',
+                borderWidth: 2
+            }],
+        options: {
+          response: true,
+          legend: {
+            display: true
+          }
+        }
+        }
+    });
+
+  }).fail(function(xhr,status,error) {
+
+  }).always(function(response) {
+
+  });
+
+
+}
+
+function chart4() {
+  $.ajax({
+    url: 'core/core.php',
+    data:{
+      node: 10
+    },
+    typo: 'POST',
+    dataType: 'json'
+  }).done(function(response) {
+
+    long = Object.keys(response).length;
+    console.log(response);
+
+    fechas = [];
+    precios = [];
+    nro = 1;
+
+    for (var i = 0; i < long; i++) {
+
+      fechas[i] = response[nro][0];
+      precios[i] = parseFloat(response[nro][1].replace(",", ""));
+      nro += 1;
+    }
+
+
+    var ctx = $('#myChart4');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: fechas, // FECHAS
+            datasets: [{
+                label: 'Oro', // NOMBRE
+                data: precios, // PRECIOS
+                borderColor: 'rgba(240, 200, 15, 1)',
+                borderWidth: 2
+            }],
+        options: {
+          response: true,
+          legend: {
+            display: true
+          }
+        }
+        }
+    });
+
+  }).fail(function(xhr,status,error) {
+
+  }).always(function(response) {
+
+  });
+
+
+}
+
+function chart5() {
+  $.ajax({
+    url: 'core/core.php',
+    data:{
+      node: 11
+    },
+    typo: 'POST',
+    dataType: 'json'
+  }).done(function(response) {
+
+    long = Object.keys(response).length;
+    console.log(response);
+
+    fechas = [];
+    precios = [];
+    nro = 1;
+
+    for (var i = 0; i < long; i++) {
+
+      fechas[i] = response[nro][0];
+      precios[i] = parseFloat(response[nro][1].replace(",", ""));
+      nro += 1;
+    }
+
+
+    var ctx = $('#myChart5');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: fechas, // FECHAS
+            datasets: [{
+                label: 'Bitcoin', // NOMBRE
+                data: precios, // PRECIOS
+                borderColor: 'rgba(50, 200, 28, 1)',
+                borderWidth: 2
+            }],
+        options: {
+          response: true,
+          legend: {
+            display: true
+          }
+        }
         }
     });
 

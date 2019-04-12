@@ -13,6 +13,7 @@
   <!-- Menu -->
   <div class="dropdown-menu dropdown-menu-right">
     <a href="cms.php" class="dropdown-item">CMS</a>
+    <a href="monitor.php" class="dropdown-item">Monitor</a>
     <a href="login.php" class="dropdown-item">Cerrar Sesión</a>
   </div>
 </div>

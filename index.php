@@ -6,7 +6,7 @@
 <?php
 include 'resources/head.php';
 ?>
-<body data-spy="scroll" data-target="#principal" data-offset="0" style="position:relative;">
+<body data-offset="0" style="position:relative;">
   <?php
     include 'components/modals.php';
     include 'components/navbar.php';
@@ -14,7 +14,7 @@ include 'resources/head.php';
 
   <!-- MAIN CONTENT
   ================================================== -->
-  <div class="main-content w-auto " id="cajaContenido">
+  <div data-spy="scroll" data-target="#principal" class="main-content w-auto " id="cajaContenido">
     <div>
       <?php
         include 'views/datosotc.php';

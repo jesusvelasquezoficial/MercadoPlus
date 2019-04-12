@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 });
 
-$('body').scrollspy({
+$('div').scrollspy({
   target: '#principal'
 });
 
@@ -274,10 +274,6 @@ function calcularPromedioTotal() {
 function formatoCajaInstagram() {
   $('#cajaContenido').toggleClass('formatoCaja');
 }
-
-// $(function () {
-//   $('[data-toggle="tooltip"]').tooltip()
-// })
 
 function tablaDatosOficiales(num) {
   $.ajax({

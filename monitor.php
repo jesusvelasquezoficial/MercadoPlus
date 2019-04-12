@@ -7,7 +7,7 @@
 <?php
   include 'resources/head.php';
 ?>
-<body data-spy="scroll" data-target="#principal" data-offset="0" style="position:relative;">
+<body data-offset="0" style="position:relative;">
   <?php
     include 'components/modals.php';
     include 'components/navbar.php';
@@ -15,7 +15,7 @@
 
   <!-- MAIN CONTENT
   ================================================== -->
-  <div class="main-content w-auto " id="cajaContenidoCMS">
+  <div data-spy="scroll" data-target="#principal" class="main-content w-auto " id="monitor">
     <div class="container-fluid">
       <div class="pt-6 h-auto" id="monitor">
         <!-- TAB HEADER DATOS -->

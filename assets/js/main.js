@@ -653,7 +653,13 @@ function chart1() {
     for (var i = 0; i < long; i++) {
 
       fechas[i] = response[nro][0];
-      precios[i] = parseFloat(response[nro][1].replace(",", ""));
+
+      if (response[nro][1].length > 4) {
+        precios[i] = parseFloat(response[nro][1].replace(",", ""));
+      }else {
+        precios[i] = parseFloat(response[nro][1].replace(",", "."));
+      }
+      
       nro += 1;
     }
 
@@ -707,7 +713,13 @@ function chart2() {
     for (var i = 0; i < long; i++) {
 
       fechas[i] = response[nro][0];
-      precios[i] = parseFloat(response[nro][1].replace(",", ""));
+
+      if (response[nro][1].length > 4) {
+        precios[i] = parseFloat(response[nro][1].replace(",", ""));
+      }else {
+        precios[i] = parseFloat(response[nro][1].replace(",", "."));
+      }
+
       nro += 1;
     }
 
@@ -761,7 +773,13 @@ function chart3() {
     for (var i = 0; i < long; i++) {
 
       fechas[i] = response[nro][0];
-      precios[i] = parseFloat(response[nro][1].replace(",", "."));
+
+      if (response[nro][1].length > 4) {
+        precios[i] = parseFloat(response[nro][1].replace(",", ""));
+      }else {
+        precios[i] = parseFloat(response[nro][1].replace(",", "."));
+      }
+
       nro += 1;
     }
 
@@ -815,7 +833,11 @@ function chart4() {
     for (var i = 0; i < long; i++) {
 
       fechas[i] = response[nro][0];
-      precios[i] = parseFloat(response[nro][1].replace(",", ""));
+      if (response[nro][1].length > 4) {
+        precios[i] = parseFloat(response[nro][1].replace(",", ""));
+      }else {
+        precios[i] = parseFloat(response[nro][1].replace(",", "."));
+      }
       nro += 1;
     }
 
@@ -869,7 +891,11 @@ function chart5() {
     for (var i = 0; i < long; i++) {
 
       fechas[i] = response[nro][0];
-      precios[i] = parseFloat(response[nro][1].replace(",", ""));
+      if (response[nro][1].length > 4) {
+        precios[i] = parseFloat(response[nro][1].replace(",", ""));
+      }else {
+        precios[i] = parseFloat(response[nro][1].replace(",", "."));
+      }
       nro += 1;
     }
 

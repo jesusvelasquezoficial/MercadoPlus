@@ -942,7 +942,7 @@
     break;
     case 7: // MOSTRAR CHART1
       include 'config/link.php';
-      $sql = "SELECT id, fecha, dolardicom FROM datosoficiales";
+      $sql = "SELECT OFI.id, OFI.fecha, OFI.dolardicom, OTC.id, OTC.promediototal FROM datosoficiales OFI LEFT JOIN datosotc OTC ON OFI.id = OTC.id";
       $query = mysqli_query($link, $sql);
       $num = mysqli_num_rows($query);
 
@@ -953,7 +953,7 @@
 
         while ($row = mysqli_fetch_assoc($query)) {
           for ($i=0; $i < count($row) ; $i++) {
-            $data[$nro] = [$row['fecha'],$row['dolardicom']];
+            $data[$nro] = [$row['fecha'],$row['dolardicom'],$row['promediototal']];
           }
           $nro += 1;
         }
@@ -968,7 +968,7 @@
       break;
       case 8: // MOSTRAR CHART2
         include 'config/link.php';
-        $sql = "SELECT id, fecha, eurodicom FROM datosoficiales";
+        $sql = "SELECT OFI.id, OFI.fecha, OFI.eurodicom, OFI.eurodolar, OTC.id, OTC.promediototal FROM datosoficiales OFI LEFT JOIN datosotc OTC ON OFI.id = OTC.id";
         $query = mysqli_query($link, $sql);
         $num = mysqli_num_rows($query);
 
@@ -979,7 +979,8 @@
 
           while ($row = mysqli_fetch_assoc($query)) {
             for ($i=0; $i < count($row) ; $i++) {
-              $data[$nro] = [$row['fecha'],$row['eurodicom']];
+              $euroOTC = floatval(str_replace(",","", $row['promediototal'])) * floatval(str_replace(",",".", $row['eurodolar']));
+              $data[$nro] = [$row['fecha'],$row['eurodicom'],$euroOTC];
             }
             $nro += 1;
           }
@@ -993,7 +994,7 @@
         mysqli_close($link);
 
       break;
-      case 9: // MOSTRAR CHART2
+      case 9: // MOSTRAR CHART3
         include 'config/link.php';
         $sql = "SELECT id, fecha, petroleo FROM datosoficiales";
         $query = mysqli_query($link, $sql);
@@ -1020,7 +1021,7 @@
         mysqli_close($link);
 
       break;
-      case 10: // MOSTRAR CHART2
+      case 10: // MOSTRAR CHART4
         include 'config/link.php';
         $sql = "SELECT id, fecha, oropromedio FROM datosoficiales";
         $query = mysqli_query($link, $sql);
@@ -1047,7 +1048,7 @@
         mysqli_close($link);
 
       break;
-      case 11: // MOSTRAR CHART2
+      case 11: // MOSTRAR CHART5
         include 'config/link.php';
         $sql = "SELECT id, fecha, bitcoinpromedio FROM datosoficiales";
         $query = mysqli_query($link, $sql);
@@ -1076,7 +1077,7 @@
       break;
 
 
-      
+
     default:
         header('location:../login.php');
       break;

@@ -653,12 +653,15 @@ function chart1() {
 
     fechas = [];
     precios = [];
+    precios2 = [];
     nro = 1;
 
     for (var i = 0; i < long; i++) {
 
       fechas[i] = response[nro][0];
       precios[i] = numFloatandReplace(response[nro][1],4,",","",".");
+      precios2[i] = numFloatandReplace(response[nro][2],4,",","");
+      // precios2[i] = parseFloat(response[nro][2]);
       nro += 1;
     }
 
@@ -669,17 +672,22 @@ function chart1() {
         data: {
             labels: fechas, // FECHAS
             datasets: [{
-                label: 'Dolar', // NOMBRE
+                label: 'Dolar OFI', // NOMBRE
                 data: precios, // PRECIOS
+                backgroundColor: 'rgba(75, 192, 192, 1)',
                 borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 2
-            }],
+                borderWidth: 2,
+                fill: false
+            },{
+                label: 'Dolar OTC', // NOMBRE
+                data: precios2, // PRECIOS
+                backgroundColor: 'rgba(192, 0, 75, 1)',
+                borderColor: 'rgba(192, 0, 75, 1)',
+                borderWidth: 2,
+                fill: false
+            }]},
         options: {
-          response: true,
-          legend: {
-            display: true
-          }
-        }
+          response: true
         }
     });
 
@@ -712,6 +720,7 @@ function chart2() {
     for (var i = 0; i < long; i++) {
       fechas[i] = response[nro][0];
       precios[i] = numFloatandReplace(response[nro][1],4,",","",".");
+      precios2[i] = response[nro][2].toFixed(2);
       nro += 1;
     }
 
@@ -722,15 +731,29 @@ function chart2() {
         data: {
             labels: fechas, // FECHAS
             datasets: [{
-                label: 'Dolar', // NOMBRE
+                label: 'Euro OFI', // NOMBRE
                 data: precios, // PRECIOS
+                backgroundColor: 'rgba(192, 75, 192, 1)',
                 borderColor: 'rgba(192, 75, 192, 1)',
-                borderWidth: 2
+                borderWidth: 2,
+                fill: false
+            },{
+                label: 'Euro OTC', // NOMBRE
+                data: precios2, // PRECIOS
+                backgroundColor: 'rgba(75, 0, 105, 1)',
+                borderColor: 'rgba(75, 0, 105, 1)',
+                borderWidth: 2,
+                fill: false
             }],
         options: {
           response: true,
-          legend: {
-            display: true
+          scales: {
+            xAxes: [{
+              ticks: {
+                min: 0,
+                max: 1
+              }
+            }]
           }
         }
         }

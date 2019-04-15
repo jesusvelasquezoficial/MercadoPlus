@@ -25,11 +25,11 @@
               <div class="col">
                 <!-- Pretitle -->
                 <h3 class="header-pretitle mb-2">
-                  PANEL DE CONTROL Y SEGUIMIENTO
+                  DASHBOARD
                 </h3>
                 <!-- Title -->
                 <h2 class="header-title">
-                  DE LA ECONOMIA Y FINANZAS DE VENEZUELA
+                  PHOENIX PLUS INTELLIGENCE
                 </h2>
               </div>
             </div> <!-- / .row -->

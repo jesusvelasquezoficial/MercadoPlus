@@ -633,6 +633,11 @@ function pushAlert() {
   });
 }
 
+function numFloatandReplace(num,long,v1,v2,v3 = null){
+  rem = (v2 == null) ? v3 : v2;
+  return result = (num.length > long) ? parseFloat(num.replace(v1,rem)) : parseFloat(num.replace(v2,rem));
+}
+
 function chart1() {
   $.ajax({
     url: 'core/core.php',
@@ -653,13 +658,7 @@ function chart1() {
     for (var i = 0; i < long; i++) {
 
       fechas[i] = response[nro][0];
-
-      if (response[nro][1].length > 4) {
-        precios[i] = parseFloat(response[nro][1].replace(",", ""));
-      }else {
-        precios[i] = parseFloat(response[nro][1].replace(",", "."));
-      }
-      
+      precios[i] = numFloatandReplace(response[nro][1],4,",","",".");
       nro += 1;
     }
 
@@ -711,15 +710,8 @@ function chart2() {
     nro = 1;
 
     for (var i = 0; i < long; i++) {
-
       fechas[i] = response[nro][0];
-
-      if (response[nro][1].length > 4) {
-        precios[i] = parseFloat(response[nro][1].replace(",", ""));
-      }else {
-        precios[i] = parseFloat(response[nro][1].replace(",", "."));
-      }
-
+      precios[i] = numFloatandReplace(response[nro][1],4,",","",".");
       nro += 1;
     }
 
@@ -773,12 +765,8 @@ function chart3() {
     for (var i = 0; i < long; i++) {
 
       fechas[i] = response[nro][0];
+      precios[i] = numFloatandReplace(response[nro][1],4,",",".");
 
-      if (response[nro][1].length > 4) {
-        precios[i] = parseFloat(response[nro][1].replace(",", ""));
-      }else {
-        precios[i] = parseFloat(response[nro][1].replace(",", "."));
-      }
 
       nro += 1;
     }
@@ -833,11 +821,7 @@ function chart4() {
     for (var i = 0; i < long; i++) {
 
       fechas[i] = response[nro][0];
-      if (response[nro][1].length > 4) {
-        precios[i] = parseFloat(response[nro][1].replace(",", ""));
-      }else {
-        precios[i] = parseFloat(response[nro][1].replace(",", "."));
-      }
+      precios[i] = numFloatandReplace(response[nro][1],4,",","",".");
       nro += 1;
     }
 
@@ -891,11 +875,7 @@ function chart5() {
     for (var i = 0; i < long; i++) {
 
       fechas[i] = response[nro][0];
-      if (response[nro][1].length > 4) {
-        precios[i] = parseFloat(response[nro][1].replace(",", ""));
-      }else {
-        precios[i] = parseFloat(response[nro][1].replace(",", "."));
-      }
+      precios[i] = numFloatandReplace(response[nro][1],4,",","",".");
       nro += 1;
     }
 

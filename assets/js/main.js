@@ -257,6 +257,8 @@ function calcularPromedioTotal() {
   console.log(euro.toFixed(2));
 
   var euroBuy =  euro - ((euro) * 5 / 100);
+  $('#euro').mask('#,###.##', {reverse:true});
+  $('#euro').val(euro.toFixed(2)).mask('#,###.##');
   console.log(euroBuy);
   console.log(euroBuy.toFixed(2));
 
@@ -375,6 +377,8 @@ function tablaDatosOTC(num) {
         bodyTable +='<th>' + updown(response[i].pctvdolarc) + '</th>';
         bodyTable +='<th>' + response[i].dolarv + '</th>';
         bodyTable +='<th>' + updown(response[i].pctvdolarv) + '</th>';
+        bodyTable +='<th>' + response[i].euro + '</th>';
+        bodyTable +='<th>' + updown(response[i].pctveuro) + '</th>';
         bodyTable +='<th>' + response[i].euroc + '</th>';
         bodyTable +='<th>' + updown(response[i].pctveuroc) + '</th>';
         bodyTable +='<th>' + response[i].eurov + '</th>';
@@ -720,7 +724,7 @@ function chart2() {
     for (var i = 0; i < long; i++) {
       fechas[i] = response[nro][0];
       precios[i] = numFloatandReplace(response[nro][1],4,",","",".");
-      precios2[i] = response[nro][2].toFixed(2);
+      precios2[i] = numFloatandReplace(response[nro][2],4,",","",".");
       nro += 1;
     }
 

@@ -964,7 +964,7 @@
       break;
     case 8: // MOSTRAR CHART2
         include 'config/link.php';
-        $sql = "SELECT OFI.id, OFI.fecha, OFI.eurodicom, OFI.eurodolar, OTC.id, OTC.promediototal FROM datosoficiales OFI LEFT JOIN datosotc OTC ON OFI.id = OTC.id";
+        $sql = "SELECT OFI.id, OFI.fecha, OFI.eurodicom, OTC.id, OTC.euro FROM datosoficiales OFI LEFT JOIN datosotc OTC ON OFI.id = OTC.id";
         $query = mysqli_query($link, $sql);
         $num = mysqli_num_rows($query);
 
@@ -975,8 +975,8 @@
 
           while ($row = mysqli_fetch_assoc($query)) {
             for ($i=0; $i < count($row) ; $i++) {
-              $euroOTC = floatval(str_replace(",","", $row['promediototal'])) * floatval(str_replace(",",".", $row['eurodolar']));
-              $data[$nro] = [$row['fecha'],$row['eurodicom'],$euroOTC];
+              // $euroOTC = floatval(str_replace(",","", $row['promediototal'])) * floatval(str_replace(",",".", $row['eurodolar']));
+              $data[$nro] = [$row['fecha'],$row['eurodicom'],$row['euro']];
             }
             $nro += 1;
           }
@@ -1402,6 +1402,7 @@
             $_POST['dolarFTPromedio']          != "" &&
             $_POST['dolarC']                   != "" &&
             $_POST['dolarV']                   != "" &&
+            $_POST['euro']                     != "" &&
             $_POST['euroC']                    != "" &&
             $_POST['euroV']                    != "" &&
             $_POST['promedioTotal']            != ""
@@ -1434,6 +1435,7 @@
             $dolarftPromedio = $_POST['dolarFTPromedio'];
             $dolarC = $_POST['dolarC'];
             $dolarV = $_POST['dolarV'];
+            $euro = $_POST['euro'];
             $euroC = $_POST['euroC'];
             $euroV = $_POST['euroV'];
             $promediototal = $_POST['promedioTotal'];
@@ -1500,6 +1502,8 @@
                 pctvdolarc,
                 dolarv,
                 pctvdolarv,
+                euro,
+                pctveuro,
                 euroc,
                 pctveuroc,
                 eurov,
@@ -1564,6 +1568,8 @@
                 0,
                 '".$euroC."',
                 0,
+                '".$euro."',
+                0,
                 '".$euroV."',
                 0,
                 '".$promediototal."',
@@ -1624,6 +1630,7 @@
                 $Adolarc = str_replace(",","", $row['dolarc']);
                 $Adolarv = str_replace(",","", $row['dolarv']);
 
+                $Aeuro = str_replace(",","", $row['euro']);
                 $Aeuroc = str_replace(",","", $row['euroc']);
                 $Aeurov = str_replace(",","", $row['eurov']);
 
@@ -1745,6 +1752,10 @@
                 $c26 = ($b26 - $Aairtmpromedio);
                 $pctvairtmpromedio = number_format($c26 / $b26,2);
 
+                $b27 = str_replace(",","", $euro);
+                $c27 = ($b27 - $Aeuro);
+                $pctveuro = number_format($c27 / $b27,2);
+
                 $sql4 = "INSERT INTO datosotc (
                   id,
                   fecha,
@@ -1801,6 +1812,8 @@
                   pctvdolarc,
                   dolarv,
                   pctvdolarv,
+                  euro,
+                  pctveuro,
                   euroc,
                   pctveuroc,
                   eurov,
@@ -1863,6 +1876,8 @@
                   '".$pctvdolarc."',
                   '".$dolarV."',
                   '".$pctvdolarv."',
+                  '".$euro."',
+                  '".$pctveuro."',
                   '".$euroC."',
                   '".$pctveuroc."',
                   '".$euroV."',

@@ -69,6 +69,7 @@
             <!-- Form Datos Oficiales -->
             <form class="mb-4 " action="core/core.php" method="post" id="form-datos">
               <input type="hidden" name="node" value="12">
+              <input type="hidden" id="euro" name="euro" data-mask="#,###.00" data-mask-reverse="true">
               <div class="row d-flex justify-content-center">
                 <!-- Fecha Datos Oficiales -->
                 <div class="col-12 col-md-6">
@@ -947,6 +948,8 @@
                     <th scope="col" style="min-width:150px;">dolar compra</th>
                     <th scope="col">%</th>
                     <th scope="col" style="min-width:135px;">dolar venta</th>
+                    <th scope="col">%</th>
+                    <th scope="col">euro</th>
                     <th scope="col">%</th>
                     <th scope="col" style="min-width:140px;">euro compra</th>
                     <th scope="col">%</th>

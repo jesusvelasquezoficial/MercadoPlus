@@ -931,3 +931,20 @@ function chart5() {
 
 
 }
+
+function paso2() {
+  $('#datosOficiales-tab').removeClass('active');
+  $('#datosOTC-tab').addClass('active');
+  setTimeout(function () {
+    $('#btnSiguiente-tab').removeClass('active');
+  }, 1000);
+}
+
+function cargarDatos() {
+  $('form-datos').submit();
+  $('#datosOTC-tab').removeClass('active');
+  $('#tablaDatosOficiales-tab').addClass('active');
+  setTimeout(function () {
+    $('#btnGuardar-tab').removeClass('active');
+  }, 1000);
+}

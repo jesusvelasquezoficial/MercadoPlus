@@ -67,8 +67,8 @@
           <!-- DATOS OFICIALES -->
           <div class="tab-pane fade show  active" id="datosOficiales" role="tabpanel" aria-labelledby="datosOficiales-tab">
             <!-- Form Datos Oficiales -->
-            <form class="mb-4 " action="core/core.php" method="post">
-              <input type="hidden" name="node" value="2">
+            <form class="mb-4 " action="core/core.php" method="post" id="form-datos">
+              <input type="hidden" name="node" value="12">
               <div class="row d-flex justify-content-center">
                 <!-- Fecha Datos Oficiales -->
                 <div class="col-12 col-md-6">
@@ -370,10 +370,10 @@
                 <!-- Botones -->
                 <div class="col-12 d-flex justify-content-end">
                   <button type="reset" class="btn btn-outline-white justify-content-end mr-4">Limpiar</button>
-                  <button type="submit" class="btn btn-outline-success justify-content-end">Guardar</button>
+                  <a id="btnSiguiente-tab" href="#datosOTC" data-toggle="tab" class="btn btn-outline-success justify-content-end" onclick="paso2();">Siguiente</a>
                 </div>
               </div> <!-- / .row -->
-            </form>
+
           </div>
           <!-- TABLA DATOS OFICIALES -->
           <div class="tab-pane fade" id="tablaDatosOficiales" role="tabpanel" aria-labelledby="tablaDatosOficiales-tab">
@@ -411,8 +411,8 @@
           <!-- DATOS OTC -->
           <div class="tab-pane fade" id="datosOTC" role="tabpanel" aria-labelledby="datosOTC-tab">
             <!-- Form Datos Oficiales -->
-            <form class="mb-4" action="core/core.php" method="post">
-              <input type="hidden" name="node" value="4">
+
+              <!-- <input type="hidden" name="node" value="4"> -->
               <div class="row d-flex justify-content-center">
                 <!-- Fecha Datos OTC -->
                 <div class="col-12 col-md-6">
@@ -912,9 +912,10 @@
                 </div>
               </div>
               <!-- Botones -->
-              <div class="col-12 d-flex justify-content-end">
+              <div class="col-12 d-flex justify-content-end mb-4">
                 <button type="reset" class="btn btn-outline-white justify-content-end mr-4">Limpiar</button>
                 <button type="submit" class="btn btn-outline-success justify-content-end">Guardar</button>
+                <!-- <a href="#tablaDatosOficiales" id="btnGuardar-tab" data-toggle="tab" role="tab" aria-controls="tablaDatosOficiales" class="btn btn-outline-success justify-content-end" onclick="cargarDatos();">Guardar</a> -->
               </div>
             </form>
           </div><!-- / .row -->

@@ -678,15 +678,15 @@ function chart1() {
             datasets: [{
                 label: 'Dolar OFI', // NOMBRE
                 data: precios, // PRECIOS
-                backgroundColor: 'rgba(75, 192, 192, 1)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(50, 255, 240, 1)',
+                borderColor: 'rgba(50, 255, 240, 1)',
                 borderWidth: 2,
                 fill: false
             },{
                 label: 'Dolar OTC', // NOMBRE
                 data: precios2, // PRECIOS
-                backgroundColor: 'rgba(192, 0, 75, 1)',
-                borderColor: 'rgba(192, 0, 75, 1)',
+                backgroundColor: 'rgba(50, 100, 255, 1)',
+                borderColor: 'rgba(50, 100, 255, 1)',
                 borderWidth: 2,
                 fill: false
             }]},
@@ -737,15 +737,15 @@ function chart2() {
             datasets: [{
                 label: 'Euro OFI', // NOMBRE
                 data: precios, // PRECIOS
-                backgroundColor: 'rgba(192, 75, 192, 1)',
-                borderColor: 'rgba(192, 75, 192, 1)',
+                backgroundColor: 'rgba(150, 50, 255, 1)',
+                borderColor: 'rgba(150, 50, 255, 1)',
                 borderWidth: 2,
                 fill: false
             },{
                 label: 'Euro OTC', // NOMBRE
                 data: precios2, // PRECIOS
-                backgroundColor: 'rgba(75, 0, 105, 1)',
-                borderColor: 'rgba(75, 0, 105, 1)',
+                backgroundColor: 'rgba(255, 50, 150, 1)',
+                borderColor: 'rgba(255, 50, 150, 1)',
                 borderWidth: 2,
                 fill: false
             }],
@@ -805,10 +805,12 @@ function chart3() {
         data: {
             labels: fechas, // FECHAS
             datasets: [{
-                label: 'Petroleo', // NOMBRE
-                data: precios, // PRECIOS
-                borderColor: 'rgba(255, 105, 5, 1)',
-                borderWidth: 2
+              label: 'PETROLEO', // NOMBRE
+              data: precios, // PRECIOS
+              backgroundColor: 'rgba(0, 0, 0, 1)',
+              borderColor: 'rgba(0, 0, 0, 1)',
+              borderWidth: 2,
+              fill: false
             }],
         options: {
           response: true,
@@ -859,10 +861,12 @@ function chart4() {
         data: {
             labels: fechas, // FECHAS
             datasets: [{
-                label: 'Oro', // NOMBRE
+                label: 'ORO', // NOMBRE
                 data: precios, // PRECIOS
-                borderColor: 'rgba(240, 200, 15, 1)',
-                borderWidth: 2
+                borderColor: 'rgba(255, 255, 0, 1)',
+                backgroundColor: 'rgba(255, 255, 0, 1)',
+                borderWidth: 2,
+                fill: false
             }],
         options: {
           response: true,
@@ -915,8 +919,10 @@ function chart5() {
             datasets: [{
                 label: 'Bitcoin', // NOMBRE
                 data: precios, // PRECIOS
-                borderColor: 'rgba(50, 200, 28, 1)',
-                borderWidth: 2
+                borderColor: 'rgba(0, 255, 0, 1)',
+                backgroundColor: 'rgba(0, 255, 0, 1)',
+                borderWidth: 2,
+                fill: false
             }],
         options: {
           response: true,

@@ -1,5 +1,6 @@
 <!-- Dropdown -->
 <div class="dropdown">
+  <!-- Dropdown -->
   <!-- Toggle -->
   <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 2) { ?>
     <a href="#" id="sidebarIcon" class="avatar avatar-sm avatar-online dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -14,5 +15,6 @@
   <div class="dropdown-menu dropdown-menu-right">
     <a href="cms.php" class="dropdown-item">CMS</a>
     <a href="monitor.php" class="dropdown-item">Monitor <span class="badge badge-soft-success ml-auto">New</span></a>
+    <a href="chat.php" class="dropdown-item">Chat</a>
   </div>
 </div>

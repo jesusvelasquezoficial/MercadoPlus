@@ -42,9 +42,11 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="login.php">
-            <i class="fe fe-log-in"></i> Iniciar Sesión
-          </a>
+        <?php if (isset($_SESSION['id']) && $_SESSION['id'] != "") { ?>
+          <a class="nav-link " href="login.php"> <i class="fe fe-log-in"></i> Cerrar Sesión </a>
+        <?php }else{ ?>
+          <a class="nav-link " href="login.php"> <i class="fe fe-log-in"></i> Iniciar Sesión </a>
+        <?php } ?>
         </li>
       </ul>
       <!-- Push content down -->

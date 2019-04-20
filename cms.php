@@ -945,17 +945,17 @@
                     <th scope="col">%</th>
                     <th scope="col">dolarft</th>
                     <th scope="col">%</th>
+                    <th scope="col" style="min-width:270px;">promedio estandar dolar</th>
+                    <th scope="col">%</th>
                     <th scope="col" style="min-width:150px;">dolar compra</th>
                     <th scope="col">%</th>
                     <th scope="col" style="min-width:135px;">dolar venta</th>
                     <th scope="col">%</th>
-                    <th scope="col">euro</th>
+                    <th scope="col" style="min-width:270px;">promedio estandar euro</th>
                     <th scope="col">%</th>
                     <th scope="col" style="min-width:140px;">euro compra</th>
                     <th scope="col">%</th>
                     <th scope="col" style="min-width:125px;">euro venta</th>
-                    <th scope="col">%</th>
-                    <th scope="col" style="min-width:190px;">promedio estandar</th>
                     <th scope="col">%</th>
                   </tr>
                 </thead>

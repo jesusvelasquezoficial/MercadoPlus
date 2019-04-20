@@ -961,7 +961,7 @@
 
         }
         mysqli_close($link);
-      break;
+    break;
     case 8: // MOSTRAR CHART2
         include 'config/link.php';
         $sql = "SELECT OFI.id, OFI.fecha, OFI.eurodicom, OTC.id, OTC.euro FROM datosoficiales OFI LEFT JOIN datosotc OTC ON OFI.id = OTC.id";

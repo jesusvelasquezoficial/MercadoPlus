@@ -373,6 +373,8 @@ function tablaDatosOTC(num) {
         bodyTable +='<th>' + updown(response[i].pctvdolargoldpromedio) + '</th>';
         bodyTable +='<th>' + response[i].dolarftpromedio + '</th>';
         bodyTable +='<th>' + updown(response[i].pctvdolarftpromedio) + '</th>';
+        bodyTable +='<th>' + response[i].promediototal + '</th>';
+        bodyTable +='<th>' + updown(response[i].pctvpromediototal) + '</th>';
         bodyTable +='<th>' + response[i].dolarc + '</th>';
         bodyTable +='<th>' + updown(response[i].pctvdolarc) + '</th>';
         bodyTable +='<th>' + response[i].dolarv + '</th>';
@@ -383,8 +385,6 @@ function tablaDatosOTC(num) {
         bodyTable +='<th>' + updown(response[i].pctveuroc) + '</th>';
         bodyTable +='<th>' + response[i].eurov + '</th>';
         bodyTable +='<th>' + updown(response[i].pctveurov) + '</th>';
-        bodyTable +='<th>' + response[i].promediototal + '</th>';
-        bodyTable +='<th>' + updown(response[i].pctvpromediototal) + '</th>';
         bodyTable +='</tr>';
 
         fondoFila = (fondoFila == "") ? "fondoFila" : "";
@@ -664,7 +664,7 @@ function chart1() {
 
       fechas[i] = response[nro][0];
       precios[i] = numFloatandReplace(response[nro][1],4,",","",".");
-      precios2[i] = numFloatandReplace(response[nro][2],4,",","");
+      precios2[i] = numFloatandReplace(response[nro][2],4,",","",".");
       // precios2[i] = parseFloat(response[nro][2]);
       nro += 1;
     }
@@ -676,14 +676,14 @@ function chart1() {
         data: {
             labels: fechas, // FECHAS
             datasets: [{
-                label: 'Dolar OFI', // NOMBRE
+                label: 'DOLAR OFICIAL', // NOMBRE
                 data: precios, // PRECIOS
                 backgroundColor: 'rgba(50, 255, 240, 1)',
                 borderColor: 'rgba(50, 255, 240, 1)',
                 borderWidth: 2,
                 fill: false
             },{
-                label: 'Dolar OTC', // NOMBRE
+                label: 'DOLAR OTC', // NOMBRE
                 data: precios2, // PRECIOS
                 backgroundColor: 'rgba(50, 100, 255, 1)',
                 borderColor: 'rgba(50, 100, 255, 1)',
@@ -718,13 +718,14 @@ function chart2() {
     console.log(response);
 
     fechas = [];
-    precios = [];
+    precios3 = [];
+    precios4 = [];
     nro = 1;
 
     for (var i = 0; i < long; i++) {
       fechas[i] = response[nro][0];
-      precios[i] = numFloatandReplace(response[nro][1],4,",","",".");
-      precios2[i] = numFloatandReplace(response[nro][2],4,",","",".");
+      precios3[i] = numFloatandReplace(response[nro][1],4,",","",".");
+      precios4[i] = numFloatandReplace(response[nro][2],4,",","",".");
       nro += 1;
     }
 
@@ -735,15 +736,15 @@ function chart2() {
         data: {
             labels: fechas, // FECHAS
             datasets: [{
-                label: 'Euro OFI', // NOMBRE
-                data: precios, // PRECIOS
+                label: 'EURO OFICIAL', // NOMBRE
+                data: precios3, // PRECIOS
                 backgroundColor: 'rgba(150, 50, 255, 1)',
                 borderColor: 'rgba(150, 50, 255, 1)',
                 borderWidth: 2,
                 fill: false
             },{
-                label: 'Euro OTC', // NOMBRE
-                data: precios2, // PRECIOS
+                label: 'EURO OTC', // NOMBRE
+                data: precios4, // PRECIOS
                 backgroundColor: 'rgba(255, 50, 150, 1)',
                 borderColor: 'rgba(255, 50, 150, 1)',
                 borderWidth: 2,
@@ -786,13 +787,13 @@ function chart3() {
     console.log(response);
 
     fechas = [];
-    precios = [];
+    precios5 = [];
     nro = 1;
 
     for (var i = 0; i < long; i++) {
 
       fechas[i] = response[nro][0];
-      precios[i] = numFloatandReplace(response[nro][1],4,",",".");
+      precios5[i] = numFloatandReplace(response[nro][1],4,",",".");
 
 
       nro += 1;
@@ -806,7 +807,7 @@ function chart3() {
             labels: fechas, // FECHAS
             datasets: [{
               label: 'PETROLEO', // NOMBRE
-              data: precios, // PRECIOS
+              data: precios5, // PRECIOS
               backgroundColor: 'rgba(0, 0, 0, 1)',
               borderColor: 'rgba(0, 0, 0, 1)',
               borderWidth: 2,
@@ -844,13 +845,13 @@ function chart4() {
     console.log(response);
 
     fechas = [];
-    precios = [];
+    precios6 = [];
     nro = 1;
 
     for (var i = 0; i < long; i++) {
 
       fechas[i] = response[nro][0];
-      precios[i] = numFloatandReplace(response[nro][1],4,",","",".");
+      precios6[i] = numFloatandReplace(response[nro][1],4,",","",".");
       nro += 1;
     }
 
@@ -862,7 +863,7 @@ function chart4() {
             labels: fechas, // FECHAS
             datasets: [{
                 label: 'ORO', // NOMBRE
-                data: precios, // PRECIOS
+                data: precios6, // PRECIOS
                 borderColor: 'rgba(255, 255, 0, 1)',
                 backgroundColor: 'rgba(255, 255, 0, 1)',
                 borderWidth: 2,
@@ -900,13 +901,13 @@ function chart5() {
     console.log(response);
 
     fechas = [];
-    precios = [];
+    precios7 = [];
     nro = 1;
 
     for (var i = 0; i < long; i++) {
 
       fechas[i] = response[nro][0];
-      precios[i] = numFloatandReplace(response[nro][1],4,",","",".");
+      precios7[i] = numFloatandReplace(response[nro][1],4,",","",".");
       nro += 1;
     }
 
@@ -917,8 +918,8 @@ function chart5() {
         data: {
             labels: fechas, // FECHAS
             datasets: [{
-                label: 'Bitcoin', // NOMBRE
-                data: precios, // PRECIOS
+                label: 'BITCOIN', // NOMBRE
+                data: precios7, // PRECIOS
                 borderColor: 'rgba(0, 255, 0, 1)',
                 backgroundColor: 'rgba(0, 255, 0, 1)',
                 borderWidth: 2,

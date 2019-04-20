@@ -15,11 +15,9 @@ include 'resources/head.php';
   <!-- MAIN CONTENT
   ================================================== -->
   <div data-spy="scroll" data-target="#principal" class="main-content w-auto " id="cajaContenido">
-    <div>
       <?php
         include 'views/chat.php';
       ?>
-    </div>
   </div> <!-- / .main-content -->
 
   <?php

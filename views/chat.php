@@ -134,7 +134,7 @@
                 <textarea class="form-control" placeholder="Leave a comment" rows="2"></textarea>
               </div>
               <div class="col-auto d-flex align-items-center">
-                <input type="submit" class="btn-lg btn-success" name="" value="Enviar">
+                <input type="submit" class="btn-lg btn-success" name="enviarChat" value="Enviar">
               </div>
             </div>
           </form>

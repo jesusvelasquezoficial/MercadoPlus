@@ -1014,11 +1014,8 @@ function mostrarMsjChat(){
       textMsj += '<p class="comment-text">'+response[i].msj+'</p> </div> </div> </div> </div>';
       textMsj += '';
     }
-
     $('#boxMsjChat').html(textMsj);
-    $("#bodyChat").animate({
-      scrollTop: $('#bodyChat')[0].scrollHeight
-    }, 850);
+    
 
   }).fail(function(xhr,status,error) {
     console.log("Error");

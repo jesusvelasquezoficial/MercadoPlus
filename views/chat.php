@@ -109,3 +109,6 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  $("#bodyChat").animate({ scrollTop: $('#bodyChat')[0].scrollHeight}, 800);
+</script>

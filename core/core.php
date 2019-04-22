@@ -1947,7 +1947,7 @@
           }
           $nro += 1;
         }
-        $_SESSION['msj'] = strval($num2);
+        // $_SESSION['msj'] = strval($num2);
         $num2 = $num;
         header('Content-Type: application/json');
         echo json_encode($data);

@@ -988,89 +988,86 @@
 
         }
         mysqli_close($link);
-      break;
+    break;
     case 9: // MOSTRAR CHART3
-        include 'config/link.php';
-        $sql = "SELECT id, fecha, petroleo FROM datosoficiales";
-        $query = mysqli_query($link, $sql);
-        $num = mysqli_num_rows($query);
+      include 'config/link.php';
+      $sql = "SELECT id, fecha, petroleo FROM datosoficiales";
+      $query = mysqli_query($link, $sql);
+      $num = mysqli_num_rows($query);
 
-        if ($num != 0) {
+      if ($num != 0) {
 
-          $data = array();
-          $nro = 1;
+        $data = array();
+        $nro = 1;
 
-          while ($row = mysqli_fetch_assoc($query)) {
-            for ($i=0; $i < count($row) ; $i++) {
-              $data[$nro] = [$row['fecha'],$row['petroleo']];
-            }
-            $nro += 1;
+        while ($row = mysqli_fetch_assoc($query)) {
+          for ($i=0; $i < count($row) ; $i++) {
+            $data[$nro] = [$row['fecha'],$row['petroleo']];
           }
-
-          header('Content-Type: application/json');
-          echo json_encode($data);
-
-        }else{
-
+          $nro += 1;
         }
-        mysqli_close($link);
 
-      break;
+        header('Content-Type: application/json');
+        echo json_encode($data);
+
+      }else{
+
+      }
+      mysqli_close($link);
+    break;
     case 10: // MOSTRAR CHART4
-        include 'config/link.php';
-        $sql = "SELECT id, fecha, oropromedio FROM datosoficiales";
-        $query = mysqli_query($link, $sql);
-        $num = mysqli_num_rows($query);
+      include 'config/link.php';
+      $sql = "SELECT id, fecha, oropromedio FROM datosoficiales";
+      $query = mysqli_query($link, $sql);
+      $num = mysqli_num_rows($query);
 
-        if ($num != 0) {
+      if ($num != 0) {
 
-          $data = array();
-          $nro = 1;
+        $data = array();
+        $nro = 1;
 
-          while ($row = mysqli_fetch_assoc($query)) {
-            for ($i=0; $i < count($row) ; $i++) {
-              $data[$nro] = [$row['fecha'],$row['oropromedio']];
-            }
-            $nro += 1;
+        while ($row = mysqli_fetch_assoc($query)) {
+          for ($i=0; $i < count($row) ; $i++) {
+            $data[$nro] = [$row['fecha'],$row['oropromedio']];
           }
-
-          header('Content-Type: application/json');
-          echo json_encode($data);
-
-        }else{
-
+          $nro += 1;
         }
-        mysqli_close($link);
 
-      break;
+        header('Content-Type: application/json');
+        echo json_encode($data);
+
+      }else{
+
+      }
+      mysqli_close($link);
+    break;
     case 11: // MOSTRAR CHART5
-        include 'config/link.php';
-        $sql = "SELECT id, fecha, bitcoinpromedio FROM datosoficiales";
-        $query = mysqli_query($link, $sql);
-        $num = mysqli_num_rows($query);
+      include 'config/link.php';
+      $sql = "SELECT id, fecha, bitcoinpromedio FROM datosoficiales";
+      $query = mysqli_query($link, $sql);
+      $num = mysqli_num_rows($query);
 
-        if ($num != 0) {
+      if ($num != 0) {
 
-          $data = array();
-          $nro = 1;
+        $data = array();
+        $nro = 1;
 
-          while ($row = mysqli_fetch_assoc($query)) {
-            for ($i=0; $i < count($row) ; $i++) {
-              $data[$nro] = [$row['fecha'],$row['bitcoinpromedio']];
-            }
-            $nro += 1;
+        while ($row = mysqli_fetch_assoc($query)) {
+          for ($i=0; $i < count($row) ; $i++) {
+            $data[$nro] = [$row['fecha'],$row['bitcoinpromedio']];
           }
-
-          header('Content-Type: application/json');
-          echo json_encode($data);
-
-        }else{
-
+          $nro += 1;
         }
-        mysqli_close($link);
 
-      break;
-    case 12:
+        header('Content-Type: application/json');
+        echo json_encode($data);
+
+      }else{
+
+      }
+      mysqli_close($link);
+    break;
+    case 12: // INSERTAR DATOS OFI Y OTC AL MISMO TIEMPO
       if ($_POST['fechaDO']          != "" &&
           $_POST['horaDO']           != "" &&
           $_POST['dolarDICOM']       != "" &&
@@ -1902,8 +1899,56 @@
             }
           }
     break;
+    case 13: //INSERTAR MSJ DE CHAT
+      if ($_POST['msj'] != "") {
+        include 'config/link.php';
+        $sql   = "INSERT INTO chat (
+          user,
+          msj
+        ) VALUES (
+          '".$_SESSION["id"]."',
+          '".$_POST["msj"]."'
+        )";
+        $query = mysqli_query($link,$sql);
+        // SI NO HAY ERRORES DE CONEXION
+        if (!mysqli_error($link)) {
+          $_SESSION['msj'] = "Datos Ingresados Correctamente.";
+          header('location:../chat.php');
+          mysqli_close($link);
 
+        }else {
+          $_SESSION['msj'] = "Error de Conexión.";
+          header('location:../chat.php');
+          mysqli_close($link);
+        }
+      }else {
+        $_SESSION['msj'] = "Error de Conexión.";
+        echo 'no llego el msj';
+        header('location:../chat.php');
+      }
+    break;
+    case 14: //MOSTRAR MSJ DE CHAT
+      include 'config/link.php';
+      $sql   = "SELECT * FROM chat";
+      $query = mysqli_query($link,$sql);
+      $num = mysqli_num_rows($query);
+      if ($num != 0) {
+        $data = array();
+        $nro = 1;
+        while ($row = mysqli_fetch_assoc($query)) {
+          for ($i=0; $i < count($row) ; $i++) {
+            $data[$nro] = $row;
+          }
+          $nro += 1;
+        }
 
+        header('Content-Type: application/json');
+        echo json_encode($data);
+      }else{
+
+      }
+      mysqli_close($link);
+    break;
     default:
         header('location:../login.php');
       break;

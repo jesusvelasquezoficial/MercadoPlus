@@ -15,6 +15,7 @@ $(document).ready(function() {
   chart3();
   chart4();
   chart5();
+  mostrarMsjChat();
 
 });
 
@@ -958,4 +959,60 @@ function cargarDatos() {
   setTimeout(function () {
     $('#btnGuardar-tab').removeClass('active');
   }, 1000);
+}
+
+function enviarMsjChat() {
+  var mensaje = $('#msjChat').val();
+  if (mensaje != "") {
+    $.ajax({
+      url: 'core/core.php',
+      data:{
+        node: 13,
+        msj: mensaje
+      },
+      method: 'POST',
+      type: 'POST'
+      // dataType: 'json'
+    }).done(function (response) {
+      pushAlert();
+      mostrarMsjChat();
+      console.log("Exito");
+    }).fail(function(xhr,status,error) {
+      console.log("Error");
+    }).always(function(response) {
+      console.log("Enviado");
+    });
+    $('#msjChat').val("");
+  }
+}
+
+function mostrarMsjChat(){
+  $.ajax({
+    url: 'core/core.php',
+    data:{
+      node: 14
+    },
+    method: 'POST',
+    type: 'POST'
+    // dataType: 'json'
+  }).done(function (response) {
+    pushAlert();
+    console.log(response);
+    long = Object.keys(response).length;
+    var textMsj = '';
+    for (var i in response) {
+      textMsj += '<div class="comment mb-3"> <div class="row"> <div class="col-auto">';
+      textMsj += '<a class="avatar" href="profile-posts.html"> <img src="assets/img/avatars/profiles/0.png" alt="..." class="avatar-img rounded-circle"> </a>';
+      textMsj += '</div> <div class="col ml-n2"> <div class="comment-body"> <div class="row"> <div class="col">';
+      textMsj += '<h5 class="comment-title"> '+response[i].user+' </h5> </div> <div class="col-auto"> <time class="comment-time"> 11:12 </time> </div> </div> ';
+      textMsj += '<p class="comment-text"> texto </p> </div> </div> </div> </div>';
+      textMsj += '';
+    }
+    $('#boxMsjChat').html(textMsj);
+
+  }).fail(function(xhr,status,error) {
+    console.log("Error");
+  }).always(function(response) {
+    console.log("Enviado");
+  });
 }

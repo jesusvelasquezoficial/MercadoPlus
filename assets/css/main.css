@@ -59,3 +59,6 @@ tbody th{
     padding-bottom: .35rem !important;
     font-family:courier;
 }
+.bodyChat {
+  overflow-y: auto;
+}

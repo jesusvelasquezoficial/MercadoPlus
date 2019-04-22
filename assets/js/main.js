@@ -15,7 +15,9 @@ $(document).ready(function() {
   chart3();
   chart4();
   chart5();
-  mostrarMsjChat();
+  setInterval(function() {
+    mostrarMsjChat();
+  },1000);
 
 });
 
@@ -986,6 +988,10 @@ function enviarMsjChat() {
   }
 }
 
+function formatHora(date) {
+  return date.slice(10, -3);
+}
+
 function mostrarMsjChat(){
   $.ajax({
     url: 'core/core.php',
@@ -1004,11 +1010,15 @@ function mostrarMsjChat(){
       textMsj += '<div class="comment mb-3"> <div class="row"> <div class="col-auto">';
       textMsj += '<a class="avatar" href="profile-posts.html"> <img src="assets/img/avatars/profiles/0.png" alt="..." class="avatar-img rounded-circle"> </a>';
       textMsj += '</div> <div class="col ml-n2"> <div class="comment-body"> <div class="row"> <div class="col">';
-      textMsj += '<h5 class="comment-title"> '+response[i].user+' </h5> </div> <div class="col-auto"> <time class="comment-time"> 11:12 </time> </div> </div> ';
-      textMsj += '<p class="comment-text"> texto </p> </div> </div> </div> </div>';
+      textMsj += '<h5 class="comment-title"> '+response[i].user_nombre+' '+response[i].user_apellido+' </h5> </div> <div class="col-auto"> <time class="comment-time"> '+formatHora(response[i].fecha)+' </time> </div> </div> ';
+      textMsj += '<p class="comment-text">'+response[i].msj+'</p> </div> </div> </div> </div>';
       textMsj += '';
     }
+
     $('#boxMsjChat').html(textMsj);
+    $("#bodyChat").animate({
+      scrollTop: $('#bodyChat')[0].scrollHeight
+    }, 850);
 
   }).fail(function(xhr,status,error) {
     console.log("Error");

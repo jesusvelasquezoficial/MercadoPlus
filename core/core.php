@@ -1903,23 +1903,28 @@
       if ($_POST['msj'] != "") {
         include 'config/link.php';
         $sql   = "INSERT INTO chat (
-          user,
+          user_id,
+          user_nombre,
+          user_apellido,
+          user_email,
           msj
         ) VALUES (
           '".$_SESSION["id"]."',
+          '".$_SESSION["nombre"]."',
+          '".$_SESSION["apellido"]."',
+          '".$_SESSION["email"]."',
           '".$_POST["msj"]."'
         )";
         $query = mysqli_query($link,$sql);
         // SI NO HAY ERRORES DE CONEXION
         if (!mysqli_error($link)) {
           $_SESSION['msj'] = "Datos Ingresados Correctamente.";
-          header('location:../chat.php');
           mysqli_close($link);
-
+          header('location:../chat.php');
         }else {
           $_SESSION['msj'] = "Error de Conexión.";
-          header('location:../chat.php');
           mysqli_close($link);
+          header('location:../chat.php');
         }
       }else {
         $_SESSION['msj'] = "Error de Conexión.";
@@ -1932,7 +1937,8 @@
       $sql   = "SELECT * FROM chat";
       $query = mysqli_query($link,$sql);
       $num = mysqli_num_rows($query);
-      if ($num != 0) {
+      $num2 = 0;
+      if ($num != $num2) {
         $data = array();
         $nro = 1;
         while ($row = mysqli_fetch_assoc($query)) {
@@ -1941,7 +1947,8 @@
           }
           $nro += 1;
         }
-
+        $_SESSION['msj'] = strval($num2);
+        $num2 = $num;
         header('Content-Type: application/json');
         echo json_encode($data);
       }else{

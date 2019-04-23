@@ -1917,20 +1917,13 @@
         )";
         $query = mysqli_query($link,$sql);
         // SI NO HAY ERRORES DE CONEXION
-        if (!mysqli_error($link)) {
-          $_SESSION['msj'] = "Datos Ingresados Correctamente.";
+            $_SESSION['msj'] = "Datos Ingresados Correctamente.";
           mysqli_close($link);
           header('location:../chat.php');
         }else {
           $_SESSION['msj'] = "Error de Conexión.";
           mysqli_close($link);
-          header('location:../chat.php');
-        }
-      }else {
-        $_SESSION['msj'] = "Error de Conexión.";
-        echo 'no llego el msj';
-        header('location:../chat.php');
-      }
+         }
     break;
     case 14: //MOSTRAR MSJ DE CHAT
       include 'config/link.php';

@@ -6,7 +6,7 @@
 <?php
 include 'resources/head.php';
 ?>
-<body data-offset="0" style="position:relative;" onload="mostrarMsjChat();">
+<body data-offset="0" style="position:relative;">
   <?php
     include 'components/modals.php';
     include 'components/navbar.php';

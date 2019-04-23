@@ -1,3 +1,9 @@
+<script type="text/javascript">
+
+  setInterval(function() {
+    mostrarMsjChat();
+  },1000);
+</script>
 <div class="container-fluid pt-6">
   <div class="card" style="height:89vh;">
     <!-- Header -->
@@ -109,6 +115,3 @@
     </div>
   </div>
 </div>
-<script type="text/javascript">
-  $("#bodyChat").animate({ scrollTop: $('#bodyChat')[0].scrollHeight}, 800);
-</script>

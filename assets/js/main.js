@@ -15,9 +15,6 @@ $(document).ready(function() {
   chart3();
   chart4();
   chart5();
-  setInterval(function() {
-    mostrarMsjChat();
-  },1000);
 
 });
 
@@ -989,7 +986,9 @@ function enviarMsjChat() {
 }
 
 function formatHora(date) {
-  return date.slice(10, -3);
+  if (date) {
+    return date.slice(10, -3);
+  }
 }
 
 function mostrarMsjChat(){
@@ -1015,7 +1014,13 @@ function mostrarMsjChat(){
       textMsj += '';
     }
     $('#boxMsjChat').html(textMsj);
-    
+    console.log(long);
+    console.log(response[long].id);
+    if (response[long].id != long) {
+      console.log("entro");
+      $("#bodyChat").animate({ scrollTop: $('#bodyChat')[0].scrollHeight}, 800);
+    }
+
 
   }).fail(function(xhr,status,error) {
     console.log("Error");

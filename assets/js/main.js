@@ -1014,13 +1014,6 @@ function mostrarMsjChat(){
       textMsj += '';
     }
     $('#boxMsjChat').html(textMsj);
-    console.log(long);
-    console.log(response[long].id);
-    if (response[long].id != long) {
-      console.log("entro");
-      $("#bodyChat").animate({ scrollTop: $('#bodyChat')[0].scrollHeight}, 800);
-    }
-
 
   }).fail(function(xhr,status,error) {
     console.log("Error");

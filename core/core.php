@@ -1900,7 +1900,7 @@
           }
     break;
     case 13: //INSERTAR MSJ DE CHAT
-      if ($_POST['msj'] != "") {
+      if ($_POST['msj'] != "" && $_SESSION["id"] != "") {
         include 'config/link.php';
         $sql   = "INSERT INTO chat (
           user_id,
@@ -1917,7 +1917,7 @@
         )";
         $query = mysqli_query($link,$sql);
         // SI NO HAY ERRORES DE CONEXION
-            $_SESSION['msj'] = "Datos Ingresados Correctamente.";
+          $_SESSION['msj'] = "Datos Ingresados Correctamente.";
           mysqli_close($link);
           header('location:../chat.php');
         }else {
@@ -1935,7 +1935,7 @@
         $data = array();
         $nro = 1;
         while ($row = mysqli_fetch_assoc($query)) {
-          for ($i=0; $i < count($row) ; $i++) {
+          for ($i=0; $i < count($row); $i++) {
             $data[$nro] = $row;
           }
           $nro += 1;

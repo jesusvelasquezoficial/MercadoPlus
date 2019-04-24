@@ -1,5 +1,4 @@
 <script type="text/javascript">
-
   setInterval(function() {
     mostrarMsjChat();
   },1000);

@@ -1,5 +1,6 @@
 <?php
   session_start();
+  if (isset($_SESSION['id']) && $_SESSION['role'] == "2") {
 ?>
 <!doctype html>
 <html lang="es">
@@ -25,3 +26,8 @@ include 'resources/head.php';
   ?>
 </body>
 </html>
+<?php
+}else {
+  echo '<script>history.back();</script>';
+}
+?>

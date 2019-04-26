@@ -1006,12 +1006,51 @@ function mostrarMsjChat(){
     long = Object.keys(response).length;
     var textMsj = '';
     for (var i in response) {
-      textMsj += '<div class="comment mb-3"> <div class="row"> <div class="col-auto">';
-      textMsj += '<a class="avatar" href="profile-posts.html"> <img src="assets/img/avatars/profiles/0.png" alt="..." class="avatar-img rounded-circle"> </a>';
-      textMsj += '</div> <div class="col ml-n2"> <div class="comment-body"> <div class="row"> <div class="col">';
-      textMsj += '<h5 class="comment-title"> '+response[i].user_nombre+' '+response[i].user_apellido+' </h5> </div> <div class="col-auto"> <time class="comment-time"> '+formatHora(response[i].fecha)+' </time> </div> </div> ';
-      textMsj += '<p class="comment-text">'+response[i].msj+'</p> </div> </div> </div> </div>';
-      textMsj += '';
+      if (response[i].user_id != response[i].session_id) {
+        textMsj += '<div class="comment mb-3">';
+        textMsj += '<div class="row">';
+        textMsj += '<div class="col-auto">';
+        textMsj += '<a class="avatar avatar-sm" href="profile-posts.html"> <img src="assets/img/avatars/profiles/avatar-'+response[i].user_id+'.jpg" alt="..." class="avatar-img rounded-circle"> </a>';
+        textMsj += '</div>';
+        textMsj += '<div class="col ml-n2">';
+        textMsj += '<div class="comment-body">';
+        textMsj += '<div class="row">';
+        textMsj += '<div class="col">';
+        textMsj += '<h5 class="comment-title">'+response[i].user_nombre+' '+response[i].user_apellido+'</h5>';
+        textMsj += '</div>';
+        textMsj += '<div class="col-auto">';
+        textMsj += '<time class="comment-time">'+formatHora(response[i].fecha);+'</time>';
+        textMsj += '</div>';
+        textMsj += '</div>';
+        textMsj += '<p class="comment-text">'+response[i].msj+'</p>';
+        textMsj += '</div>';
+        textMsj += '</div>';
+        textMsj += '</div>';
+        textMsj += '</div>';
+        textMsj += '';
+      }else{
+        textMsj += '<div class="comment mb-3">';
+        textMsj += '<div class="row d-flex justify-content-end">';
+        textMsj += '<div class="col-auto ml-n2">';
+        textMsj += '<div class="comment-body">';
+        textMsj += '<div class="row">';
+        textMsj += '<div class="col">';
+        textMsj += '<h5 class="comment-title">'+response[i].user_nombre+' '+response[i].user_apellido+'</h5>';
+        textMsj += '</div>';
+        textMsj += '<div class="col-auto">';
+        textMsj += '<time class="comment-time"> '+formatHora(response[i].fecha);+' </time>';
+        textMsj += '</div>';
+        textMsj += '</div>';
+        textMsj += '<p class="comment-text">'+response[i].msj+'</p>';
+        textMsj += '</div>';
+        textMsj += '</div>';
+        textMsj += '<div class="col-auto">';
+        textMsj += '<a class="avatar avatar-sm" href="profile-posts.html"> <img src="assets/img/avatars/profiles/avatar-'+response[i].user_id+'.jpg" alt="..." class="avatar-img rounded-circle"> </a>';
+        textMsj += '</div>';
+        textMsj += '</div>';
+        textMsj += '</div>';
+        textMsj += '';
+      }
     }
     $('#boxMsjChat').html(textMsj);
 

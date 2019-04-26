@@ -1935,9 +1935,11 @@
         $data = array();
         $nro = 1;
         while ($row = mysqli_fetch_assoc($query)) {
+          $long = sizeof($row);
           for ($i=0; $i < count($row); $i++) {
             $data[$nro] = $row;
           }
+          $data[$nro]['session_id'] = $_SESSION['id'];
           $nro += 1;
         }
         // $_SESSION['msj'] = strval($num2);

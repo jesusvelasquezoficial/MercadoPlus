@@ -4,7 +4,7 @@
   },1000);
 </script>
 <div class="container-fluid pt-6">
-  <div class="card" style="height:89vh;">
+  <div class="card" style="height:89vh;max-width:500px;">
     <!-- Header -->
     <div class="card-head my-3">
       <div class="row align-items-center">
@@ -49,39 +49,10 @@
     </div>
     <div class="card-body bodyChat" id="bodyChat">
       <div id="boxMsjChat">
-        <!-- Comments -->
-        <div class="comment mb-3 float-right">
-          <div class="row">
-            <div class="col ml-n2">
-              <!-- Body -->
-              <div class="comment-body">
-                <div class="row">
-                  <div class="col">
-                    <!-- Time -->
-                    <time class="comment-time">
-                      11:12
-                    </time>
-                  </div>
-                  <div class="col-auto">
-                    <!-- Title -->
-                    <h5 class="comment-title">
-                      Adolfo Hess
-                    </h5>
-                  </div>
-                </div> <!-- / .row -->
-                <!-- Text -->
-                <p class="comment-text">
-                  Any chance you're going to link the grid up to a public gallery of sites built with Launchday?
-                </p>
-              </div>
-            </div>
-            <div class="col-auto">
-              <!-- Avatar -->
-              <a class="avatar" href="profile-posts.html">
-                <img src="assets/img/avatars/profiles/0.png" alt="..." class="avatar-img rounded-circle">
-              </a>
-            </div>
-          </div> <!-- / .row -->
+        <div class="d-flex align-items-center justify-content-center">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
         </div>
       </div>
     </div>

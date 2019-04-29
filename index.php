@@ -3,9 +3,7 @@
 ?>
 <!doctype html>
 <html lang="es">
-<?php
-include 'resources/head.php';
-?>
+<?php include 'resources/head.php'; ?>
 <body data-offset="0" style="position:relative;">
   <?php
     include 'components/modals.php';
@@ -23,8 +21,6 @@ include 'resources/head.php';
     </div>
   </div> <!-- / .main-content -->
 
-  <?php
-    include 'resources/scripts.php';
-  ?>
+  <?php include 'resources/scripts.php'; ?>
 </body>
 </html>

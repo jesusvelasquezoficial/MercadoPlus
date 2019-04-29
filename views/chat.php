@@ -59,8 +59,8 @@
     <!-- Divider -->
     <hr>
     <div class="container-fluid mb-3">
-      <div class="row justify-content-end">
-        <div class="col-auto align-items-center">
+      <div class="row d-flex justify-content-end">
+        <div class="col-auto d-flex align-items-center">
           <!-- Avatar -->
           <div class="avatar">
             <img src="assets/img/avatars/profiles/0.png" alt="..." class="avatar-img rounded-circle">

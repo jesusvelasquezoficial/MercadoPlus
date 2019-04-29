@@ -15,7 +15,7 @@ include 'resources/head.php';
 
   <!-- MAIN CONTENT
   ================================================== -->
-  <div data-spy="scroll" data-target="#cajaChat" class="main-content w-auto " id="cajaChat">
+  <div data-spy="scroll" data-target="cajaChat" class="main-content w-auto " id="cajaChat">
       <?php
         include 'views/chat.php';
       ?>

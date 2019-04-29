@@ -5,11 +5,11 @@
 </script>
 <div class="container-fluid pt-6">
   <div class="row">
-    <div class="col">
+    <div class="col-lg">
 
     </div>
-    <div class="col-auto">
-      <div class="card" style="height:89vh;max-width:500px;">
+    <div class="col-lg-auto">
+      <div class="card" style="height:89vh;max-width:550px;">
         <!-- Header -->
         <div class="card-head my-3">
           <div class="row align-items-center">

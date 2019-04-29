@@ -1,6 +1,6 @@
 <?php
   session_start();
-  if (isset($_SESSION['id']) && $_SESSION['role'] == "2") {
+  if (isset($_SESSION['id']) && $_SESSION['role'] != "") {
 ?>
 <!doctype html>
 <html lang="es">
@@ -15,7 +15,7 @@ include 'resources/head.php';
 
   <!-- MAIN CONTENT
   ================================================== -->
-  <div data-spy="scroll" data-target="#principal" class="main-content w-auto " id="cajaContenido">
+  <div data-spy="scroll" data-target="#cajaChat" class="main-content w-auto " id="cajaChat">
       <?php
         include 'views/chat.php';
       ?>

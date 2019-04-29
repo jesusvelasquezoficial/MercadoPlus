@@ -1,6 +1,7 @@
 <?php
   // Iniciamos una Session.
   session_start();
+  error_reporting(E_ERROR);                   // OJO: EL ERROR_REPORTING ESTA ACTIVADO Y NO MUESTRA LOS MENSAJES DE ERROR PRODUCIDOS EN EL CORE.
 
   // Trabajamos el nucleo con un switch
   switch ($_REQUEST['node']) {
@@ -29,11 +30,11 @@
             $_SESSION['email'] = $row['email'];
             $_SESSION['role'] = $row['role'];
 
-
             mysqli_close($link);
-            // Damos la 'Bienvenida' al Cliente.
 
+            // Damos la 'Bienvenida' al Cliente.
             $_SESSION['msj'] = "Bienvenido ".$_SESSION['nombre']." ".$_SESSION['apellido'];
+
             // Redireccionamiento a la pagina principal.
             echo "<script>location.href='../index.php'</script>";
 
@@ -1950,6 +1951,61 @@
 
       }
       mysqli_close($link);
+    break;
+    case 'Registro_Usuarios':
+      if ($_POST['nombre'] != "" && $_POST['apellido'] != "" && $_POST['email'] != "" && $_POST['pass'] != "" && $_POST['pass2'] != "" && $_POST['tyc'] != "") {
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
+        $pass2 = $_POST['pass2'];
+
+        if ($pass == $pass2) {
+          $pass = md5($pass);
+          include 'config/link.php';
+          $sql   = "SELECT * FROM usuarios WHERE email='".$email."'";
+          $query = mysqli_query($link,$sql);
+          $num = mysqli_num_rows($query);
+          if ($num == 0) {
+            $sql = "INSERT INTO usuarios (id,nombre,apellido,email,password,role) VALUES (0,'".$nombre."','".$apellido."','".$email."','".$pass."',1)";
+            $query = mysqli_query($link,$sql);
+            // SI NO HAY ERRORES DE CONEXION
+            if (!mysqli_error($link)) {
+
+              // Mensaje
+              $_SESSION['id'] = $row['id'];
+              $_SESSION['nombre'] = $row['nombre'];
+              $_SESSION['apellido'] = $row['apellido'];
+              $_SESSION['email'] = $row['email'];
+              $_SESSION['role'] = $row['role'];
+
+              // Damos la 'Bienvenida' al Cliente.
+              $_SESSION['msj'] = "Bienvenido ".$_SESSION['nombre']." ".$_SESSION['apellido'];
+              mysqli_close($link);
+
+              // Redireccionamiento a la pagina principal.
+              echo "<script>location.href='../index.php'</script>";
+            }else {
+              $_SESSION['msj'] = "Error de Conexión.";
+              mysqli_close($link);
+              echo "<script>history.back();</script>";
+            }
+
+          }else {
+            $_SESSION['msj'] = "El Email esta en uso, elige otro.";
+            // mysqli_close($link);
+            echo "<script>history.back();</script>";
+          }
+        }else {
+          $_SESSION['msj'] = "El Password no son coincide.";
+          // mysqli_close($link);
+          echo "<script>history.back();</script>";
+        }
+      }else{
+        $_SESSION['msj'] = "Debe llenar todos los campos.";
+        // mysqli_close($link);
+        echo "<script>history.back();</script>";
+      }
     break;
     default:
       header('location:../login.php');

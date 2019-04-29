@@ -56,6 +56,12 @@
             <input type="checkbox" class="custom-control-input" id="customSwitch1" onchange="formatoCajaInstagram();">
             <label class="custom-control-label" for="customSwitch1">1080px</label>
           </div>
+        <?php } if (!isset($_SESSION['id'])) { ?>
+          <ul class="navbar-nav">
+            <li class="nav-item my-3">
+              <a class="nav-link " href="registro.php"> <i class="fe fe-user-plus"></i>Registrarse </a>
+            </li>
+          </ul>
         <?php } ?>
       </div>
       <!-- Customize -->

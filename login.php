@@ -53,11 +53,11 @@ if (isset($_SESSION['id'])) {
           <!-- Submit -->
           <button type="submit" class="btn btn-lg btn-block btn-primary mb-3"> Iniciar Sesión </button>
           <!-- Link -->
-          <!-- <div class="text-center">
+          <div class="text-center">
             <small class="text-muted text-center">
-              ¿Aun no te registras? <p><a href="#">Registrate</a></p>
+              ¿Aun no te registras? <p><a href="registro.php">Registrate</a></p>
             </small>
-          </div> -->
+          </div>
         </form>
       </div>
       <div class="col-12 col-md-7 col-lg-6 col-xl-5 d-none d-lg-block">

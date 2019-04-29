@@ -976,7 +976,6 @@ function enviarMsjChat() {
     }).done(function (response) {
       pushAlert();
       mostrarMsjChat();
-      console.log("Exito");
     }).fail(function(xhr,status,error) {
       console.log("Error");
     }).always(function(response) {
@@ -1059,8 +1058,8 @@ function mostrarMsjChat(){
       }
 
       $('#boxMsjChat').html(textMsj);
-      $('#bodyChat').scrollTop(0,0);
-
+      $('#bodyChat').scrollTop(100000);
+      beepSound(4);
       long2[0] = long;
     }
 
@@ -1068,4 +1067,56 @@ function mostrarMsjChat(){
     console.log("Error");
   }).always(function(response) {
   });
+}
+
+function beepSound(msj) {
+  switch (msj) {
+    case 1:
+      var snd = new Audio("assets/beep.mp3");
+      snd.play();
+    break;
+    case 2:
+      var snd = new Audio("assets/smsnew.mp3");
+      snd.play();
+    break;
+    case 3:
+      var snd = new Audio("assets/fsms.mp3");
+      snd.play();
+    break;
+    case 4:
+      var snd = new Audio("assets/tono1.mp3");
+      snd.play();
+    break;
+    case 5:
+      var snd = new Audio("assets/tono2.mp3");
+      snd.play();
+    break;
+    default:
+
+  }
+}
+
+function chatBot_promediosDia(){
+  var mensaje = $('#msjChat').val();
+  if (mensaje != "") {
+    $.ajax({
+      url: 'core/core.php',
+      data:{
+        node: 13,
+        msj: mensaje
+      },
+      method: 'POST',
+      type: 'POST'
+      // dataType: 'json'
+    }).done(function (response) {
+      pushAlert();
+      mostrarMsjChat();
+      beepSound(1);
+    }).fail(function(xhr,status,error) {
+      console.log("Error");
+    }).always(function(response) {
+      console.log("Enviado");
+    });
+    $('#msjChat').val("");
+  }
 }

@@ -29,15 +29,9 @@
                   </h4>
                 </a>
                 <div class="dropdown-menu">
-                  <a href="#" class="dropdown-item">
-                    Action
-                  </a>
-                  <a href="#" class="dropdown-item">
-                    Another action
-                  </a>
-                  <a href="#" class="dropdown-item">
-                    Something else here
-                  </a>
+                  <a href="#" class="dropdown-item"> Action </a>
+                  <a href="#" class="dropdown-item"> Another action </a>
+                  <a href="#" class="dropdown-item"> Something else here </a>
                 </div>
               </div>
 
@@ -55,15 +49,9 @@
                   <i class="fe fe-more-vertical"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                  <a href="#!" class="dropdown-item">
-                    Promedio del Dia
-                  </a>
-                  <a href="#!" class="dropdown-item">
-                    Tasa de Mercados
-                  </a>
-                  <a href="#!" class="dropdown-item">
-                    Datos Oficiales
-                  </a>
+                  <button onclick="chatBot_promediosDia();" class="dropdown-item"> Promedios del Dia </button>
+                  <button onclick="" class="dropdown-item"> Tasa de Mercados </button>
+                  <button onclick="" class="dropdown-item"> Datos Oficiales </button>
                 </div>
               </div>
 

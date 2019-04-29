@@ -1918,7 +1918,6 @@
         )";
         $query = mysqli_query($link,$sql);
         // SI NO HAY ERRORES DE CONEXION
-          $_SESSION['msj'] = "Datos Ingresados Correctamente.";
           mysqli_close($link);
           header('location:../chat.php');
         }else {

@@ -1952,8 +1952,8 @@
       mysqli_close($link);
     break;
     default:
-        header('location:../login.php');
-      break;
+      header('location:../login.php');
+    break;
   }
 
 ?>

@@ -2006,6 +2006,41 @@
         echo "<script>history.back();</script>";
       }
     break;
+    case 'chatBot_promediosDia':
+      include 'config/link.php';
+      $sql = 'SELECT * FROM datosoficiales ORDER BY id DESC';
+      $query = mysqli_query($link,$sql);
+      $num = mysqli_num_rows($query);
+
+      if ($num != 0) {
+        $row = mysqli_fetch_assoc($query);
+        $id = $row['id'];
+        $nombre = 'Promedio';
+        $apellido = 'del Dia';
+        $email = '';
+        $msj = 'C:'.$row['dolarc'].' / V:/';
+      }
+
+
+      $sql2   = "INSERT INTO chat (
+        user_id,
+        user_nombre,
+        user_apellido,
+        user_email,
+        msj
+      ) VALUES (
+        $id,
+        '".$_SESSION["nombre"]."',
+        '".$_SESSION["apellido"]."',
+        '".$_SESSION["email"]."',
+        '".$_POST["msj"]."'
+      )";
+      $query2 = mysqli_query($link,$sql2);
+      // SI NO HAY ERRORES DE CONEXION
+        mysqli_close($link);
+        header('location:../chat.php');
+
+      break;
     default:
       header('location:../login.php');
     break;

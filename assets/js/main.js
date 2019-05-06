@@ -1097,26 +1097,20 @@ function beepSound(msj) {
 }
 
 function chatBot_promediosDia(){
-  var mensaje = $('#msjChat').val();
-  if (mensaje != "") {
-    $.ajax({
-      url: 'core/core.php',
-      data:{
-        node: 13,
-        msj: mensaje
-      },
-      method: 'POST',
-      type: 'POST'
-      // dataType: 'json'
-    }).done(function (response) {
-      pushAlert();
-      mostrarMsjChat();
-      beepSound(1);
-    }).fail(function(xhr,status,error) {
-      console.log("Error");
-    }).always(function(response) {
-      console.log("Enviado");
-    });
-    $('#msjChat').val("");
-  }
+  $.ajax({
+    url: 'core/core.php',
+    data:{
+      node: 'chatBot_promediosDia'
+    },
+    method: 'POST',
+    type: 'POST'
+    // dataType: 'json'
+  }).done(function (response) {
+    mostrarMsjChat();
+  }).fail(function(xhr,status,error) {
+    console.log("Error");
+  }).always(function(response) {
+    console.log("Enviado");
+  });
+  $('#msjChat').val("");
 }

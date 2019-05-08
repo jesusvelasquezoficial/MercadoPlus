@@ -1,7 +1,8 @@
 <?php
   // Iniciamos una Session.
   session_start();
-  error_reporting(E_ERROR);                   // OJO: EL ERROR_REPORTING ESTA ACTIVADO Y NO MUESTRA LOS MENSAJES DE ERROR PRODUCIDOS EN EL CORE.
+  // OJO: EL ERROR_REPORTING ESTA ACTIVADO Y NO MUESTRA LOS MENSAJES DE ERROR PRODUCIDOS EN EL CORE.
+  error_reporting(E_ERROR);
 
   // Trabajamos el nucleo con un switch
   switch ($_REQUEST['node']) {

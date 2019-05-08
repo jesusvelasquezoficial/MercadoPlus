@@ -26,7 +26,7 @@ if (isset($_SESSION['id'])) {
         <p class="text-muted text-center mb-5"> Bienvenidos a nuestro panel de control. </p>
         <!-- Form -->
         <form class="" action="core/core.php" method="post">
-          <input type="hidden" name="node" value="1">
+          <input type="hidden" name="node" value="0">
           <!-- Email address -->
           <div class="form-group">
             <!-- Label -->

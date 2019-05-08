@@ -9,7 +9,7 @@ class conexion {
   private $configuracion = [
     "driver" => "mysql",
     "host" => "localhost",
-    "database" => "crudphp",
+    "database" => "mercadoplus",
     "port" => "3306",
     "user" => "root",
     "password" => "",

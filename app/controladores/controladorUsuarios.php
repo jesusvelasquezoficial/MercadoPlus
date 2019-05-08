@@ -55,6 +55,15 @@ class controladorUsuarios {
     return $respuesta;
   }
 
+  public function buscarUsuarioPorEmail($emailUsuario) {
+    $usuarioModel = new Usuarios();
+    $usuario = $usuarioModel->where("email", "=", $emailUsuario)->first(); //asi solo nos da 1 solo obj
+    $v = ($usuario != null);
+    $respuesta = new respuesta($v ? EMensajes::CONSULTA_EXITOSA : EMensajes::CONSULTA_ERROR);
+    $respuesta->setDatos($usuario);
+    return $respuesta;
+  }
+
 }
 
  ?>

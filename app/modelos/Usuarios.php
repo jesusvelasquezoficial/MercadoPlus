@@ -6,10 +6,10 @@
     protected $id;
     protected $nombre;
     protected $apellido;
-    protected $edad;
     protected $email;
-    protected $telefono;
-    protected $fecha_registro;
+    protected $password;
+    protected $role;
+    // protected $fecha_registro;
 
     public function __construct($propiedades = null) {
       parent::__construct("usuarios",Usuarios::class, $propiedades);
@@ -29,16 +29,16 @@
       return $this->apellido;
     }
 
-    function getEdad() {
-      return $this->edad;
+    function getPassword() {
+      return $this->password;
     }
 
     function getEmail() {
       return $this->email;
     }
 
-    function getTelefono() {
-      return $this->telefono;
+    function getRole() {
+      return $this->role;
     }
 
     function getFecha_registro() {
@@ -59,16 +59,16 @@
       $this->apellido = $apellido;
     }
 
-    function setEdad($edad) {
-      $this->edad = $edad;
+    function setPassword($password) {
+      $this->password = $password;
     }
 
     function setEmail($email) {
       $this->email = $email;
     }
 
-    function setTelefono($telefono) {
-      $this->telefono = $telefono;
+    function setRole($role) {
+      $this->role = $role;
     }
 
     function setFecha_registro($fecha_registro) {

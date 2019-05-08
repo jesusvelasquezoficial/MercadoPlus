@@ -12,10 +12,9 @@
   switch ($_REQUEST['node']) {
     case 0:
     if ($_POST['email'] && $_POST['pass']) {
-      $sesion = new controladorSesion();
+      $sesion = new controladorSesion($_POST['email'],$_POST['pass']);
       $obj = $sesion->entrar()->json();
       $_SESSION['msj'] = $obj->datos;
-      $sesion->salir();
       header('location:../index.php');
     }else{
         header('location:../login.php');

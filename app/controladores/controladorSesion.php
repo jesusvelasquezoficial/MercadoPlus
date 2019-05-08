@@ -7,7 +7,7 @@ class controladorSesion {
   protected $email;
   protected $pass;
 
-  public function __construct($e,$p) {
+  public function __construct($e = null, $p = null) {
     $this->email = $e;
     $this->pass = $p;
   }
@@ -49,6 +49,12 @@ class controladorSesion {
   public function salir() {
     session_unset();
     session_destroy();
+  }
+
+  public function verificarCredenciales() {
+    $controladorUsuario = new controladorUsuarios();
+    $objUsuario = $controladorUsuario->buscarUsuarioPorEmail($this->email);
+
   }
 
   // GETS

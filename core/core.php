@@ -1,10 +1,26 @@
 <?php
   // Iniciamos una Session.
   session_start();
-  error_reporting(E_ERROR);                   // OJO: EL ERROR_REPORTING ESTA ACTIVADO Y NO MUESTRA LOS MENSAJES DE ERROR PRODUCIDOS EN EL CORE.
+  // OJO: EL ERROR_REPORTING ESTA ACTIVADO Y NO MUESTRA LOS MENSAJES DE ERROR PRODUCIDOS EN EL CORE.
+  error_reporting(E_ERROR);
+
+  require_once '../src/roots.php';
+  require_once PATH_SRC.'autoloader/autoloader.php';
+  autoloader::registrar();
 
   // Trabajamos el nucleo con un switch
   switch ($_REQUEST['node']) {
+    case 0:
+    if ($_POST['email'] && $_POST['pass']) {
+      $sesion = new controladorSesion($_POST['email'],$_POST['pass']);
+      $obj = $sesion->entrar()->json();
+      $_SESSION['msj'] = $obj->datos;
+      header('location:../index.php');
+    }else{
+        header('location:../login.php');
+        // echo "<script>history.back();</script>";
+      }
+    break;
     case 1: // LOGIN ( INICIO DE SESION )
       // SI LLEGA 'EMAIL' AND 'PASS'
       if ($_POST['email'] && $_POST['pass']) {

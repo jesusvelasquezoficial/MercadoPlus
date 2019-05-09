@@ -71,13 +71,13 @@
         <hr>
         <div class="container-fluid mb-3">
           <div class="row d-flex justify-content-end">
-            <div class="col-auto d-flex align-items-center">
+            <!-- <div class="col-auto d-flex align-items-center"> -->
               <!-- Avatar -->
-              <div class="avatar">
-                <?php echo '<img src="assets/img/avatars/profiles/avatar-'.$_SESSION['id'].'.jpg" alt="..." class="avatar-img rounded-circle">'; ?>
-              </div>
-            </div>
-            <div class="col ml-n2">
+              <!-- <div class="avatar"> -->
+                <?php //echo '<img src="assets/img/avatars/profiles/avatar-'.$_SESSION['id'].'.jpg" alt="..." class="avatar-img rounded-circle">'; ?>
+              <!-- </div> -->
+            <!-- </div> -->
+            <div class="col">
               <!-- Form -->
               <form>
                 <div class="row">

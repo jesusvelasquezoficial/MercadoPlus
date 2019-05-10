@@ -9,7 +9,6 @@
     include 'components/modals.php';
     include 'components/navbar.php';
   ?>
-
   <!-- MAIN CONTENT
   ================================================== -->
   <div data-spy="scroll" data-target="#principal" class="main-content w-auto " id="cajaContenido">

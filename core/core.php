@@ -11,10 +11,13 @@
   // Trabajamos el nucleo con un switch
   switch ($_REQUEST['node']) {
     case 0:
+    // Verificamos que los datos esten seteados.
     if (isset($_POST['email']) && isset($_POST['pass'])) {
+      // Creamos un Array de datos llamado $Credenciales.
       $credenciales = ["email" => $_POST['email'], "password" => $_POST['pass']];
+      // Creamos una nueva session.
       $sesion = new controladorSesion();
-      $sesion->entrar($credenciales);
+      echo $sesion->entrar($credenciales)->json();
     }
     break;
     case 1: // LOGIN ( INICIO DE SESION )

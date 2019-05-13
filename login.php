@@ -16,6 +16,16 @@ if (isset($_SESSION['id'])) {
   ================================================== -->
   <div class="container-fluid">
     <div class="row align-items-center justify-content-center blue-alpha-0">
+      <div class="col-12">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-center justify-content-center blue-alpha-0">
       <div class="col-12 col-md-5 col-lg-5 col-xl-3 px-lg-6 my-5 p-5 animated flipInX shadow" style="background-color: rgba(0,0,0,.15);">
         <div class="col-12 text-center mb-4">
           <a href="index.php"><img src="assets/img/logo.png" class="mx-auto img-fluid" alt="..."></a>
@@ -25,7 +35,7 @@ if (isset($_SESSION['id'])) {
         <!-- Subheading -->
         <p class="text-muted text-center mb-5"> Bienvenidos a nuestro panel de control. </p>
         <!-- Form -->
-        <form action="core/core.php" method="post">
+        <form>
           <input type="hidden" name="node" value="0">
           <!-- Email address -->
           <div class="form-group">
@@ -51,7 +61,7 @@ if (isset($_SESSION['id'])) {
             </div>
           </div>
           <!-- Submit -->
-          <button type="submit" class="btn btn-lg btn-block btn-primary mb-3"> Iniciar Sesión </button>
+          <a class="btn btn-lg btn-block btn-primary mb-3" onclick="login();"> Iniciar Sesión </a>
           <!-- Link -->
           <div class="text-center">
             <small class="text-muted text-center">

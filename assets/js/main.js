@@ -15,8 +15,6 @@ $(document).ready(function() {
   chart3();
   chart4();
   chart5();
-
-
 });
 
 $('div').scrollspy({
@@ -1116,9 +1114,12 @@ function chatBot_promediosDia(){
 }
 
 function login() {
+  // Capturamos los valores de los campos en variables.
   var email = $('#email').val();
   var pass = $('#pass').val();
+  // verificamos que no esten vacios.
   if (email != "" && pass != "") {
+    // Enviamos los datos al core con ajax,
     $.ajax({
       url: 'core/core.php',
       data:{
@@ -1129,10 +1130,18 @@ function login() {
       method:'post',
       type:'post'
     }).done(function (response){
-      console.log(response);
+      // Recibimos un obj y redireccionamos si todo esta correcto.
+      if (response.codigo > 0) {
+        console.log(response);
+        // window.location = "index.php";
+      }else{
+        // Mostrar Mensaje de Error
+        console.log(response);
+      }
     }).fail(function(xhr,status,error) {
       console.log("Error");
     }).always(function(response) {
+      $('.alert').alert('close');
       console.log("Enviado");
     });
   }

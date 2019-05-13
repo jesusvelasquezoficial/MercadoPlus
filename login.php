@@ -25,14 +25,14 @@ if (isset($_SESSION['id'])) {
         <!-- Subheading -->
         <p class="text-muted text-center mb-5"> Bienvenidos a nuestro panel de control. </p>
         <!-- Form -->
-        <form class="" action="core/core.php" method="post">
+        <form action="core/core.php" method="post">
           <input type="hidden" name="node" value="0">
           <!-- Email address -->
           <div class="form-group">
             <!-- Label -->
             <label> Email Address </label>
             <!-- Input -->
-            <input type="email" id="email" name="email" class="form-control form-control-appended" placeholder="usuario@gmail.com" required>
+            <input type="email" id="email" name="email" class="form-control" placeholder="usuario@gmail.com" required>
           </div>
           <!-- Password -->
           <div class="form-group">

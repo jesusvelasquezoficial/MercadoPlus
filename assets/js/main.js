@@ -1114,3 +1114,26 @@ function chatBot_promediosDia(){
   });
   $('#msjChat').val("");
 }
+
+function login() {
+  var email = $('#email').val();
+  var pass = $('#pass').val();
+  if (email != "" && pass != "") {
+    $.ajax({
+      url: 'core/core.php',
+      data:{
+        node: 0,
+        email: email,
+        pass: pass
+      },
+      method:'post',
+      type:'post'
+    }).done(function (response){
+      console.log(response);
+    }).fail(function(xhr,status,error) {
+      console.log("Error");
+    }).always(function(response) {
+      console.log("Enviado");
+    });
+  }
+}

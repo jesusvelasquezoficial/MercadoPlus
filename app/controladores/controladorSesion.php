@@ -28,9 +28,8 @@ class controladorSesion {
         $_SESSION['role'] = $result->datos->role;
         $_SESSION['msj'] = "Bienvenido ".$this->nombre." ".$this->apellido;
         header('location:../index.php');
-        return $result;
       }
-      header('location:../login.php');
+      return $result;
   }
 
   public function salir() {
@@ -47,7 +46,7 @@ class controladorSesion {
       // Verificamos si Password coincide con el de la DB.
       if (md5($credencial['password']) == $result->datos->password) {
 
-        $this->id = $result->datos->id;
+        $this->idSesion = $result->datos->id;
         $this->nombre = $result->datos->nombre;
         $this->apellido = $result->datos->apellido;
         $this->email = $result->datos->email;

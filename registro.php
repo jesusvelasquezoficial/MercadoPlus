@@ -16,7 +16,7 @@ if (isset($_SESSION['id'])) {
   ================================================== -->
   <div class="container-fluid">
     <div class="row align-items-center justify-content-center blue-alpha-0">
-      <div class="col-12 col-md-5 col-lg-5 col-xl-3 px-lg-6 my-5 p-5 animated flipInX shadow" style="background-color: rgba(0,0,0,.15);">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-4 my-5 p-5 animated flipInX shadow" style="background-color: rgba(0,0,0,.15);">
         <div class="col-12 text-center mb-4">
           <a href="index.php"><img src="assets/img/logo.png" class="mx-auto img-fluid" alt="..."></a>
         </div>
@@ -25,8 +25,7 @@ if (isset($_SESSION['id'])) {
         <!-- Subheading -->
         <p class="text-muted text-center mb-5"> Forma parte de un Nuevo Sistema.</p>
         <!-- Form -->
-        <form class="" action="core/core.php" method="post">
-          <input type="hidden" name="node" value="Registro_Usuarios">
+        <form>
           <div class="row">
             <!-- Nombre -->
             <div class="form-group col-xl-6">
@@ -58,7 +57,7 @@ if (isset($_SESSION['id'])) {
               <!-- Input group -->
               <div class="input-group input-group-merge">
                 <!-- Input -->
-                <input type="password" id="pass" name="pass" class="form-control form-control-appended" placeholder="*************" required>
+                <input type="password" id="pass1" name="pass1" class="form-control form-control-appended" placeholder="*************" required>
                 <!-- Icon -->
                 <div class="input-group-append">
                   <span class="input-group-text">
@@ -85,13 +84,13 @@ if (isset($_SESSION['id'])) {
             </div>
           </div>
           <!-- Submit -->
-          <button type="submit" class="btn btn-lg btn-block btn-primary mb-3"> Registrarse </button>
+          <a class="btn btn-lg btn-block btn-primary mb-3" onclick="Registrarse();"> Registrarse </a>
           <div class="row ">
             <div class="form-group mx-auto mt-2">
               <!-- Input group -->
               <div class="input-group input-group-merge">
                 <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input" id="tyc" name="tyc">
+                  <input type="checkbox" class="custom-control-input" id="tyc" required>
                   <label class="text-muted text-small text-center custom-control-label" for="tyc"> Acepto los <a href="#"><strong>Terminos</strong> y <strong>Condiciones</strong></a> </label>
                 </div>
               </div>
@@ -99,7 +98,7 @@ if (isset($_SESSION['id'])) {
           </div>
         </form>
       </div>
-      <div class="col-12 col-md-7 col-lg-6 col-xl-5 d-none d-lg-block">
+      <div class="d-none d-lg-block">
         <!-- Image -->
         <div class="bg-cover vh-100 mt-n1 mr-n3" style="background-image: transparent;"></div>
       </div>

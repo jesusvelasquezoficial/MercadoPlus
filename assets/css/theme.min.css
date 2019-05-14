@@ -10792,8 +10792,8 @@ a.text-white:hover {
 
 .alert-danger {
     color: #fff;
-    background-color: #e63757;
-    border-color: #e63757
+    background-color: rgba(255, 0, 0, 0.6);
+    border-color: rgba(255, 0, 0, 1)
 }
 
 .alert-danger hr {

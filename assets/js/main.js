@@ -1113,7 +1113,8 @@ function chatBot_promediosDia(){
   $('#msjChat').val("");
 }
 
-function login() {
+// Inicio de sesion
+function Iniciar_Sesion() {
   // Capturamos los valores de los campos en variables.
   var email = $('#email').val();
   var pass = $('#pass').val();
@@ -1123,7 +1124,7 @@ function login() {
     $.ajax({
       url: 'core/core.php',
       data:{
-        node: 0,
+        node: 1,
         email: email,
         pass: pass
       },
@@ -1133,16 +1134,67 @@ function login() {
       // Recibimos un obj y redireccionamos si todo esta correcto.
       if (response.codigo > 0) {
         console.log(response);
-        // window.location = "index.php";
+        window.location = "index.php";
       }else{
-        // Mostrar Mensaje de Error
+        // Estructuramos mensaje en HTML
+        var textMsj = '';
+        textMsj += '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
+        textMsj +='<strong>¡Error!</strong> '+response.mensaje+'';
+        textMsj +='<button type="button" class="close" data-dismiss="alert" aria-label="Close">';
+        textMsj +='<span aria-hidden="true">&times;</span>';
+        textMsj +='</button></div>';
+        textMsj += '';
+        // Enviamos el mensaje a la caja msjError
+        $('#msjError').html(textMsj);
         console.log(response);
       }
     }).fail(function(xhr,status,error) {
       console.log("Error");
     }).always(function(response) {
-      $('.alert').alert('close');
       console.log("Enviado");
     });
+  }
+}
+
+function Registrarse() {
+  // Capturamos los valores de los campos en variables.
+  var nombre = $('#nombre').val();
+  var apellido = $('#apellido').val();
+  var email = $('#email').val();
+  var pass1 = $('#pass1').val();
+  var pass2 = $('#pass2').val();
+  var tyc = $('#tyc').prop('checked');
+  // verificamos que no esten vacios.
+  if (nombre != '' && apellido != '' && email != '' && pass1 != '' && pass2 != '' && tyc != false) {
+    // Verificar que coincidan los passwords
+    if (pass1 == pass2) {
+      // Enviamos los datos por ajax
+      $.ajax({
+        url: 'core/core.php',
+        data:{
+          node: 0,
+          nombre: nombre,
+          apellido: apellido,
+          email: email,
+          pass: pass1,
+          tyc: tyc
+        },
+        method:'post',
+        type:'post'
+      }).done(function (response) {
+        // Recibimos un obj
+        console.log(response);
+      }).fail(function(xhr,status,error) {
+        console.log("Error");
+      }).always(function(response) {
+        console.log("Enviado");
+      });
+    }else{
+      // Mostrar Mensaje del Password no Coincide.
+      console.log('El Password no coincide.');
+    }
+  }else{
+    // Mostrar Mensaje de Campos Vacios
+    console.log('Los campos estan vacios.');
   }
 }

@@ -24,7 +24,7 @@ class controladorSesion {
     session_destroy();
   }
 
-  public function verificar($credencial) {
+  private function verificar($credencial) {
     // Verificamos si Email coincide con el de la DB.
     $result = (new controladorUsuarios())->buscarUsuarioPorEmail($credencial['email']);
     // Creamos una Bandera con el codigo del Result.
@@ -32,33 +32,39 @@ class controladorSesion {
     if ($flag) {
       // Verificamos si Password coincide con el de la DB.
       if (md5($credencial['password']) == $result->datos->password) {
-
+        // Iniciamos un session_start de PHP
         session_start();
+        // Almacenamos los datos en una Array SESSION
         $_SESSION['id'] = $result->datos->id;
         $_SESSION['nombre'] = $result->datos->nombre;
         $_SESSION['apellido'] = $result->datos->apellido;
         $_SESSION['email'] = $result->datos->email;
         $_SESSION['role'] = $result->datos->role;
         $_SESSION['msj'] = "Bienvenido ".$_SESSION['nombre']." ".$_SESSION['apellido'];
-
+        // Seteamos los atributos de la case sesion
         $this->idSesion = $result->datos->id;
         $this->nombre = $result->datos->nombre;
         $this->apellido = $result->datos->apellido;
         $this->email = $result->datos->email;
         $this->password = $result->datos->password;
         $this->role = $result->datos->role;
-
+        // Modificamos el mensaje y colocamos uno de Bienvenida
         $result->setMensaje("Bienvenido ".$this->nombre." ".$this->apellido);
+        // Limiamos los datos para no enviar los extraidos de la DB.
         $result->setDatos(null);
-
+        //Devolvemos el obj Result
         return $result;
-
       }
+        // Seteamos un codigo de Error
         $result->setCodigo(-1);
+        // Modificamos el msj y enviamos uno personalizado.
         $result->setMensaje("Password Incorrecto");
+        // Limiamos los datos para no enviar los extraidos de la DB.
         $result->setDatos(null);
         return $result;
     }
+      // No se puedo verificar el Email
+      // Modificamos el msj y enviamos uno personalizado.
       $result->setMensaje("Email Incorrecto");
       return $result;
   }

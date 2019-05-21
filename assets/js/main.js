@@ -1182,14 +1182,39 @@ function Registrarse() {
         method:'post',
         type:'post'
       }).done(function (response) {
-        // Recibimos un obj
-        console.log(response);
+        // Recibimos un obj y redireccionamos si todo esta correcto.
+        if (response.codigo > 0) {
+          console.log(response);
+          window.location = "index.php";
+        }else{
+          // Estructuramos mensaje en HTML
+          var textMsj = '';
+          textMsj += '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
+          textMsj +='<strong>¡Error!</strong> '+response.mensaje+'';
+          textMsj +='<button type="button" class="close" data-dismiss="alert" aria-label="Close">';
+          textMsj +='<span aria-hidden="true">&times;</span>';
+          textMsj +='</button></div>';
+          textMsj += '';
+          // Enviamos el mensaje a la caja msjError
+          $('#msjError').html(textMsj);
+          console.log(response);
+        }
       }).fail(function(xhr,status,error) {
         console.log("Error");
       }).always(function(response) {
         console.log("Enviado");
       });
     }else{
+      // Estructuramos mensaje en HTML
+      var textMsj = '';
+      textMsj += '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
+      textMsj +='<strong>¡Error!</strong> El Password no coincide.';
+      textMsj +='<button type="button" class="close" data-dismiss="alert" aria-label="Close">';
+      textMsj +='<span aria-hidden="true">&times;</span>';
+      textMsj +='</button></div>';
+      textMsj += '';
+      // Enviamos el mensaje a la caja msjError
+      $('#msjError').html(textMsj);
       // Mostrar Mensaje del Password no Coincide.
       console.log('El Password no coincide.');
     }

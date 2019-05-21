@@ -7,8 +7,10 @@
  <script src="assets/libs/jquery/dist/jquery.min.js"></script>
  <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
+ <!-- TEMA -->
+ <script src="assets/js/theme.min.js"></script>
 
- <!-- ==================================================================== -->
+<!-- ==================================================================== -->
 <!-- GRAFICOS -->
 <script src="assets/libs/chart.js/dist/Chart.min.js"></script>
 <!-- EXTENSION GRAFICOS -->
@@ -29,11 +31,8 @@
 <!-- INPUTS SELECT -->
 <script src="assets/libs/select2/dist/js/select2.min.js"></script>
 
-<!-- CDN JS -->
+<!-- PUSH JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.9/push.js" integrity="sha256-p73+snCYhrDo9U6USD9P19LnY1EwAe4+VzQxj/kNyBE=" crossorigin="anonymous"></script>
 
-<!-- THEME JS -->
-<script src="assets/js/theme.min.js"></script>
-
-<!-- MAIN JAVASCRIPT -->
+<!-- MAIN -->
 <script src="assets/js/main.js" charset="utf-8"></script>

@@ -14,7 +14,7 @@ class controladorUsuarios {
     $id = $usuarioModel->insert($usuario);
     $v = ($id > 0);
     $respuesta = new respuesta($v ? EMensajes::INSERCION_EXITOSA : EMensajes::INSERCION_ERROR);
-    $respuesta->setDatos($id);
+    $respuesta->setDatos(["id" => $id]);
     return $respuesta;
   }
 

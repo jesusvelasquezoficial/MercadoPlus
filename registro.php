@@ -16,6 +16,10 @@ if (isset($_SESSION['id'])) {
   ================================================== -->
   <div class="container-fluid">
     <div class="row align-items-center justify-content-center blue-alpha-0">
+      <!-- MENSAJE ERROR -->
+      <div class="col-lg-6" id="msjError"></div>
+    </div>
+    <div class="row align-items-center justify-content-center blue-alpha-0">
       <div class="col-12 col-md-10 col-lg-8 col-xl-4 my-5 p-5 animated flipInX shadow" style="background-color: rgba(0,0,0,.15);">
         <div class="col-12 text-center mb-4">
           <a href="index.php"><img src="assets/img/logo.png" class="mx-auto img-fluid" alt="..."></a>

@@ -27,14 +27,47 @@
     case 0:
       // Verificamos que los datos esten seteados.
       if (isset($_POST['nombre']) &&
-          isset($_POST['apellido']) &&
-          isset($_POST['email']) &&
-          isset($_POST['pass']) &&
-          isset($_POST['tyc']))  {
-            // Creamos un nuevo usuario.
-            // $usuario = new controladorUsuarios();
-            //
-
+        isset($_POST['apellido']) &&
+        isset($_POST['email']) &&
+        isset($_POST['pass']) &&
+        isset($_POST['tyc'])) {
+          // Creamos un Array de Datos.
+          $datos = [
+            "nombre" => $_POST['nombre'],
+            "apellido" => $_POST['apellido'],
+            "email" => $_POST['email'],
+            "password" => md5($_POST['pass']),
+            "tyc" => $_POST['tyc']
+          ];
+          // Creamos un nuevo usuario.
+          $usuario = new controladorUsuarios();
+          // Verificamos si el email coincide con el de la DB.
+          $result = $usuario->buscarUsuarioPorEmail($datos['email']);
+          // Si el Codigo de resultado es menor a 0 entonces
+          if ($result->getCodigo() < 0) {
+            // Insertamos un nuevo usuarios enviando los datos con el Password encryptado
+            $r2 = $usuario->insertarUsuario($datos);
+            // Si el usuario fue insertado correctamente entonces.
+            if ($r2->getCodigo() > 0) {
+              // Creamos un Array de datos llamado $Credenciales.
+              $credenciales = ['email' => $_POST['email'],'password' => $_POST['pass']];
+              // Creamos una nueva session.
+              $sesion = new controladorSesion();
+              //Imprimimos el resultado.
+              echo $sesion->entrar($credenciales)->json();
+            }else{
+              // devolvemos el resultado (ERROR)
+              echo $r2->json();
+            }
+          }else{
+            // Seteamos un codigo de Error
+            $result->setCodigo(-1);
+            // Modificamos el msj y enviamos uno personalizado.
+            $result->setMensaje("El email no es valido.");
+            // Limiamos los datos para no enviar los extraidos de la DB.
+            $result->setDatos(null);
+            echo $result->json();
+          }
       }
     break;
     case 2: // INSERTAR DATOS OFICIALES
@@ -1975,7 +2008,7 @@
             echo "<script>history.back();</script>";
           }
         }else {
-          $_SESSION['msj'] = "El Password no son coincide.";
+          $_SESSION['msj'] = "El Password no coincide.";
           // mysqli_close($link);
           echo "<script>history.back();</script>";
         }

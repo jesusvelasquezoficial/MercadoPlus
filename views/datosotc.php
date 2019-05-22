@@ -1,6 +1,6 @@
 <!-- View 2 -->
 <div class="pt-6 h-auto" id="datosotc" style="height:1080px;">
-  <!-- HEADER -->
+  <!-- header -->
   <div class="header">
     <div class="container-fluid">
       <!-- Body -->
@@ -13,7 +13,7 @@
               Visión general
             </h4>
             <!-- Title -->
-            <h2 class="header-title">Información del promedio dolar oficial y paralelo en venezuela</h2>
+            <h2 class="header-title">Información del promedio dolar paralelo en venezuela</h2>
           </div>
           <!-- Fecha y Hora -->
           <div class="col-auto">
@@ -24,7 +24,7 @@
     </div>
   </div> <!-- / .header -->
 
-  <!-- CARDS -->
+  <!-- cards -->
   <div class="container-fluid">
     <div class="row">
       <!-- Tasa de Mercados -->

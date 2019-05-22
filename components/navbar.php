@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="sidebarCollapse">
       <!-- Navigation -->
       <ul class="navbar-nav mb-md-4">
-        <!-- INICIO -->
+        <!-- Inicio -->
         <li class="nav-item">
           <a class="nav-link" href="#sidebarInicio" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarInicio">
             <i class="fe fe-home"></i> Inicio
@@ -81,7 +81,6 @@
       <!-- Form -->
       <div class="d-flex"></div>
       <!-- User -->
-
       <div class="navbar-user">
         <?php include 'navbar/menu.php'; ?>
       </div>

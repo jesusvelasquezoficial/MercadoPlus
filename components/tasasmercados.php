@@ -17,7 +17,7 @@
         <th class="text-center">Precio</th>
         <th class="text-right">Cambio(24h)</th>
       </thead>
-      <tbody class="list" id="bodyTasasMercados"> </tbody>
+      <tbody class="list" id="bodyTasasMercados"></tbody>
     </table>
   </div>
 </div>

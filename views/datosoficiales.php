@@ -1,6 +1,6 @@
-<!-- View 1 -->
+<!-- Vista 1 -->
 <div class="h-auto" id="datosoficiales" style="height:1080px;">
-  <!-- HEADER -->
+  <!-- header -->
   <div class="header">
     <div class="container-fluid">
       <!-- Body -->
@@ -13,7 +13,7 @@
               Visión general
             </h4>
             <!-- Title -->
-            <h2 class="header-title">Información del promedio dolar oficial y paralelo en venezuela</h2>
+            <h2 class="header-title">Información del promedio dolar oficial en venezuela</h2>
           </div>
           <!-- Fecha y Hora -->
           <div class="col-auto">
@@ -24,14 +24,14 @@
     </div>
   </div> <!-- / .header -->
 
-  <!-- CARDS -->
+  <!-- cards -->
   <div class="container-fluid">
     <div class="row" id="bodyTasasMercadosOficiales"> </div>
     <div class="row">
       <!-- Nota Importante  -->
       <div class="col-12">
         <div class="alert alert-light alert-dismissible fade show" role="alert">
-          <strong> NOTA IMPORTANTE:</strong> Los precios reflejados son obtenidos de los indicadores referenciales y los resultados son mostrado a modo de orientacion.
+          <strong> NOTA IMPORTANTE: </strong>Los precios reflejados son obtenidos de los indicadores referenciales y los resultados son mostrado a modo de orientacion.
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

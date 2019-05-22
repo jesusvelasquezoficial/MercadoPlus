@@ -11,7 +11,7 @@
   // Trabajamos el nucleo con un switch
   switch ($_REQUEST['node']) {
     // Inicio se sesion
-    case 1:
+    case 'Iniciar_Sesion':
       // Verificamos que los datos esten seteados.
       if (isset($_POST['email']) && isset($_POST['pass'])) {
         // Creamos un Array de datos llamado $Credenciales.
@@ -24,7 +24,7 @@
         // Recuerda que debes sacar a la gente de aqui si no esta seteados los
       }
     break;
-    case 0:
+    case 'Registrarse':
       // Verificamos que los datos esten seteados.
       if (isset($_POST['nombre']) &&
         isset($_POST['apellido']) &&

@@ -10,5 +10,5 @@
       </div>
     </div> <!-- / .row -->
   </div>
-  <div class="card-body text-center" id="promediosDia"> </div>
+  <div class="card-body text-center" id="promediosDia"></div>
 </div>

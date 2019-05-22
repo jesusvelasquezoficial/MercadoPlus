@@ -213,7 +213,7 @@
 
                   <!-- Avatar -->
                   <a href="profile-posts.html" class="avatar">
-                    <img src="assets/img/avatars/profiles/avatar-7.jpg" alt="..." class="avatar-img rounded-circle">
+                    <img src="assets/img/avatars/profiles/avatar-2.jpg" alt="..." class="avatar-img rounded-circle">
                   </a>
 
                 </div>
@@ -702,7 +702,7 @@
 
                 <!-- Avatar -->
                 <div class="avatar avatar-sm">
-                  <img src="assets/img/avatars/profiles/avatar-7.jpg" alt="..." class="avatar-img rounded-circle">
+                  <img src="assets/img/avatars/profiles/avatar-2.jpg" alt="..." class="avatar-img rounded-circle">
                 </div>
 
               </div>

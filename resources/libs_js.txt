@@ -1,0 +1,20 @@
+<!-- graficos -->
+<script src="assets/libs/chart.js/dist/Chart.min.js"></script>
+<!-- extension graficos -->
+<script src="assets/libs/chart.js/Chart.extension.min.js"></script>
+<!-- inputs calendario -->
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+<!-- inputs select -->
+<script src="assets/libs/select2/dist/js/select2.min.js"></script>
+<!-- listar datos -->
+<script src="assets/libs/list.js/dist/list.min.js"></script>
+<!-- editor de texto -->
+<script src="assets/libs/quill/dist/quill.min.js"></script>
+<!-- mascara de datos -->
+<script src="assets/libs/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+<!-- push js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.9/push.js" integrity="sha256-p73+snCYhrDo9U6USD9P19LnY1EwAe4+VzQxj/kNyBE=" crossorigin="anonymous"></script>
+
+
+<!-- evaluar este recurso mas adelante.
+<script src="assets/libs/dropzone/dist/min/dropzone.min.js"></script> -->

@@ -1,0 +1,6 @@
+<!-- editor de texto -->
+<link rel="stylesheet" href="assets/libs/quill/dist/quill.core.css">
+<!-- inputs select -->
+<link rel="stylesheet" href="assets/libs/select2/dist/css/select2.min.css">
+<!-- inputs calendario -->
+<link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">

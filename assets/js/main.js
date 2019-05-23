@@ -4,9 +4,6 @@
 // });
 
 $(document).ready(function() {
-
-  tablaDatosOficiales(3);
-  tablaDatosOTC(5);
   pushAlert();
   chart1();
   chart2();
@@ -19,10 +16,11 @@ $('div').scrollspy({
   target: '#principal'
 });
 
-
+// index
 function formatoCajaInstagram() {
   $('#cajaContenido').toggleClass('formatoCaja');
 }
+// tablas y datos
 function updown(num,boolean) {
   num = parseFloat(num);
   num = (num == 0 || isNaN(num)) ? 0 : num;
@@ -40,7 +38,7 @@ function updown(num,boolean) {
     return '<i class="fe fe-arrow-down '+colorBlanco+'">'+ result.toFixed(2) +'%</i>';
   }
 }
-
+// msj push
 function pushAlert() {
   $.ajax({
     url: 'core/core.php',
@@ -66,7 +64,7 @@ function pushAlert() {
 
   });
 }
-
+// charts 1,2,3,4,5
 function numFloatandReplace(num,long,v1,v2,v3 = null){
   rem = (v2 == null) ? v3 : v2;
   return result = (num.length > long) ? parseFloat(num.replace(v1,rem)) : parseFloat(num.replace(v2,rem));
@@ -372,7 +370,7 @@ function chart5() {
 
 
 }
-
+// form-cms
 function paso2() {
   $('#datosOficiales-tab').removeClass('active');
   $('#datosOTC-tab').addClass('active');
@@ -380,7 +378,7 @@ function paso2() {
     $('#btnSiguiente-tab').removeClass('active');
   }, 1000);
 }
-
+// sin uso
 function cargarDatos() {
   $('form-datos').submit();
   $('#datosOTC-tab').removeClass('active');

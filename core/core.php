@@ -24,6 +24,7 @@
         // Recuerda que debes sacar a la gente de aqui si no esta seteados los
       }
     break;
+    // Registro de usuario
     case 'Registrarse':
       // Verificamos que los datos esten seteados.
       if (isset($_POST['nombre']) &&

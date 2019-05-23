@@ -950,7 +950,7 @@
           </div>
         </div>
       </div>
-    </div> <!-- / .main-content -->
+    </div> <!-- / content -->
     <!-- ================================================== -->
     <?php include 'resources/scripts.php'; ?>
     <!-- inputs calendario -->
@@ -961,6 +961,8 @@
     <script src="assets/libs/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
     <!-- tema -->
     <script src="assets/js/theme.min.js"></script>
+    <!-- cms -->
+    <script src="assets/js/cms.js"></script>
     <!-- ================================================== -->
   </body>
 </html>

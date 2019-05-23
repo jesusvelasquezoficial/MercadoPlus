@@ -46,6 +46,7 @@ function fechayhora() {
   $('#horaOTC').val(time);
 
 }
+fechayhora();
 // (CMS) Recibe 3 campos
 function promediar(precioCompra, precioVenta, promedio) {
   var valorCompra = precioCompra.value;

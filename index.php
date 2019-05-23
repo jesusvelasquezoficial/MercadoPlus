@@ -38,6 +38,10 @@
     <script src="assets/libs/list.js/dist/list.min.js"></script>
     <!-- tema -->
     <script src="assets/js/theme.min.js"></script>
+    <!-- datos otc -->
+    <script src="assets/js/datos_otc.js"></script>
+    <!-- dato oficiales -->
+    <script src="assets/js/datos_oficiales.js"></script>
     <!-- ================================================== -->
   </body>
 </html>

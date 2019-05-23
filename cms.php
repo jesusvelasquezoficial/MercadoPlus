@@ -904,9 +904,9 @@
                 </div>
               </form>
             </div><!-- / .row -->
-            <!-- TABLA DATOS OFICIALES -->
+            <!-- TABLA DATOS OTC -->
             <div class="tab-pane fade" id="tablaDatosOTC" role="tabpanel" aria-labelledby="tablaDatosOTC-tab">
-              <!-- Tabla Datos Oficiales -->
+              <!-- Tabla Datos Otc -->
               <div class="table-responsive">
                 <table class="table table-bordered text-center">
                   <thead>
@@ -963,6 +963,10 @@
     <script src="assets/js/theme.min.js"></script>
     <!-- cms -->
     <script src="assets/js/cms.js"></script>
+    <!-- tabla datos oficiales -->
+    <script src="assets/js/tablas_datosoficiales.js"></script>
+    <!-- tabla datos otc -->
+    <script src="assets/js/tablas_datosotc.js"></script>
     <!-- ================================================== -->
   </body>
 </html>

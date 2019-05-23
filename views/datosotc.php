@@ -28,11 +28,11 @@
   <div class="container-fluid">
     <div class="row">
       <!-- Tasa de Mercados -->
-      <div class="col-12 col-xl-6">
+      <div class="col-12 col-xl-7">
         <?php include 'components/tasasmercados.php' ?>
       </div>
       <!-- Promedio del Dia -->
-      <div class="col-12 col-xl-6">
+      <div class="col-12 col-xl-5">
         <?php include 'components/promediodia.php'; ?>
       </div>
       <!-- Nota Importante  -->

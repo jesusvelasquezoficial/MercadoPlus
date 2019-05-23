@@ -32,6 +32,13 @@ class controladorSesion {
     if ($flag) {
       // Verificamos si Password coincide con el de la DB.
       if (md5($credencial['password']) == $result->datos->password) {
+        // Seteamos los atributos de la case sesion
+        $this->idSesion = $result->datos->id;
+        $this->nombre = $result->datos->nombre;
+        $this->apellido = $result->datos->apellido;
+        $this->email = $result->datos->email;
+        $this->password = $result->datos->password;
+        $this->role = $result->datos->role;
         // Iniciamos un session_start de PHP
         session_start();
         // Almacenamos los datos en una Array SESSION
@@ -41,13 +48,6 @@ class controladorSesion {
         $_SESSION['email'] = $result->datos->email;
         $_SESSION['role'] = $result->datos->role;
         $_SESSION['msj'] = "Bienvenido ".$_SESSION['nombre']." ".$_SESSION['apellido'];
-        // Seteamos los atributos de la case sesion
-        $this->idSesion = $result->datos->id;
-        $this->nombre = $result->datos->nombre;
-        $this->apellido = $result->datos->apellido;
-        $this->email = $result->datos->email;
-        $this->password = $result->datos->password;
-        $this->role = $result->datos->role;
         // Modificamos el mensaje y colocamos uno de Bienvenida
         $result->setMensaje("Bienvenido ".$this->nombre." ".$this->apellido);
         // Limiamos los datos para no enviar los extraidos de la DB.

@@ -4,7 +4,7 @@
 <!-- Modal: Demo -->
 <div class="modal fade fixed-right" id="modalDemo" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-vertical" role="document">
-    <form class="modal-content" id="demoForm">
+    <form class="modal-content" id="">
       <div class="modal-body">
 
         <!-- Close -->
